@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
 import Login from './Login/renderer.js';
-import './Login/renderer.css'
+import Nav from './Nav/nav.js';
+import Slider from './Slider/slider.js';
 
 class App extends Component {
   render() {
     return (
- 		<Login/>
+	    <div>
+	    	<Nav/>
+	    	<Slider/>
+	    	<Login/>
+ 		</div>
     );
   }
 }
