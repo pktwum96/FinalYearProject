@@ -1,0 +1,67 @@
+#about {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	color: #555;
+}
+
+.about-content {
+	padding-top: 20px;
+
+}
+
+.row h2 {
+	text-align: center;
+}
+
+#services {
+	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../Slider/img/accounting.jpg);
+	background-size: cover;
+	background-position: center;
+	color: #efefef!important;
+	background-attachment: fixed;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+#services h2 {
+	text-align: center;
+	color: #efefef!important;
+	padding-bottom: 10px;
+}
+
+#services h2::after {
+	content:'';
+	background: #efefef;
+	display: block;
+	height: 3px;
+	width:170px;
+	margin: 20px auto 5px;
+}
+
+.services {
+	margin-top: 40px;
+}
+
+.icon {
+	font-size: 40px;
+	margin: 20px auto;
+	padding: 10px;
+	height: 80px;
+	width: 80px;
+	border: 1px solid #fff;
+	border-radius: 50px;
+}
+
+#services p {
+	font-size:14px;
+	margin-top: 20px;
+	color: #ccc;
+
+}
+
+.services .col-md-3:hover {
+	background: rgb(43,37,111);
+	cursor: pointer;
+	transition: 0.7s;
+	border-radius: 10px;
+}
