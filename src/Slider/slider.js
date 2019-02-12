@@ -1,8 +1,8 @@
 import React from "react";
 import "./slider.css";
-import family from "./img/family.jpg";
-import blackboy from "./img/blackboy.jpg";
-import money from "./img/money.jpg";
+import accounting from "./img/accounting.jpg";
+import pc from "./img/pc.jpg";
+import appleprods from "./img/appleprods.jpg";
 
 
  class Slider extends React.Component {
@@ -21,19 +21,19 @@ import money from "./img/money.jpg";
 					  </ol>
 					<div className="carousel-inner">
 					    <div className="carousel-item active">
-					      <img src={money} className="d-block mysizing"/>
+					      <img src={accounting} className="d-block mysizing"/>
 						      <div className="carousel-caption">
 						      		<h5>Grow Your Money</h5>
 						      </div>
 					    </div>
 					    <div className="carousel-item">
-					      <img src={blackboy} className="d-block mysizing"/>
+					      <img src={pc} className="d-block mysizing"/>
 						      <div className="carousel-caption">
 								     <h5>Your Very Own Invesment Portfolio</h5>
 						      </div>
 					    </div>
 					    <div className="carousel-item">
-					      <img src={family} className="d-block mysizing"/>
+					      <img src={appleprods} className="d-block mysizing"/>
 							      <div className="carousel-caption">
 							      		<h5>Your First Step Towards Financial Security</h5>
 							      </div>
