@@ -39,16 +39,17 @@
     line-height: 2;
     cursor: pointer;
 }
+
 .controller:hover,
 .controller:focus {
     background-color: rgb(43,37,111);
+    border: 1px solid white;
+    border-radius: 5px;
     color: white;
-    border-radius: 6px;
-    border: 2px solid white;
 }
 .selected-controller {
     transition: border 0.5s ease-out;
-    border-bottom: 2px solid rgb(43,37,111);
+    border-bottom: 2px solid black;
 }
 
 .box-container {
@@ -59,12 +60,15 @@
     min-width: 21em;
     box-shadow: 0px 0px 20px 0px rgba(15, 15, 15, 0.2);
     border-radius: 6px;
-    padding: 24px;
+    padding-bottom: 35px;
+    padding-top: 20px;
     margin-bottom: 20px;
 }
 
 .inner-container {
     transition: visibility 0.2s ease-out;
+    width: 18em;
+    align-self: center;
 }
 
 .inner-container.show {
@@ -73,6 +77,7 @@
 
 
 .header {
+    align-self: center;
     text-align: center;
     padding: 5px;
     margin-bottom: 17px;
@@ -102,21 +107,25 @@
     font-family: Oxygen, sans-serif;
     font-size: 20px;
     font-weight: 600;
-    padding-left: 5px;
+    padding-left: 50px;
     padding-bottom: 5px;
 }
 
 
 .login-input {
+    align-self: center;
+    width:15em;
     height: 2.1em;
     border-radius: 3px;
     border: 1px solid rgb(43,37,111);
     transition: border 0.4s ease-out;
     padding: 1px;
+    margin: 10px;
     font-family: Oxygen, sans-serif;
     font-size: 19px;
     color: #3e3e42;
     background: rgba(15, 15, 15, 0.01);
+    text-indent: 15px;
 }
 
 .login-input:hover {
@@ -139,6 +148,7 @@
     padding: 2px 30px;
     /* background-color: #417cef; */
     border: 0;
+    width: 10em;
     font-size: 18px;
     border-radius: 3px;
     font-family: Oxygen, sans-serif;
@@ -147,6 +157,7 @@
     border: 2px solid rgb(43,37,111);
     transition: background-color 0.3s ease-out;
     cursor: pointer;
+    align-self: center;
 }
 
 .login-btn:hover,

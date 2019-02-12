@@ -22,19 +22,23 @@ import "./renderer.css";
 			
 					<div className="input-group">
 			
-						<label htmlFor="username">Username</label>
 						<input type="text" name="username" className="login-input" placeholder="Username"/>	
 			
 					</div>
 			
 					<div className="input-group">
 			
-						<label htmlFor="password">Password</label>
+						<input type="text" name="email" className="login-input" placeholder="Email"/>	
+			
+					</div>
+			
+					<div className="input-group">
+			
 						<input type="password" name="password" className="login-input" placeholder="Password"/>	
 			
 					</div>
 
-					<button type="button" className="login-btn" onClick={this.submitRegister.bind(this)}>Register</button>
+					<button type="button" className="login-btn" onClick={this.submitRegister.bind(this)}>Sign Up</button>
 
 			
 				</div>
