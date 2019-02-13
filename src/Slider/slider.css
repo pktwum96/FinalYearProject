@@ -18,3 +18,7 @@
 	width: 100%!important;
 	height: 700px!important;
 }
+
+.special {
+  filter: brightness(50%);
+}
