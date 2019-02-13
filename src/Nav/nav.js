@@ -24,7 +24,7 @@ import "./nav.css";
 				        <a className="nav-link" href="#">Services</a>
 				      </li>
 				      <li className="nav-item">
-				        <a className="nav-link" href="#">The Team</a>
+				        <a className="nav-link" href="#">How It Works</a>
 				      </li>
 				      <li className="nav-item">
 				        <a className="nav-link" href="#">Login</a>

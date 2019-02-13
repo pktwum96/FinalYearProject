@@ -19,6 +19,7 @@ class Aboutservices extends React.Component {
 			 		</div>
 		 		</div>
 	    	</div>
+
 	    	<div id="services">
 	    		<h2> Services </h2>
 	    		<div className="row services">
@@ -43,7 +44,7 @@ class Aboutservices extends React.Component {
 	    				<div className="icon">
 	    					<i className="fa fa-sliders"></i>
 	    				</div>
-	    				<h3>Investment Management</h3>
+	    				<h3>Wealth Management</h3>
 	    				<p>Lorem ipsum dolor amet. In taberna in discussurum. Quantus tremor est futurus, dies irae dies illa.</p>
 	    			</div>
 
@@ -55,6 +56,27 @@ class Aboutservices extends React.Component {
 	    				<p>Lorem ipsum dolor amet. In taberna in discussurum. Quantus tremor est futurus, dies irae dies illa.</p>
 	    			</div>
 	    		</div>
+	    	</div>
+
+	    	<div id="youtubevideo">
+			    <div className="container">
+			 		<div className="row">
+
+			 			<div className="video-parent">
+			 				<h2>How It Works</h2>
+			 				<div className="video">
+				 				<iframe width="560" 
+				 					height="315" 
+				 					src="https://www.youtube.com/embed/l4TzfPfLMB4" 
+				 					frameborder="0" 
+				 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+				 					allowfullscreen>
+			 					</iframe>
+			 				</div>
+			 			</div>
+
+			 		</div>
+		 		</div>
 	    	</div>
 	    </div>
     );

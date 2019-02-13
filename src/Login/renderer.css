@@ -120,7 +120,8 @@
     border: 1px solid rgb(43,37,111);
     transition: border 0.4s ease-out;
     padding: 1px;
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-family: Oxygen, sans-serif;
     font-size: 19px;
     color: #3e3e42;
