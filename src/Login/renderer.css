@@ -11,7 +11,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: rgb(43,37,111);
+    background-image: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url(../Slider/img/contemporary.jpg);
+    background-size: cover;
+    background-position: center;
+    color: #efefef!important;
+    background-attachment: fixed;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 .box-controller {
@@ -38,6 +44,7 @@
     height: 100%;
     line-height: 2;
     cursor: pointer;
+    color:#555;
 }
 
 .controller:hover,
@@ -86,6 +93,7 @@
     font-family: Oxygen, sans-serif;
     font-size: 22px;
     border-bottom: 2px solid rgb(43,37,111);
+    color: #555;
 }
 
 .box {
