@@ -1,3 +1,74 @@
+/*  Navigation Bar*/
+
+*{
+	margin: 0;
+	padding:0;
+}
+#nav-bar {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+ }
+
+#navbarNav ul li a:hover{
+	color: #007bff!important;
+}
+
+
+.navbar-nav li {
+	padding: 0 10px;
+}
+
+.navbar-nav li a{
+	float: right;
+	text-align: left;
+}
+
+.navbar {
+	background: #fff;
+}
+
+.navbar-toggler {
+	border: none!important;
+}
+
+.nav-link {
+	color: #555!important;
+	font-weight: 600;
+	font-size: 16px;
+}
+
+
+
+/*---------------------------Slider---------------------------------------------- */
+
+
+
+#Home {
+	width: 100%;
+}
+
+.carousel-caption {
+	top: 50%;
+	transform: translateY(-50%);
+	bottom: initial!important;
+
+}
+
+.carousel-caption h5{
+	color: #fff;
+	font-size: 1.9em;
+}
+
+.special {
+  filter: brightness(50%);
+}
+
+
+
+/*---------------------------Aboutservices---------------------------------------------- */
+
+
 #about {
 	color: #555;
 }
