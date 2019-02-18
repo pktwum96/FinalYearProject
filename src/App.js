@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter, Switch, Route, Link} from 'react-router-dom';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import LandingPage from './components/LandingPage.js';
 import Login from './components/Login.js';
 
