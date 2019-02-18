@@ -21,19 +21,19 @@ import appleprods from "./img/appleprods.jpg";
 					  </ol>
 					<div className="carousel-inner">
 					    <div className="carousel-item active">
-					      <img src={dollars} className="d-block mysizing special"/>
+					      <img src={dollars} className="d-block img-fluid special"/>
 						      <div className="carousel-caption">
 						      		<h5>Grow Your Money</h5>
 						      </div>
 					    </div>
 					    <div className="carousel-item">
-					      <img src={pc} className="d-block mysizing"/>
+					      <img src={pc} className="d-block img-fluid"/>
 						      <div className="carousel-caption">
 								     <h5>Your Very Own Investment Portfolio</h5>
 						      </div>
 					    </div>
 					    <div className="carousel-item">
-					      <img src={appleprods} className="d-block mysizing"/>
+					      <img src={appleprods} className="d-block img-fluid"/>
 							      <div className="carousel-caption">
 							      		<h5>Your First Step Towards Financial Security</h5>
 							      </div>

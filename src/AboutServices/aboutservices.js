@@ -64,11 +64,11 @@ class Aboutservices extends React.Component {
 
 			 			<div className="video-parent">
 			 				<h2>How It Works</h2>
-			 				<div className="video">
+			 				<div className="embed-responsive embed-responsive-16by9">
 				 				<iframe width="560"
 				 					height="315"
 				 					src="https://www.youtube.com/embed/l4TzfPfLMB4"
-				 					frameborder="0"
+				 					className="embed-responsive-item"
 				 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 				 					allowfullscreen>
 			 					</iframe>
