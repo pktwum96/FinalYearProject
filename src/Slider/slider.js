@@ -12,7 +12,7 @@ import appleprods from "./img/appleprods.jpg";
 	}
 	render(){
 		return(
-			<div id="slider">
+			<div id="Home">
 				<div id="headerSlider" className="carousel slide" data-ride="carousel">
 					  <ol className="carousel-indicators">
 					    <li data-target="#headerSlider" data-slide-to="0" className="active"></li>

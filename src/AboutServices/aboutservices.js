@@ -4,7 +4,7 @@ import './aboutservices.css';
 class Aboutservices extends React.Component {
   render() {
     return (
-	    <div>
+	    <div id ="Services">
 		    <div id="about">
 			    <div className="container">
 			 		<div className="row">
@@ -58,18 +58,18 @@ class Aboutservices extends React.Component {
 	    		</div>
 	    	</div>
 
-	    	<div id="youtubevideo">
+	    	<div id="HowItWorks">
 			    <div className="container">
 			 		<div className="row">
 
 			 			<div className="video-parent">
 			 				<h2>How It Works</h2>
 			 				<div className="video">
-				 				<iframe width="560" 
-				 					height="315" 
-				 					src="https://www.youtube.com/embed/l4TzfPfLMB4" 
-				 					frameborder="0" 
-				 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+				 				<iframe width="560"
+				 					height="315"
+				 					src="https://www.youtube.com/embed/l4TzfPfLMB4"
+				 					frameborder="0"
+				 					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 				 					allowfullscreen>
 			 					</iframe>
 			 				</div>
