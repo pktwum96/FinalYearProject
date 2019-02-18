@@ -1,6 +1,7 @@
 import React from "react";
-import "./LandingPage.css";
-import { Link, animateScroll as scroll } from "react-scroll";
+import "../styles/LandingPage.css";
+import { Link} from 'react-router-dom';
+import { Link as SmoothScroll, animateScroll as scroll } from "react-scroll";
 import dollars from "../img/dollars.jpg";
 import pc from "../img/pc.jpg";
 import appleprods from "../img/appleprods.jpg";
@@ -17,23 +18,23 @@ import appleprods from "../img/appleprods.jpg";
         {/*-------------------Navigation Bar ------------------------------------- */}
 			<div id="nav-bar">
 				<nav className="navbar navbar-expand-lg navbar-light ">
-				  <a className="navbar-brand" href="#"><Link to="Home" smooth={true} offset={-50}>iPortfolio</Link></a>
+				  <div className="navbar-brand" href="#"><SmoothScroll to="Home" smooth={true} offset={-50}>iPortfolio</SmoothScroll></div>
 				  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				    <span className="navbar-toggler-icon"></span>
 				  </button>
 				  <div className="collapse navbar-collapse" id="navbarNav">
 				    <ul className="navbar-nav ml-auto">
 				      <li className="nav-item active">
-				        <a className="nav-link" href="#"><Link to="Home" smooth={true} offset={-50}>Home</Link></a>
+				        <div className="nav-link" href="#"><SmoothScroll to="Home" smooth={true} offset={-50}>Home</SmoothScroll></div>
 				      </li>
 				      <li className="nav-item">
-				        <a className="nav-link" href="#"><Link to="Services" smooth={true} offset={-50}>Services</Link></a>
+				        <div className="nav-link" href="#"><SmoothScroll to="Services" smooth={true} offset={-50}>Services</SmoothScroll></div>
 				      </li>
 				      <li className="nav-item">
-				        <a className="nav-link" href="#"><Link to="HowItWorks" smooth={true} offset={-50}>How It Works</Link></a>
+				        <div className="nav-link"><SmoothScroll to="HowItWorks" smooth={true} offset={-50}>How It Works</SmoothScroll></div>
 				      </li>
 				      <li className="nav-item">
-				        <a className="nav-link" href="#">Login</a>
+				        <div className="nav-link"><Link to="/login">Login</Link></div>
 				      </li>
 				    </ul>
 				  </div>

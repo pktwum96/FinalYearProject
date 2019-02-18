@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import LandingPage from './Components/LandingPage.js';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Login from './Components/Login.js';
+import { BrowserRouter, Switch, Route, Link} from 'react-router-dom';
+import LandingPage from './components/LandingPage.js';
+import Login from './components/Login.js';
 
 class App extends Component {
   render() {
