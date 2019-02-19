@@ -208,3 +208,54 @@
 	justify-content: center;
 	flex-direction: column;
 }
+
+
+
+/*---------------------------get started---------------------------------------------- */
+
+.GetStarted {
+	padding: 50px 20px;
+	background-color: rgb(43,37,111);
+	position: relative;
+	box-shadow: 0 0 20px 7px rgba(0,0,0,0.2);
+	margin-bottom: -200px;
+}
+
+.GetStarted h3, .GetStarted p {
+	color: #fff;
+}
+
+
+/*---------------------------Footer---------------------------------------------- */
+
+#footer {
+	margin-top: 40px;
+	padding: 100px;
+	background-color: #efefef;
+	color: #013f7e;
+}
+
+.footer-logo {
+	width:25px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+#footer h1 {
+	font-size: 15px;
+	text-align: left;
+	margin-top: 25px;
+	margin-bottom: 25px
+}
+
+#footer p {
+	font-size: 12px;
+	text-align: left;
+}
+
+#footer .city {
+	margin-left: 37px;
+}
+#footer .fa {
+	padding-right: 20px;
+	font-size: 15px;
+}
