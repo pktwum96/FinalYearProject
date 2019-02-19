@@ -20,18 +20,23 @@ import appleprods from "../img/appleprods.jpg";
 				    <span className="navbar-toggler-icon"></span>
 				  </button>
 				  <div className="collapse navbar-collapse" id="navbarNav">
-				    <ul className="navbar-nav ml-auto">
+				    <ul className="navbar-nav">
 				      <li className="nav-item active">
-				        <div className= "nav-link"><SmoothScroll to="Home" smooth={true} offset={-50}>Home</SmoothScroll></div>
+				        <span className= "nav-link"><SmoothScroll to="Home" smooth={true} offset={-50}>Home</SmoothScroll></span>
 				      </li>
 				      <li className="nav-item">
-				        <div className= "nav-link"><SmoothScroll to="Services" smooth={true} offset={-50}>Services</SmoothScroll></div>
+				        <span className= "nav-link"><SmoothScroll to="Services" smooth={true} offset={-50}>Services</SmoothScroll></span>
 				      </li>
 				      <li className="nav-item">
-				        <div className="nav-link"><SmoothScroll to="HowItWorks" smooth={true} offset={-50}>How It Works</SmoothScroll></div>
+				        <span className="nav-link"><SmoothScroll to="HowItWorks" smooth={true} offset={-50}>How It Works</SmoothScroll></span>
+				      </li>
+            </ul>
+            <ul className="navbar-nav ml-auto">
+				      <li className="nav-item">
+				            <Link to="/login" className="nav-link link"><div>Login</div></Link>
 				      </li>
 				      <li className="nav-item">
-				        <div className="nav-link"><Link to="/login">Login</Link></div>
+				             <Link to="/login" className="nav-link link"><div className="signin">Get Started</div></Link>
 				      </li>
 				    </ul>
 				  </div>
