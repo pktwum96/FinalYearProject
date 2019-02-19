@@ -86,8 +86,9 @@ import appleprods from "../img/appleprods.jpg";
       			 			<div className="col-md-12">
       			 				<h2>iPortfolio</h2>
       			 				<div className="about-content">
-      			 					iPortfolio is a user specific portfolio creation software that utilizes the power of algorithms to creat investment portfolios that match users' investment expectations and risk profile.
-      			 				</div>
+      			 					iPortfolio is a user specific portfolio creation software that utilizes the power of algorithms to creat investment portfolios that match users
+                       investment expectations and risk profile.
+                    </div>
       			 			</div>
 
       			 		</div>
@@ -119,10 +120,10 @@ import appleprods from "../img/appleprods.jpg";
       	    					<i className="fa fa-sliders"></i>
       	    				</div>
       	    				<h3>Wealth Management</h3>
-                    <div className="col-md-3 text-center">
       	    				<p>Lorem ipsum dolor amet. In taberna in discussurum. Quantus tremor est futurus, dies irae dies illa.</p>
       	    			</div>
 
+                  <div className="col-md-3 text-center">
       	    				<div className="icon">
       	    					<i className="fa fa-money"></i>
       	    				</div>
@@ -138,7 +139,7 @@ import appleprods from "../img/appleprods.jpg";
 
       			 			<div className="video-parent">
       			 				<h2>How It Works</h2>
-      			 				<div className="embed-responsive embed-responsive-16by9">
+      			 				<div className="embed-responsive embed-responsive-16by9 col-md-9">
       				 				<iframe width="560"
       				 					height="315"
                         title="How To Use iPortfolio"
