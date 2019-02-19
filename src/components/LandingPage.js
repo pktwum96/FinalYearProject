@@ -5,6 +5,7 @@ import { Link as SmoothScroll} from "react-scroll";
 import dollars from "../img/dollars.jpg";
 import pc from "../img/pc.jpg";
 import appleprods from "../img/appleprods.jpg";
+import robot from "../img/Robot.png";
 
 
  class LandingPage extends React.Component {
@@ -15,7 +16,7 @@ import appleprods from "../img/appleprods.jpg";
         {/*-------------------Navigation Bar ------------------------------------- */}
 			<div id="nav-bar">
 				<nav className="navbar navbar-expand-lg navbar-light ">
-				  <div className="navbar-brand"><SmoothScroll to="Home" smooth={true} offset={-50}>iPortfolio</SmoothScroll></div>
+				  <div className="navbar-brand"><SmoothScroll to="Home" smooth={true} offset={-50}> <img src={robot}/></SmoothScroll></div>
 				  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				    <span className="navbar-toggler-icon"></span>
 				  </button>

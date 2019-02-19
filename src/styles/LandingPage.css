@@ -26,6 +26,18 @@
 	text-align: left;
 }
 
+.navbar-brand {
+	display: flex;
+}
+
+.navbar-brand img{
+	height: 30px;
+	weight:40px;
+	align-self: center;
+	  filter: brightness(50%);
+}
+
+
 .navbar {
 	background: #fff;
 }
