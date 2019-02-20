@@ -1,1 +1,46 @@
+.login-form {
+  max-width: 25em;
+  margin-left: auto!important;
+  margin-right: auto!important;
+}
+.login-form-forgot {
+  float: right;
+}
+.login-form-button {
+  width: 100%;
+}
 
+#LoginPage {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: purple;
+}
+
+.LoginForm {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.ant-form-item-control {
+  text-align: left;
+}
+
+.login-form h1{
+ color: #fff;
+ text-align: center;
+ font-family: 'Gravitas One', cursive;
+}
+
+.formwrapper{
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.centered {
+  text-align: center;
+}

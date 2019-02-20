@@ -16,7 +16,7 @@ class LandingPage extends React.Component {
         {/*-------------------Navigation Bar ------------------------------------- */}
         <div id="nav-bar">
           <nav className="navbar navbar-expand-lg navbar-light ">
-            <div className="navbar-brand"><SmoothScroll to="Home" smooth={true} offset={-50}> <img src={robot}/></SmoothScroll></div>
+            <div className="navbar-brand"><SmoothScroll to="Home" smooth={true} offset={-50}> <img src={robot} alt="logo"/></SmoothScroll></div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -37,7 +37,7 @@ class LandingPage extends React.Component {
                   <Link to="/login" className="nav-link link"><div>Login</div></Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/login" className="nav-link link"><div className="signin">Get Started</div></Link>
+                  <Link to="/register" className="nav-link link"><div className="signin">Get Started</div></Link>
                 </li>
               </ul>
             </div>
@@ -194,7 +194,7 @@ class LandingPage extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-md-3">
-                <img src={robot} className="footer-logo"/>
+                <img src={robot} alt="logo" className="footer-logo"/>
                 <p>tgfcjvh hsv shb bjs jksb  sjb kskbj</p>
               </div>
                 <div className="col-md-3">
