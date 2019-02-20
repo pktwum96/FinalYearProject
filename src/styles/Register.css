@@ -1,0 +1,33 @@
+
+
+#Registerpage {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: purple;
+}
+
+.RegisterDiv {
+  display: table-cell;
+  vertical-align: middle;
+}
+.innerdiv{
+  max-width: 50em;
+  margin-left: auto!important;
+  text-align: left;
+  margin-right: auto!important;
+}
+
+.formwrapper{
+  margin-top: 5em;
+  margin-bottom: 5em;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+.ant-form-item-label {
+  text-align: left!important;
+}
