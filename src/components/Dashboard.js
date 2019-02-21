@@ -23,7 +23,7 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
+      <div id="Dashboard">
         <div className={this.state.active ? "d-flex toggled active" : "d-flex"} id="wrapper" >
 
           {/* Sidebar */}
@@ -73,7 +73,7 @@ class Dashboard extends Component {
                     <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                       <a className="dropdown-item" href="#">Portfolio</a>
                       <a className="dropdown-item" href="#">Wallet</a>
-                      <a className="dropdown-item" href="#">Logout</a>
+                      <a className="dropdown-item" href="/login">Logout</a>
                     </div>
                   </li>
                 </ul>
