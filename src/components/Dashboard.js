@@ -28,7 +28,7 @@ class Dashboard extends Component {
 
           {/* Sidebar */}
           <div className="bg-dark border-right" id="sidebar-wrapper">
-            <div className="sidebar-heading">iPortfolio</div>
+            <div className="sidebar-heading"><h2>iPortfolio</h2></div>
             <div className="list-group list-group-flush">
               <a href="#" className="list-group-item list-group-item-action bg-dark">
                 <i class="material-icons" >poll</i>

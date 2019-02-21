@@ -46,23 +46,27 @@ body {
 
 
 .wrapper {
-    display: flex;
-    align-items: stretch;
-    perspective: 1500px;
+  display: flex;
+  align-items: stretch;
+  perspective: 1500px;
 }
 
 .sidebar-heading {
-   color: #fff;
-   text-align: center;
-   font-family: 'Gravitas One';
+  text-align: center;
+}
+.sidebar-heading h2{
+
+  color: #fff;
+  margin-bottom: 0;
+  font-size: 38px;
+  font-weight: bold;
 }
 
-
 #sidebar-wrapper a h5{
-   color: #fff;
-   text-align: left;
-   margin-left: 5px;
-   margin-bottom: 0;
+  color: #fff;
+  text-align: left;
+  margin-left: 5px;
+  margin-bottom: 0;
 }
 
 #sidebar-wrapper a {
@@ -72,42 +76,42 @@ body {
 }
 
 #nav-bar {
-	position: sticky;
-	top: 0;
-	z-index: 10;
- }
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
 
 #navbarNav ul li a:hover{
-	color: #007bff!important;
+  color: #007bff!important;
 }
 
 
 .navbar-nav li {
-	padding: 0 10px;
-	align-self: center;
+  padding: 0 10px;
+  align-self: center;
 }
 
 .navbar-nav li a{
-	float: right;
-	text-align: left;
+  float: right;
+  text-align: left;
 }
 
 
 
 .navbar {
-	background: #fff;
+  background: #fff;
 }
 
 .navbar-toggler {
-	border: none!important;
+  border: none!important;
 }
 
 .dropdown .nav-link {
-	color: #fff!important;
-	font-weight: 600;
-	font-size: 16px;
-	padding: 0!important;
+  color: #fff!important;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 0!important;
 }
 
 .list-group .material-icons{
@@ -121,8 +125,8 @@ body {
 }
 
 .sidebartoggler .material-icons{
-    font-size:32px;
-    color:white;
+  font-size:32px;
+  color:white;
 
 }
 .navbar-expand-lg .navbar-nav .dropdown-menu {
