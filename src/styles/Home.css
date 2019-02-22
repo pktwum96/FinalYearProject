@@ -75,7 +75,7 @@ body {
   align-items: center;
 }
 
-#nav-bar {
+#navbar {
   position: sticky;
   top: 0;
   z-index: 10;
@@ -131,4 +131,16 @@ body {
 }
 .navbar-expand-lg .navbar-nav .dropdown-menu {
   margin-left: -75px;
+}
+
+.list-group .nav{
+    border: none;
+}
+
+.list-group .nav li{
+width: 100%;
+}
+
+.tab-pane {
+    height: 0;
 }
