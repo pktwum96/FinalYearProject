@@ -73,6 +73,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  padding-right: 0;
 }
 
 #navbar {
@@ -143,4 +144,23 @@ width: 100%;
 
 .tab-pane {
     height: 0;
+}
+
+.sidebartoggler {
+    cursor: pointer;
+}
+
+
+.list-group-item.active {
+    border: none;
+}
+
+
+.list-group-item.active .triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-right: 50px solid #fff;
+    border-bottom: 25px solid transparent;
+    margin-left: auto;
 }

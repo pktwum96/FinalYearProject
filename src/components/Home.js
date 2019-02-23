@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../styles/Home.css';
-import {Switch, Route} from 'react-router-dom';
 import Assessment from './Assessment.js';
 import Dashboard from './Dashboard.js';
 import Invest from './Invest.js';
@@ -37,24 +36,28 @@ class Home extends React.Component {
             <a href="#Dashboard" className="list-group-item list-group-item-action bg-dark" data-toggle="tab">
             <i class="material-icons" >poll</i>
             <h5>Dashboard</h5>
+            <span className="triangle-left"></span>
             </a>
             </li>
             <li>
             <a href="#Assessment" className="list-group-item list-group-item-action bg-dark" data-toggle="tab">
             <i class="material-icons" >work</i>
             <h5>Assessment</h5>
+            <span className="triangle-left"></span>
             </a>
             </li>
             <li>
             <a href="#Invest" className="list-group-item list-group-item-action bg-dark" data-toggle="tab">
             <i class="material-icons">account_balance_wallet</i>
             <h5>Invest</h5>
+            <span className="triangle-left"></span>
             </a>
             </li>
             <li>
             <a href="#Learn" className="list-group-item list-group-item-action bg-dark" data-toggle="tab">
             <i class="material-icons" >school</i>
             <h5>Learn</h5>
+            <span className="triangle-left"></span>
             </a>
             </li>
             </ul>
@@ -65,7 +68,7 @@ class Home extends React.Component {
             {/* Page Content */}
             <div id="page-content-wrapper">
             <nav id="navbar" className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a className="sidebartoggler" onClick={this.changeClass}><i className="material-icons">apps</i></a>
+            <div className="sidebartoggler" onClick={this.changeClass}><i className="material-icons">apps</i></div>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
@@ -94,7 +97,7 @@ class Home extends React.Component {
 
             <div className="container-fluid tab-content">
 
-            <div id="Dashboard" className="tab-pane fade in active">
+            <div id="Dashboard" className="tab-pane active">
             <Dashboard/>
             </div>
             <div id="Assessment" className="tab-pane fade">
