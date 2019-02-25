@@ -1,0 +1,9 @@
+
+.list-group-item:active .triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 25px solid #fff;
+    border-bottom: 10px solid transparent;
+    margin-left: auto;
+}
