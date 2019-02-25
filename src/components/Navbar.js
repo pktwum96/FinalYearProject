@@ -8,7 +8,7 @@ class Navbar extends React.Component {
     render() {
         return (
             <nav id="navbar" className="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div className="sidebartoggler" onClick={this.changeClass}><i className="material-icons">apps</i></div>
+                <div className="sidebartoggler" onClick={this.props.changeClass}><i className="material-icons">apps</i></div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>

@@ -4,20 +4,6 @@ import '../styles/NavSideBar.css';
 
 class Sidebar extends React.Component {
 
-    constructor (){
-        super();
-        this.state = {
-
-            active:false
-        }
-        this.changeClass = e => {
-            e.preventDefault();
-            this.setState({active: !this.state.active})
-        }
-    }
-
-
-
     render() {
         return (
                     <div className="bg-dark border-right" id="sidebar-wrapper">
