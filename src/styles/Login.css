@@ -45,8 +45,14 @@
   background-color: #fff;
   border-radius: 10px;
   padding: 50px;
+  padding-bottom: 10px;
 }
 
 .centered {
   text-align: center;
+}
+
+.ant-form-item-children {
+    display: flex;
+    flex-direction: column;
 }

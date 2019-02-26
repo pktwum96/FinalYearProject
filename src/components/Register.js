@@ -182,7 +182,7 @@ class Register extends React.Component {
                 )}
               </Form.Item>
               <Form.Item {...tailFormItemLayout}>
-                <Button type="primary" htmlType="submit">Register</Button>
+                <Button type="primary" htmlType="submit" href="/login">Register</Button>
               </Form.Item>
             </div>
             </Form>
