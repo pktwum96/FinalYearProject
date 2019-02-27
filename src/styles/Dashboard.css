@@ -7,3 +7,66 @@
     border-bottom: 10px solid transparent;
     margin-left: auto;
 }
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid h5 {
+    padding: 5px;
+    background-color: #ccc;
+}
+
+.Stats{
+    padding-bottom: 10px;
+}
+
+
+.Stats .row .col-md-3 {
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.Stats .row h2{
+    margin-bottom: 0;
+}
+
+.Stats .row p {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.graphs .col-md-3 {
+    padding:0;
+}
+
+.progress-bar {
+    background-color: #333;
+    color: #fff;
+}
+
+.seventy{
+    width: 70%!important;
+}
+
+.forty{
+    width: 45%!important;
+}
+
+.progress {
+    margin-bottom: 10px;
+}
+
+
+.well {
+    padding:15px;
+    margin-left: auto;
+    margin-right: auto;
+    width:85%;
+    border: 1px solid silver;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
