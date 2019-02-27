@@ -3,6 +3,8 @@ import '../styles/Dashboard.css'
 import Navbar from './Navbar.js';
 import Sidebar from './Sidebar.js';
 import Barchart from './Barchart.js';
+import Doughnutchart from './Doughnut.js';
+import Linechart from './Linechart.js';
 
 
 class Dashboard extends React.Component {
@@ -49,38 +51,46 @@ class Dashboard extends React.Component {
 
                         </div>
 
-                        <div className="row graphs well">
-                            <div className="col-md-3">
-                                <div className="well">
-                                    <h4>Goal</h4>
-                                    <div className="progress">
-                                        <div className="progress-bar seventy" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                                            70%
+                        <div className="well">
+                            <div className="row graphs">
+                                <div className="col-md-3">
+                                    <div className="well">
+                                        <h4>Goal</h4>
+                                        <div className="progress">
+                                            <div className="progress-bar seventy" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                                70%
+                                            </div>
                                         </div>
+                                        <p>$101,000 of $150,000</p>
                                     </div>
-                                    <p>$101,000 of $150,000</p>
-                                </div>
-                                <div className="well">
-                                    <h4>Time Passed</h4>
-                                    <div className="progress">
-                                        <div className="progress-bar forty" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
-                                            45%
+                                    <div className="well">
+                                        <h4>Time Passed</h4>
+                                        <div className="progress">
+                                            <div className="progress-bar forty" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                                45%
+                                            </div>
                                         </div>
+                                        <p>Day 175 of 365 </p>
                                     </div>
-                                    <p>Day 175 of 365 </p>
+                                </div>
+                                <div className="col-md-9">
+                                    <Barchart/>
                                 </div>
                             </div>
-                            <div className="col-md-7">
-                                <Barchart/>
-                            </div>
-                            <div className="col-md-2">
-                            <div className="well">
-                                <h4>Number of Assets</h4>
-                                <h1>44</h1>
-                            </div>
-                            <div className="well">
-                                <h4>Asset Classes</h4>
-                            </div>
+                            <div className="row second">
+                                <div className="col-md-7">
+                                    <Linechart/>
+                                </div>
+                                <div className="col-md-5">
+                                    <div className="well">
+                                        <h4>Number of Assets</h4>
+                                        <h1>44</h1>
+                                    </div>
+                                    <div className="well">
+                                        <h4>Asset Classes</h4>
+                                        <Doughnutchart/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
