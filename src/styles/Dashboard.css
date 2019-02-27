@@ -19,7 +19,7 @@
 }
 
 .Stats{
-    padding-bottom: 10px;
+    padding-bottom: 20px;
 }
 
 
@@ -62,9 +62,9 @@
 
 .well {
     padding:15px;
-    margin-left: auto;
-    margin-right: auto;
-    width:85%;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    width: 95%;
     border: 1px solid silver;
     border-radius: 5px;
     margin-bottom: 15px;

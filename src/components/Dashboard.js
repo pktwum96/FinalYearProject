@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Dashboard.css'
 import Navbar from './Navbar.js';
 import Sidebar from './Sidebar.js';
+import Barchart from './Barchart.js';
 
 
 class Dashboard extends React.Component {
@@ -48,8 +49,8 @@ class Dashboard extends React.Component {
 
                         </div>
 
-                        <div className="row graphs">
-                            <div className="col-md-2">
+                        <div className="row graphs well">
+                            <div className="col-md-3">
                                 <div className="well">
                                     <h4>Goal</h4>
                                     <div className="progress">
@@ -70,12 +71,15 @@ class Dashboard extends React.Component {
                                 </div>
                             </div>
                             <div className="col-md-7">
-                                Maga
+                                <Barchart/>
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-2">
                             <div className="well">
+                                <h4>Number of Assets</h4>
+                                <h1>44</h1>
                             </div>
                             <div className="well">
+                                <h4>Asset Classes</h4>
                             </div>
                             </div>
                         </div>
