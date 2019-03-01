@@ -21,18 +21,17 @@
       z-index: 10;
 }
 
-.Stats{
-    padding-bottom: 20px;
+#Dashboard {
+    margin-top: 10px;
 }
 
-
 .Stats .row .col-md-3 {
-    padding-bottom: 20px;
     padding-top: 10px;
 }
 
 .Stats .row h2{
     margin-bottom: 0;
+    font-size: 1.8rem;
 }
 
 .Stats .row p {
@@ -70,10 +69,42 @@
     width: 95%;
     border: 1px solid silver;
     border-radius: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-align: center;
+    background-color: white;
 }
 
 .second {
     padding-top: 50px;
+}
+
+
+.portfolio {
+    list-style: none;
+}
+
+.portfolio-asset{
+    padding: 0;
+    height: 20px;
+  overflow: hidden;
+}
+.portfolio li:hover{
+    cursor: pointer;
+}
+.portfolio .expanded{
+    height:50px;
+    cursor: pointer;
+    height: auto;
+}
+
+.otherinfo {
+    padding-top: 10px;
+}
+
+#profile {
+    padding-left: 0;
+}
+
+#maindisplay{
+    padding: 0;
 }
