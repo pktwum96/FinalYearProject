@@ -39,13 +39,13 @@ class Dashboard extends React.Component {
                                     <div className="row">
                                         <div className="col-md-3">
                                             <div className="well">
-                                                <h2>$ 100,000</h2>
+                                                <h2>₵ 100,000</h2>
                                                 <p>Initial Deposit</p>
                                             </div>
                                         </div>
                                         <div className="col-md-3">
                                             <div className="well">
-                                                <h2>$ 101,000</h2>
+                                                <h2>₵ 101,000</h2>
                                                 <p>Current Value</p>
                                             </div>
                                         </div>
@@ -60,7 +60,7 @@ class Dashboard extends React.Component {
                                         </div>
                                         <div className="col-md-3">
                                             <div className="well">
-                                                <h2>$ 150,000</h2>
+                                                <h2>₵ 150,000</h2>
                                                 <p>Projected Value</p>
                                             </div>
                                         </div>
@@ -78,7 +78,7 @@ class Dashboard extends React.Component {
                                                         70%
                                                     </div>
                                                 </div>
-                                                <p>$101,000 of $150,000</p>
+                                                <p>₵101,000 of ₵150,000</p>
                                             </div>
                                             <div className="well">
                                                 <h4>Time Passed</h4>
@@ -113,55 +113,52 @@ class Dashboard extends React.Component {
                                 <div className="well assets">
                                     <h4>Portfolio</h4>
                                     <ul className="well portfolio">
+                                        <li className=" portfolio-asset">
+
+                                            <span className="assetbrief">
+                                                <p>Asset</p>
+                                                <p>Symbol</p>
+                                                <p>Price</p>
+                                                <p>Number</p>
+                                                <p>Value</p>
+                                            </span></li>
                                         <li >
                                             <div className={this.state.expand ? "well portfolio-asset expanded" : "well portfolio-asset"} onClick={this.expandDiv}>
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-
+                                                <span className="assetbrief">
+                                                    <h6>Total Petroleum Ghana</h6>
+                                                    <p>TOTAL</p>
+                                                    <p>₵4.60</p>
+                                                    <p>2.4%</p>
+                                                    <p>5</p>
+                                                    <p>23</p>
+                                                </span>
+                                                <span className="fas fa-line"></span>
                                             </div>
                                         </li>
                                         <li >
                                             <div className={this.state.expand ? "well portfolio-asset expanded" : "well portfolio-asset"} onClick={this.expandDiv}>
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-
+                                                <span className="assetbrief">
+                                                    <h6>Societe Generale Ghana</h6>
+                                                    <p>SOGEGH</p>
+                                                    <p>₵0.98</p>
+                                                    <p>1.2%</p>
+                                                    <p>8</p>
+                                                    <p>₵7.84</p>
+                                                </span>
+                                                <span className="fas fa-line"></span>
                                             </div>
                                         </li>
                                         <li >
                                             <div className={this.state.expand ? "well portfolio-asset expanded" : "well portfolio-asset"} onClick={this.expandDiv}>
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                ygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-                                                fskbhf sdkhs k,fjsygvkweb  euwgio uewhbf uer rbewb  ksmn rbhk fd lkb dfkvfkd fd il rfedshj sdyf jbskd mfk sdm emrfs
-
+                                                <span className="assetbrief">
+                                                    <h6>Trust Bank</h6>
+                                                    <p>TBL</p>
+                                                    <p>₵0.26</p>
+                                                    <p>0.37%</p>
+                                                    <p>12</p>
+                                                    <p>₵50</p>
+                                                </span>
+                                                <span className="fas fa-line"></span>
                                             </div>
                                         </li>
                                     </ul>

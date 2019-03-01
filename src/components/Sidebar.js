@@ -28,7 +28,7 @@ class Sidebar extends React.Component {
 
                             <li>
                                 <a href="/invest" className="list-group-item list-group-item-action bg-dark">
-                                    <i class="fas fa-money-bill-alt"></i>
+                                    <i class="far fa-money-bill-alt"></i>
                                     <h5>Invest</h5>
                                 </a>
                             </li>

@@ -56,7 +56,7 @@ body {
 .sidebar-heading i{
 
     color: #fff;
-    margin-bottom: 0;
+    margin-bottom: 90px;
     font-size: 38px;
     font-weight: bold;
 }
@@ -134,7 +134,7 @@ body {
 }
 
 .sidebartoggler i{
-    font-size:32px;
+    font-size:28px;
     color:black;
     padding-bottom: 5px;
 }
@@ -167,16 +167,16 @@ body {
     position: sticky;
     top: 0;
     width: 15rem!important;
-    -webkit-transition: width .5s ease-out;
-    -moz-transition: width .5s ease-out;
-    -o-transition: width .5s ease-out;
-    transition: width .5s ease-out;
+    -webkit-transition: width .25s ease-out;
+    -moz-transition: width .25s ease-out;
+    -o-transition: width .25s ease-out;
+    transition: width .25s ease-out;
 }
 
 #wrapper.toggled #sticky {
     width: 6rem!important;
-    -webkit-transition: width .5s ease-out;
-    -moz-transition: width .5s ease-out;
-    -o-transition: width .5s ease-out;
-    transition: width .5s ease-out;
+    -webkit-transition: width .25s ease-out;
+    -moz-transition: width .25s ease-out;
+    -o-transition: width .25s ease-out;
+    transition: width .25s ease-out;
 }

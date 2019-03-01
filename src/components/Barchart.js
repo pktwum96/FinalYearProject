@@ -17,7 +17,7 @@ class Barchart extends React.Component {
             label: "# of Likes",
             data: [12, 19, 3,8,5,9],
             backgroundColor: [
-              "rgba(255, 99, 132)",
+              "rgba(255, 0, 0)",
               "rgba(54, 162, 235)",
               "rgba(255, 206, 86)",
                 "rgba(255, 99, 132)",

@@ -16,9 +16,9 @@
 .container-fluid h5 {
     padding: 5px;
     background-color: #ccc;
-      position: sticky;
-      top: 45.5px;
-      z-index: 10;
+    position: sticky;
+    top: 45.5px;
+    z-index: 10;
 }
 
 #Dashboard {
@@ -86,20 +86,29 @@
 
 .portfolio-asset{
     padding: 0;
-    height: 20px;
-  overflow: hidden;
+    height: 40px;
+    overflow: hidden;
+    -webkit-transition: height .5s ease-out;
+    -moz-transition: height .5s ease-out;
+    -o-transition: height .5s ease-out;
+    transition: height .5s ease-out;
 }
 .portfolio li:hover{
     cursor: pointer;
 }
 .portfolio .expanded{
-    height:50px;
+    height:100px;
     cursor: pointer;
-    height: auto;
+    -webkit-transition: height .5s ease-out;
+    -moz-transition: height .5s ease-out;
+    -o-transition: height .5s ease-out;
+    transition: height .5s ease-out;
 }
 
 .otherinfo {
     padding-top: 10px;
+    position: sticky;
+    top: 45px;
 }
 
 #profile {
@@ -117,8 +126,24 @@
 }
 
 #inLine i {
-    font-size: 24px;
-    color: green;
-    padding-top: 4px;
+    font-size: 33px;
+    color: #7cfc00;
     padding-right: 4px;
+}
+
+.assetbrief {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.assetbrief h6 {
+    width: 200px;
+    text-align: left;
+}
+
+.assetbrief p {
+    width: 85px;
+    text-align: left;
 }
