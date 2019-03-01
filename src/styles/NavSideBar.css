@@ -5,11 +5,6 @@ body {
 
 #sidebar-wrapper {
     min-height: 100vh;
-    margin-left: -15rem;
-    -webkit-transition: margin .25s ease-out;
-    -moz-transition: margin .25s ease-out;
-    -o-transition: margin .25s ease-out;
-    transition: margin .25s ease-out;
 }
 
 #sidebar-wrapper .sidebar-heading {
@@ -18,10 +13,10 @@ body {
 }
 
 #sidebar-wrapper .list-group {
-    width: 15rem;
+    width: inherit;
 }
 .toggled #sidebar-wrapper .list-group {
-    width: 5rem;
+    width: inherit;
 }
 #page-content-wrapper {
     min-width: 100vw;
@@ -42,7 +37,7 @@ body {
     }
 
     #wrapper.toggled #sidebar-wrapper {
-        width: 5rem;
+        width: inherit;
     }
 }
 .toggled #sidebar-wrapper a h5 {
@@ -58,7 +53,7 @@ body {
 .sidebar-heading {
     text-align: center;
 }
-.sidebar-heading h2{
+.sidebar-heading i{
 
     color: #fff;
     margin-bottom: 0;
@@ -71,13 +66,17 @@ body {
     text-align: left;
     margin-left: 15px;
     margin-bottom: 0;
+    width: 120px;
 }
 
 #sidebar-wrapper a {
+    padding: 1rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-right: 0;
+    justify-content: space-evenly;
+    padding-left: 5px;
 }
 
 #navbar {
@@ -124,20 +123,20 @@ body {
     padding: 0!important;
 }
 
-.list-group .material-icons{
-    font-size:48px;
+.list-group i{
+    font-size:43px;
     color:white;
 }
 
-.nav-item .material-icons{
+.nav-item i{
     font-size:24px;
     color:black;
 }
 
-.sidebartoggler .material-icons{
+.sidebartoggler i{
     font-size:32px;
     color:black;
-
+    padding-bottom: 5px;
 }
 .navbar-expand-lg .navbar-nav .dropdown-menu {
     margin-left: -75px;
@@ -167,4 +166,17 @@ body {
 #sticky{
     position: sticky;
     top: 0;
+    width: 15rem!important;
+    -webkit-transition: width .5s ease-out;
+    -moz-transition: width .5s ease-out;
+    -o-transition: width .5s ease-out;
+    transition: width .5s ease-out;
+}
+
+#wrapper.toggled #sticky {
+    width: 6rem!important;
+    -webkit-transition: width .5s ease-out;
+    -moz-transition: width .5s ease-out;
+    -o-transition: width .5s ease-out;
+    transition: width .5s ease-out;
 }

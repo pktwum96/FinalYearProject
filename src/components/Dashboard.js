@@ -51,7 +51,10 @@ class Dashboard extends React.Component {
                                         </div>
                                         <div className="col-md-3">
                                             <div className="well">
-                                                <h2>1%</h2>
+                                                <span id="inLine">
+                                                    <i class="fas fa-caret-up"></i>
+                                                    <h2>1%</h2>
+                                                </span>
                                                 <p>Change</p>
                                             </div>
                                         </div>
@@ -166,9 +169,9 @@ class Dashboard extends React.Component {
                             </div>
                             <div id="profile" className="col-md-3">
                                 <div className="otherinfo">
-                                <div className="well profile">
-                                    <div className=""></div>
-                                </div>
+                                    <div className="well profile">
+                                        <div className=""></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

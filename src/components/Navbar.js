@@ -8,7 +8,7 @@ class Navbar extends React.Component {
     render() {
         return (
             <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="sidebartoggler" onClick={this.props.changeClass}><i className="material-icons">apps</i></div>
+                <div className="sidebartoggler" onClick={this.props.changeClass}><i class="fas fa-th"></i></div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -17,14 +17,14 @@ class Navbar extends React.Component {
                     <ul className="navbar-nav ml-auto">
 
                         <li className="nav-item">
-                            <a><i className="material-icons">announcement</i></a>
+                            <a><i class="far fa-envelope"></i></a>
                         </li>
                         <li className="nav-item">
-                            <a><i className="material-icons">notifications_none</i></a>
+                            <a><i class="far fa-question-circle"></i></a>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i className="material-icons">account_circle</i>
+                                <i class="far fa-user-circle"></i>
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a className="dropdown-item" href="#">Portfolio</a>
