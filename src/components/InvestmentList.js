@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 class InvestmentList extends React.Component{
     render () {
@@ -12,11 +13,25 @@ class InvestmentList extends React.Component{
                     <td>{symbol}</td>
                     <td>{company}</td>
                     <td>₵ {price}</td>
-                    <td>{inCart ?  "In Cart" : <button className="cart-btn" disabled={inCart} onClick={()=>{console.log("added to cart")}}><i className="fas fa-cart-plus"/></button>}</td>
+                    <td>{inCart ?  "In Cart" : <button className="cart-btn" disabled={inCart} onClick={()=> this.props.addToCart(id)}><i className="fas fa-cart-plus"/></button>}</td>
                 </tr>
             </tbody>
         )
     }
 }
+
+
+InvestmentList.propTypes = {
+    investmentAssets:PropTypes.shape({
+        id: PropTypes.number,
+        name:PropTypes.string,
+        price:PropTypes.number,
+        symbol:PropTypes.string,
+        company:PropTypes.string,
+        assetType:PropTypes.string,
+        inCart:PropTypes.boolean,
+    }).isRequired
+};
+
 
 export default InvestmentList;

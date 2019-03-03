@@ -7,15 +7,51 @@ const ProductContext = React.createContext();
 
 class ProductProvider extends React.Component {
     state= {
-        investmentAssets:investmentAssets,
+        investmentAssets:[],
+        cart:[]
+    }
+
+    componentDidMount() {
+        this.setInvestmentAssets();
+    }
+
+    setInvestmentAssets=()=> {
+        let tempProducts =[];
+        investmentAssets.forEach(item => {
+            const singleItem={...item};
+            tempProducts=[...tempProducts,singleItem];
+        })
+
+        this.setState(()=> {
+            return {investmentAssets:tempProducts};
+        })
+    }
+
+    getItem=id =>{
+        const investmentAssets=this.state.investmentAssets.find(item=>item.id===id);
+        return investmentAssets;
     }
 
     handleDetail =() => {
         console.log('hello from detail');
     }
 
-    addToCart =() => {
-         console.log('hello from add to cart');
+    addToCart=id=> {
+        let tempProducts=[...this.state.investmentAssets];
+        const index= tempProducts.indexOf(this.getItem(id));
+        const investmentAssets=tempProducts[index];
+        investmentAssets.inCart=true;
+        investmentAssets.count=1;
+        const price = investmentAssets.price;
+        investmentAssets.total=price;
+        console.log('added biytch');
+
+        this.setState(()=> {
+            return {
+                investmentAssets:tempProducts,
+                cart:[...this.state.cart,investmentAssets]
+            };
+        })
      }
 
     render () {

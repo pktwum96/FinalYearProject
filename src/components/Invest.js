@@ -32,18 +32,20 @@ class Invest extends React.Component {
                             <div className="col-md-9 px-0">
                                 <div className="invest-asset-list well">
                                     <table>
-                                        <tr>
-                                            <th>Asset Type</th>
-                                            <th>Name</th>
-                                            <th>Symbol</th>
-                                            <th>Company</th>
-                                            <th>Value</th>
-                                            <th>Buy</th>
-                                        </tr>
+                                        <thead>
+                                            <tr>
+                                                <th>Asset Type</th>
+                                                <th>Name</th>
+                                                <th>Symbol</th>
+                                                <th>Company</th>
+                                                <th>Value</th>
+                                                <th>Buy</th>
+                                            </tr>
+                                    </thead>
                                         <ProductConsumer>
                                             {(value)=>{
                                                 return value.investmentAssets.map(investmentAssets => {
-                                                    return <InvestmentList key={investmentAssets.id} investmentAssets={investmentAssets}/>
+                                                    return <InvestmentList key={investmentAssets.id} investmentAssets={investmentAssets} addToCart={value.addToCart}/>
                                                 })
                                             }}
                                         </ProductConsumer>
