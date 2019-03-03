@@ -1,5 +1,5 @@
 import React from 'react';
-import {investmentAssets} from './investmentassets.js';
+import {investmentAsset} from './investmentasset.js';
 
 
 const ProductContext = React.createContext();
@@ -7,8 +7,10 @@ const ProductContext = React.createContext();
 
 class ProductProvider extends React.Component {
     state= {
-        investmentAssets:[],
-        cart:[]
+        investmentAsset:[],
+        cart:[],
+        modalOpen:false,
+        modalProduct:investmentAsset[0],
     }
 
     componentDidMount() {
@@ -17,19 +19,19 @@ class ProductProvider extends React.Component {
 
     setInvestmentAssets=()=> {
         let tempProducts =[];
-        investmentAssets.forEach(item => {
+        investmentAsset.forEach(item => {
             const singleItem={...item};
             tempProducts=[...tempProducts,singleItem];
         })
 
         this.setState(()=> {
-            return {investmentAssets:tempProducts};
+            return {investmentAsset:tempProducts};
         })
     }
 
     getItem=id =>{
-        const investmentAssets=this.state.investmentAssets.find(item=>item.id===id);
-        return investmentAssets;
+        const investmentAsset=this.state.investmentAsset.find(item=>item.id===id);
+        return investmentAsset;
     }
 
     handleDetail =() => {
@@ -37,30 +39,46 @@ class ProductProvider extends React.Component {
     }
 
     addToCart=id=> {
-        let tempProducts=[...this.state.investmentAssets];
+        let tempProducts=[...this.state.investmentAsset];
         const index= tempProducts.indexOf(this.getItem(id));
-        const investmentAssets=tempProducts[index];
-        investmentAssets.inCart=true;
-        investmentAssets.count=1;
-        const price = investmentAssets.price;
-        investmentAssets.total=price;
+        const investmentAsset=tempProducts[index];
+        investmentAsset.inCart=true;
+        investmentAsset.count=1;
+        const price = investmentAsset.price;
+        investmentAsset.total=price;
         console.log('added biytch');
 
         this.setState(()=> {
             return {
-                investmentAssets:tempProducts,
-                cart:[...this.state.cart,investmentAssets]
+                investmentAsset:tempProducts,
+                cart:[...this.state.cart,investmentAsset]
             };
         })
-     }
+    }
+
+    openModal=id=> {
+        const product =this.getItem(id);
+        this.setState(()=> {
+            return {modalProduct:product,modalOpen:true};
+        })
+    }
+
+    closeModal =() => {
+        this.setState(()=> {
+            return {modalOpen:false}
+        })
+    }
 
     render () {
         return (
             <ProductContext.Provider value={{
-                ...this.state,
-                handleDetail:this.handleDetail,
-                addToCart:this.addToCart,
-            }}>
+                    ...this.state,
+                    handleDetail:this.handleDetail,
+                    addToCart:this.addToCart,
+                    openModal:this.openModal,
+                    closeModal:this.closeModal,
+
+                }}>
                 {this.props.children}
             </ProductContext.Provider>
         )

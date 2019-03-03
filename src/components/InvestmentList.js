@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class InvestmentList extends React.Component{
     render () {
-        const {id,name,price,symbol,company,assetType, inCart}=this.props.investmentAssets;
+        const {id,name,price,symbol,company,assetType, inCart}=this.props.investmentAsset;
 
         return (
             <tbody className="well">
@@ -13,7 +13,7 @@ class InvestmentList extends React.Component{
                     <td>{symbol}</td>
                     <td>{company}</td>
                     <td>₵ {price}</td>
-                    <td>{inCart ?  "In Cart" : <button className="cart-btn" disabled={inCart} onClick={()=> this.props.addToCart(id)}><i className="fas fa-cart-plus"/></button>}</td>
+                    <td>{inCart ?  "In Cart" : <button className="cart-btn" disabled={inCart} onClick={()=> this.props.openModal(id)}><i className="fas fa-cart-plus"/></button>}</td>
                 </tr>
             </tbody>
         )
@@ -22,7 +22,7 @@ class InvestmentList extends React.Component{
 
 
 InvestmentList.propTypes = {
-    investmentAssets:PropTypes.shape({
+    investmentAsset:PropTypes.shape({
         id: PropTypes.number,
         name:PropTypes.string,
         price:PropTypes.number,

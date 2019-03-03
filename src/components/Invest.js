@@ -44,8 +44,8 @@ class Invest extends React.Component {
                                     </thead>
                                         <ProductConsumer>
                                             {(value)=>{
-                                                return value.investmentAssets.map(investmentAssets => {
-                                                    return <InvestmentList key={investmentAssets.id} investmentAssets={investmentAssets} addToCart={value.addToCart}/>
+                                                return value.investmentAsset.map(investmentAsset => {
+                                                    return <InvestmentList key={investmentAsset.id} investmentAsset={investmentAsset}  openModal={value.openModal}/>
                                                 })
                                             }}
                                         </ProductConsumer>

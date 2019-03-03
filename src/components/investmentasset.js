@@ -1,4 +1,4 @@
-export const investmentAssets = [
+export const investmentAsset = [
     {
         id:1,
         name: "Total Petroleum Ghana",

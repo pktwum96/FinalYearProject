@@ -10,6 +10,7 @@ import Invest from './components/Invest.js';
 import Learn from './components/Learn.js';
 import Default from './components/Default.js';
 import {ProductProvider} from './components/context.js';
+import Modal from './components/Modal.js'
 
 class App extends Component {
     render() {
@@ -27,6 +28,7 @@ class App extends Component {
                             <Route path="/register" component={Register} />
                             <Route component={Default} />
                         </Switch>
+                        <Modal/>
                     </div>
                 </BrowserRouter>
             </ProductProvider>
