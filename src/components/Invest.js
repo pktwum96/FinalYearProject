@@ -1,6 +1,10 @@
 import React from 'react';
 import Navbar from './Navbar.js';
 import Sidebar from './Sidebar.js';
+import {ProductConsumer} from './context.js';
+import InvestmentList from './InvestmentList.js';
+import Profile from './Profile.js';
+import  '../styles/Invest.css';
 
 
 class Invest extends React.Component {
@@ -24,8 +28,32 @@ class Invest extends React.Component {
                 <div id="page-content-wrapper">
                     <Navbar changeClass={this.changeClass}/>
                     <div className="container-fluid ">
-
-                        <h1>Invest</h1>
+                        <div className="row" id="InvestPage">
+                            <div className="col-md-9 px-0">
+                                <div className="invest-asset-list well">
+                                    <table>
+                                        <tr>
+                                            <th>Asset Type</th>
+                                            <th>Name</th>
+                                            <th>Symbol</th>
+                                            <th>Company</th>
+                                            <th>Value</th>
+                                            <th>Buy</th>
+                                        </tr>
+                                        <ProductConsumer>
+                                            {(value)=>{
+                                                return value.investmentAssets.map(investmentAssets => {
+                                                    return <InvestmentList key={investmentAssets.id} investmentAssets={investmentAssets}/>
+                                                })
+                                            }}
+                                        </ProductConsumer>
+                                    </table>
+                                </div>
+                            </div>
+                            <div className="col-md-3 px-0">
+                                <Profile/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

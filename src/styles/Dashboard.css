@@ -92,6 +92,7 @@
     -moz-transition: height .5s ease-out;
     -o-transition: height .5s ease-out;
     transition: height .5s ease-out;
+    cursor: pointer;
 }
 .portfolio li:hover{
     cursor: pointer;
@@ -138,12 +139,32 @@
     justify-content: space-between;
 }
 
-.assetbrief h6 {
-    width: 200px;
+
+.userimage i {
+    font-size:100px;
+    padding: 10px;
+}
+.profile h6 {
+    font-size: 1.2rem;
+}
+
+.profile table {
+    width: 100%;
+}
+
+.profile tr {
+    border-bottom: 1px solid silver;
+    font-size: 1.2rem;
+}
+.profile td:nth-child(1) {
     text-align: left;
 }
 
-.assetbrief p {
-    width: 85px;
-    text-align: left;
+
+.profile td:nth-child(2) {
+    text-align: right;
+}
+
+.profile tr:nth-child(2n) {
+    background-color: #f3f3f3;
 }

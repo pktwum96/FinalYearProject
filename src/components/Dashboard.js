@@ -5,6 +5,7 @@ import Sidebar from './Sidebar.js';
 import Barchart from './Barchart.js';
 import Doughnutchart from './Doughnut.js';
 import Linechart from './Linechart.js';
+import Profile from './Profile.js';
 
 
 class Dashboard extends React.Component {
@@ -52,7 +53,7 @@ class Dashboard extends React.Component {
                                         <div className="col-md-3">
                                             <div className="well">
                                                 <span id="inLine">
-                                                    <i class="fas fa-caret-up"></i>
+                                                    <i className="fas fa-caret-up"></i>
                                                     <h2>1%</h2>
                                                 </span>
                                                 <p>Change</p>
@@ -112,64 +113,50 @@ class Dashboard extends React.Component {
                                 </div>
                                 <div className="well assets">
                                     <h4>Portfolio</h4>
-                                    <ul className="well portfolio">
-                                        <li className=" portfolio-asset">
+                                    <table className="well portfolio">
+                                        <tr className=" portfolio-asset">
+                                            <th>Asset Type</th>
+                                            <th>Asset</th>
+                                            <th>Symbol</th>
+                                            <th>Price</th>
+                                            <th>% Change</th>
+                                            <th>Number</th>
+                                            <th>Value</th>
+                                        </tr>
+                                        <tr className={this.state.expand ? "well portfolio-asset expanded" : "well portfolio-asset"} onClick={this.expandDiv}>
+                                            <td>Stock</td>
+                                            <td>Total Petroleum Ghana</td>
+                                            <td>TOTAL</td>
+                                            <td>₵4.60</td>
+                                            <td>2.43%</td>
+                                            <td>5</td>
+                                            <td>₵23.00</td>
 
-                                            <span className="assetbrief">
-                                                <p>Asset</p>
-                                                <p>Symbol</p>
-                                                <p>Price</p>
-                                                <p>Number</p>
-                                                <p>Value</p>
-                                            </span></li>
-                                        <li >
-                                            <div className={this.state.expand ? "well portfolio-asset expanded" : "well portfolio-asset"} onClick={this.expandDiv}>
-                                                <span className="assetbrief">
-                                                    <h6>Total Petroleum Ghana</h6>
-                                                    <p>TOTAL</p>
-                                                    <p>₵4.60</p>
-                                                    <p>2.4%</p>
-                                                    <p>5</p>
-                                                    <p>23</p>
-                                                </span>
-                                                <span className="fas fa-line"></span>
-                                            </div>
-                                        </li>
-                                        <li >
-                                            <div className={this.state.expand ? "well portfolio-asset expanded" : "well portfolio-asset"} onClick={this.expandDiv}>
-                                                <span className="assetbrief">
-                                                    <h6>Societe Generale Ghana</h6>
-                                                    <p>SOGEGH</p>
-                                                    <p>₵0.98</p>
-                                                    <p>1.2%</p>
-                                                    <p>8</p>
-                                                    <p>₵7.84</p>
-                                                </span>
-                                                <span className="fas fa-line"></span>
-                                            </div>
-                                        </li>
-                                        <li >
-                                            <div className={this.state.expand ? "well portfolio-asset expanded" : "well portfolio-asset"} onClick={this.expandDiv}>
-                                                <span className="assetbrief">
-                                                    <h6>Trust Bank</h6>
-                                                    <p>TBL</p>
-                                                    <p>₵0.26</p>
-                                                    <p>0.37%</p>
-                                                    <p>12</p>
-                                                    <p>₵50</p>
-                                                </span>
-                                                <span className="fas fa-line"></span>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                        </tr>
+                                        <tr className={this.state.expand ? "well portfolio-asset expanded" : "well portfolio-asset"} onClick={this.expandDiv}>
+                                            <td>Stock</td>
+                                            <td>Societe Generale Ghana</td>
+                                            <td>SOGEGH</td>
+                                            <td>₵0.98</td>
+                                            <td>1.20%</td>
+                                            <td>8</td>
+                                            <td>₵7.84</td>
+                                        </tr>
+
+                                        <tr className={this.state.expand ? "well portfolio-asset expanded" : "well portfolio-asset"} onClick={this.expandDiv}>
+                                            <td>Stock</td>
+                                            <td>Trust Bank</td>
+                                            <td>TBL</td>
+                                            <td>₵0.26</td>
+                                            <td>0.37%</td>
+                                            <td>12</td>
+                                            <td>₵50.00</td>
+                                        </tr>
+                                    </table>
                                 </div>
                             </div>
                             <div id="profile" className="col-md-3">
-                                <div className="otherinfo">
-                                    <div className="well profile">
-                                        <div className=""></div>
-                                    </div>
-                                </div>
+                                <Profile/>
                             </div>
                         </div>
                     </div>
