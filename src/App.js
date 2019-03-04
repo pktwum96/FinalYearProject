@@ -10,7 +10,8 @@ import Invest from './components/Invest.js';
 import Learn from './components/Learn.js';
 import Default from './components/Default.js';
 import {ProductProvider} from './components/context.js';
-import Modal from './components/Modal.js'
+import ModalAddToCart from './components/Modal.js'
+import ModalCart from './components/ModalCart.js'
 
 class App extends Component {
     render() {
@@ -28,7 +29,8 @@ class App extends Component {
                             <Route path="/register" component={Register} />
                             <Route component={Default} />
                         </Switch>
-                        <Modal/>
+                        <ModalAddToCart/>
+                        <ModalCart/>
                     </div>
                 </BrowserRouter>
             </ProductProvider>

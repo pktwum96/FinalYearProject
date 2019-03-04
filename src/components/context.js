@@ -10,7 +10,11 @@ class ProductProvider extends React.Component {
         investmentAsset:[],
         cart:[],
         modalOpen:false,
+        modalCartOpen:false,
         modalProduct:investmentAsset[0],
+        cartSubTotal:0,
+        cartTotal:0,
+        serviceFee:0,
     }
 
     componentDidMount() {
@@ -69,6 +73,35 @@ class ProductProvider extends React.Component {
         })
     }
 
+    openCartModal=id=> {
+        this.setState(()=> {
+            return {modalCartOpen:true};
+        })
+    }
+
+    closeCartModal =() => {
+        this.setState(()=> {
+            return {modalCartOpen:false}
+        })
+    }
+
+    increment =id => {
+        console.log('This is an increment');
+    }
+
+    decrement =id => {
+        console.log('This is an decrement');
+    }
+
+    removeItem =id => {
+        console.log('This is an remove');
+    }
+
+
+    clearCart = () => {
+        console.log('This is an clearCart');
+    }
+
     render () {
         return (
             <ProductContext.Provider value={{
@@ -77,7 +110,12 @@ class ProductProvider extends React.Component {
                     addToCart:this.addToCart,
                     openModal:this.openModal,
                     closeModal:this.closeModal,
-
+                    openCartModal:this.openCartModal,
+                    closeCartModal:this.closeCartModal,
+                    removeItem:this.removeItem,
+                    clearCart:this.clearCart,
+                    increment:this.increment,
+                    decrement:this.decrement,
                 }}>
                 {this.props.children}
             </ProductContext.Provider>

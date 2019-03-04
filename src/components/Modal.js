@@ -4,12 +4,12 @@ import {Link} from 'react-router-dom';
 import '../styles/Modal.css';
 
 
-class Modal extends React.Component {
+class ModalAddToCart extends React.Component {
     render () {
         return (
             <ProductConsumer>
                 {(value)=> {
-                    const {modalOpen,closeModal,addToCart} =value;
+                    const {modalOpen,closeModal,addToCart,modalCartOpen} =value;
                     const {name,symbol,total,price,id}=value.modalProduct;
 
                     if(!modalOpen) {
@@ -22,6 +22,7 @@ class Modal extends React.Component {
                                     <div className="row">
                                         <div className="mx-auto col-md-6 text-center text-capitalize ">
                                             <div className="modalclass p-5">
+                                                <span className="fas fa-times" onClick={()=> {value.closeModal()}}></span>
                                                 <h5>Add item to Cart</h5>
                                                 <table>
                                                     <tbody>
@@ -34,7 +35,7 @@ class Modal extends React.Component {
                                                 </table>
                                                 <button onClick={()=> {value.closeModal()}}>Close</button>
                                                 <button onClick={()=> {value.addToCart(id); value.closeModal()}}>Add to Cart</button>
-                                                <button>Go to Cart</button>
+                                                <button onClick={()=> {value.openCartModal(); value.closeModal()}}>Go to Cart</button>
                                             </div>
                                         </div>
                                     </div>
@@ -48,4 +49,4 @@ class Modal extends React.Component {
     }
 }
 
-export default Modal;
+export default ModalAddToCart;
