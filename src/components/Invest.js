@@ -28,8 +28,8 @@ class Invest extends React.Component {
                 <div id="page-content-wrapper">
                     <Navbar changeClass={this.changeClass}/>
                     <div className="container-fluid ">
-                        <div className="row" id="InvestPage">
-                            <div className="col-md-9 px-0">
+                        <div className="row" >
+                            <div className="col-md-9 px-0"id="InvestPage">
                                 <div className="invest-asset-list well">
                                     <table>
                                         <thead>

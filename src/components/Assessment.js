@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar.js';
 import Sidebar from './Sidebar.js';
+import Profile from './Profile.js';
 
 
 class Assessment extends React.Component {
@@ -24,8 +25,15 @@ class Assessment extends React.Component {
                 <div id="page-content-wrapper">
                     <Navbar changeClass={this.changeClass}/>
                     <div className="container-fluid ">
-
-                        <h1>Assessment</h1>
+                        <div className="row">
+                            <div className="col-md-9 px-0" id="LearnPage">
+                                <div className="well videolist">
+                                </div>
+                            </div>
+                            <div className="col-md-3 px-0">
+                                <Profile/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

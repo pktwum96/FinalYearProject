@@ -107,7 +107,7 @@ class LandingPage extends React.Component {
 
               <div className="col-md-3 text-center">
                 <div className="icon">
-                  <i className="fa fa-line-chart"></i>
+                  <i className="fas fa-chart-line"></i>
                 </div>
                 <h3>Portfolio Creation</h3>
                 <p>Lorem ipsum dolor amet. In taberna in discussurum. Quantus tremor est futurus, dies irae dies illa.</p>
@@ -115,7 +115,7 @@ class LandingPage extends React.Component {
 
               <div className="col-md-3 text-center">
                 <div className="icon">
-                  <i className="fa fa-address-card"></i>
+                  <i className="fas fa-address-card"></i>
                 </div>
                 <h3>Profiling</h3>
                 <p>Lorem ipsum dolor amet. In taberna in discussurum. Quantus tremor est futurus, dies irae dies illa.</p>
@@ -123,7 +123,7 @@ class LandingPage extends React.Component {
 
               <div className="col-md-3 text-center">
                 <div className="icon">
-                  <i className="fa fa-sliders"></i>
+                  <i className="fas fa-sliders-h"></i>
                 </div>
                 <h3>Wealth Management</h3>
                 <p>Lorem ipsum dolor amet. In taberna in discussurum. Quantus tremor est futurus, dies irae dies illa.</p>
@@ -131,7 +131,7 @@ class LandingPage extends React.Component {
 
               <div className="col-md-3 text-center">
                 <div className="icon">
-                  <i className="fa fa-money"></i>
+                  <i className="fas fa-money-bill-alt"></i>
                 </div>
                 <h3>Financial Planning</h3>
                 <p>Lorem ipsum dolor amet. In taberna in discussurum. Quantus tremor est futurus, dies irae dies illa.</p>
@@ -159,7 +159,7 @@ class LandingPage extends React.Component {
 
                 <div className="col-md-6 text-center">
                   <div className="icon">
-                    <i className="fa fa-line-chart"></i>
+                    <i className="fas fa-chart-line"></i>
                   </div>
                   <h3>Portfolio Creation</h3>
                   <p>Lorem ipsum dolor amet. In taberna in discussurum. Quantus tremor est futurus, dies irae dies illa.</p>
@@ -167,7 +167,7 @@ class LandingPage extends React.Component {
 
                 <div className="col-md-6 text-center">
                   <div className="icon">
-                    <i className="fa fa-address-card"></i>
+                    <i className="fas fa-address-card"></i>
                   </div>
                   <h3>Profiling</h3>
                   <p>Lorem ipsum dolor amet. In taberna in discussurum. Quantus tremor est futurus, dies irae dies illa.</p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import {investmentAsset} from './investmentasset.js';
+import {videos} from "./learnvideo.js";
 
 
 const ProductContext = React.createContext();
@@ -15,6 +16,7 @@ class ProductProvider extends React.Component {
         cartSubTotal:0,
         cartTotal:0,
         serviceFee:0,
+        video:videos,
     }
 
     componentDidMount() {

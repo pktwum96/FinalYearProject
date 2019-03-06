@@ -11,6 +11,7 @@ class ModalCart extends React.Component {
                 {(value)=> {
                     const {modalCartOpen,closeCartModal} =value;
                     const {name,symbol,total,price,id}=value.modalProduct;
+                    const {cart}=value;
 
                     if(!modalCartOpen) {
                         return null;
@@ -23,7 +24,11 @@ class ModalCart extends React.Component {
                                         <div className="mx-auto col-md-9 text-center text-capitalize ">
                                             <div className="modalclass p-5">
                                                 <span className="fas fa-times" onClick={()=> {value.closeCartModal()}}></span>
-                                                <h5>Cart</h5>
+                                                {(!cart.length>0) ? <h1>Your Cart is Currently Empty</h1> :
+                                                    <div>
+                                                        <h1>Cart</h1>
+                                                    </div>
+                                                }
                                             </div>
                                         </div>
                                     </div>

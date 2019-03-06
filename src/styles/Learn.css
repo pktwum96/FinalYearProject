@@ -1,0 +1,10 @@
+#LearnPage {
+    margin-top: 1rem;
+}
+
+
+.videolist {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
