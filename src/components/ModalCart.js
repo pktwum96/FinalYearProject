@@ -59,7 +59,7 @@ class ModalCart extends React.Component {
                                                                             {item.symbol}
                                                                         </div>
                                                                         <div className="col-10 mx-auto col-lg-2 align-self-center">
-                                                                            <span className="d-lg-none">Price: </span>${item.price}
+                                                                            <span className="d-lg-none">Price: </span>₵ {item.price}
                                                                         </div>
                                                                         <div className="col-10 mx-auto col-lg-2 my-2 my-lg-0">
                                                                             <div className="d-flex justify-content-center">
@@ -71,12 +71,12 @@ class ModalCart extends React.Component {
                                                                         </div>
                                                                         </div>
                                                                         <div className="col-10 mx-auto col-lg-2 align-self-center">
-                                                                            <div className="cart-icon" onClick={()=>removeItem(id)}>
+                                                                            <div className="cart-icon" onClick={()=>removeItem(item.id)}>
                                                                                 <i className="fas fa-trash"></i>
                                                                             </div>
                                                                         </div>
                                                                         <div className="col-10 mx-auto col-lg-2 align-self-center">
-                                                                            <strong><span className="d-lg-none">Item total: </span>${item.total}</strong>
+                                                                            <strong><span className="d-lg-none">Item total: </span>₵ {item.total}</strong>
                                                                         </div>
                                                                     </div>
                                                                 </React.Fragment>
@@ -90,13 +90,13 @@ class ModalCart extends React.Component {
                                                                         Clear Cart
                                                                     </button>
                                                                     <h5>
-                                                                        Subtotal : <strong>$ {cartSubTotal}</strong>
+                                                                        Subtotal : <strong>₵ {cartSubTotal}</strong>
                                                                     </h5>
                                                                     <h5>
-                                                                        Service Fee : <strong>$ {serviceFee}</strong>
+                                                                        Service Fee : <strong>₵ {serviceFee}</strong>
                                                                     </h5>
                                                                     <h5>
-                                                                        Total : <strong>$ {cartTotal}</strong>
+                                                                        Total : <strong>₵ {cartTotal}</strong>
                                                                     </h5>
                                                                 </div>
                                                             </div>
