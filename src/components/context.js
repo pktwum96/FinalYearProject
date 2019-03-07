@@ -10,9 +10,7 @@ class ProductProvider extends React.Component {
     state= {
         investmentAsset:[],
         cart:[],
-        modalOpen:false,
         modalCartOpen:false,
-        modalProduct:investmentAsset[0],
         cartSubTotal:0,
         cartTotal:0,
         serviceFee:0,
@@ -40,9 +38,6 @@ class ProductProvider extends React.Component {
         return investmentAsset;
     }
 
-    handleDetail =() => {
-        console.log('hello from detail');
-    }
 
     addToCart=id=> {
         let tempProducts=[...this.state.investmentAsset];
@@ -52,28 +47,19 @@ class ProductProvider extends React.Component {
         investmentAsset.count=1;
         const price = investmentAsset.price;
         investmentAsset.total=price;
-        console.log('added biytch');
 
         this.setState(()=> {
             return {
                 investmentAsset:tempProducts,
                 cart:[...this.state.cart,investmentAsset]
             };
-        })
+        },
+        ()=> {
+            this.addTotals();
+        }
+    );
     }
 
-    openModal=id=> {
-        const product =this.getItem(id);
-        this.setState(()=> {
-            return {modalProduct:product,modalOpen:true};
-        })
-    }
-
-    closeModal =() => {
-        this.setState(()=> {
-            return {modalOpen:false}
-        })
-    }
 
     openCartModal=id=> {
         this.setState(()=> {
@@ -88,11 +74,11 @@ class ProductProvider extends React.Component {
     }
 
     increment =id => {
-        console.log('This is an increment');
+        console.log('This is an increment ' + id);
     }
 
     decrement =id => {
-        console.log('This is an decrement');
+        console.log('This is an decrement ' + id);
     }
 
     removeItem =id => {
@@ -101,17 +87,41 @@ class ProductProvider extends React.Component {
 
 
     clearCart = () => {
-        console.log('This is an clearCart');
+        this.setState(()=> {
+            return {cart:[]};
+        },
+    ()=> {
+        this.setInvestmentAssets();
+        this.addTotals();
+    },
+()=> {
+    console.log(this.state.cartTotal);
+    console.log(this.state.cartSubTotal);
+    console.log(this.state.serviceFee);
+})
     }
 
+    addTotals = () => {
+        let subTotal=0;
+        this.state.cart.map(item => (subTotal+=item.total));
+        const tempSFee=subTotal*0.02;
+        const Fee=parseFloat(tempSFee.toFixed(2));
+        const temptotal=subTotal+Fee;
+        const total=parseFloat(temptotal.toFixed(2));
+        this.setState(()=>  {
+            return {
+            cartSubTotal:subTotal,
+            serviceFee:Fee,
+            cartTotal:total,
+        }
+    })
+    }
     render () {
         return (
             <ProductContext.Provider value={{
                     ...this.state,
                     handleDetail:this.handleDetail,
                     addToCart:this.addToCart,
-                    openModal:this.openModal,
-                    closeModal:this.closeModal,
                     openCartModal:this.openCartModal,
                     closeCartModal:this.closeCartModal,
                     removeItem:this.removeItem,

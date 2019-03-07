@@ -15,16 +15,46 @@
     background-color: #f3f3f3;
 }
 
-.modalclass span {
+.modalclass .close {
     position: absolute;
     top:0;
     right:1rem;
 }
 
-.modalclass span:hover {
+.modalclass .close:hover {
     cursor: pointer;
     border: none;
 }
 table {
     width: 100%;
+}
+
+.btn-black {
+    background: transparent;
+    text-transform: capitalize;
+    font-size: 0.8rem!important;
+    color: black;
+    border-radius: 0!important;
+    border: 0.1rem solid black!important;
+}
+
+.btn-black:hover {
+    background: black!important;
+    color: white!important;
+}
+
+.cart-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color:red;
+}
+
+#ModalCart .style {
+    padding:0.8rem;
+    border: 1px solid silver;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: white;
+    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2) , 0 6px 20px 0 rgba(0,0,0,0.019);
 }

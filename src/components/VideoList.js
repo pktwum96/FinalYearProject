@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types';
 
 class VideoList extends React.Component{
     render () {
@@ -23,19 +22,6 @@ class VideoList extends React.Component{
     }
 }
 
-{/*
-    InvestmentList.propTypes = {
-    investmentAsset:PropTypes.shape({
-    id: PropTypes.number,
-    name:PropTypes.string,
-    price:PropTypes.number,
-    symbol:PropTypes.string,
-    company:PropTypes.string,
-    assetType:PropTypes.string,
-    inCart:PropTypes.boolean,
-    }).isRequired
-    };
-    */}
 
 
     export default VideoList;

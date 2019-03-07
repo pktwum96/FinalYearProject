@@ -45,11 +45,18 @@ class Invest extends React.Component {
                                         <ProductConsumer>
                                             {(value)=>{
                                                 return value.investmentAsset.map(investmentAsset => {
-                                                    return <InvestmentList key={investmentAsset.id} investmentAsset={investmentAsset}  openModal={value.openModal}/>
+                                                    return <InvestmentList key={investmentAsset.id} investmentAsset={investmentAsset}  addToCart={value.addToCart}/>
                                                 })
                                             }}
                                         </ProductConsumer>
                                     </table>
+                                    <ProductConsumer>
+                                            {(value)=>{
+                                                const {openCartModal,cart}=value;
+                                        return <button onClick={()=>openCartModal()}><i className="fas fa-cart-plus"></i> My Cart <span className="badge">{cart.length}</span></button>
+
+                                        }}
+                                    </ProductConsumer>
                                 </div>
                             </div>
                             <div className="col-md-3 px-0">

@@ -13,7 +13,7 @@ class InvestmentList extends React.Component{
                     <td>{symbol}</td>
                     <td>{company}</td>
                     <td>₵ {price}</td>
-                    <td>{inCart ?  "In Cart" : <button className="cart-btn" disabled={inCart} onClick={()=> this.props.openModal(id)}><i className="fas fa-cart-plus"/></button>}</td>
+                    <td>{inCart ?  "In Cart" : <button className="cart-btn" disabled={inCart} onClick={()=> this.props.addToCart(id)}><i className="fas fa-cart-plus"/></button>}</td>
                 </tr>
             </tbody>
         )

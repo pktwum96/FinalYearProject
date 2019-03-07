@@ -2,9 +2,7 @@ import React from "react";
 var Chart = require("chart.js");
 
 class Barchart extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+
   componentDidMount() {
     const node = this.node;
 
