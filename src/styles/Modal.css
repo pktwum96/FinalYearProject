@@ -1,7 +1,7 @@
 #ModalCart {
     position: fixed;
+    height: 100%;
     top:0;
-    bottom: 0;
     right: 0;
     left:0;
     background: rgba(0, 0, 0, 0.3);
@@ -57,4 +57,9 @@ table {
     text-align: center;
     background-color: white;
     box-shadow:0 4px 8px 0 rgba(0,0,0,0.2) , 0 6px 20px 0 rgba(0,0,0,0.019);
+}
+
+.cartlist {
+    height:30rem;
+    overflow: scroll;
 }

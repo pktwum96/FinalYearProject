@@ -24,7 +24,7 @@ class ModalCart extends React.Component {
                                             <div className="modalclass p-5">
                                                 <span className="fas fa-times close" onClick={()=> {closeCartModal()}}></span>
                                                 {(!cart.length>0) ? <h1>Your Cart is Currently Empty</h1> :
-                                                    <div>
+                                                    <div className="cartlist">
                                                         <h1>Cart</h1>
                                                         <div className="d-none d-lg-block text-center">
                                                             <div className="row my-2 text-center">
@@ -50,7 +50,7 @@ class ModalCart extends React.Component {
                                                         </div>
                                                         <div>
                                                             {cart.map(item=>{
-                                                                return <React.Fragment>
+                                                                return <React.Fragment key={item.id}>
                                                                     <div className="row my-1 text-capitalize p-2 style">
                                                                         <div className="col-10 mx-auto col-lg-2 align-self-center">
                                                                             {item.name}
