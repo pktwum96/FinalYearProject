@@ -8,12 +8,12 @@ class InvestmentList extends React.Component{
         return (
             <tbody className="well">
                 <tr>
-                    <td>{assetType}</td>
+                    <td className="text-uppercase">{assetType}</td>
                     <td>{name}</td>
-                    <td>{symbol}</td>
-                    <td>{company}</td>
+                    <td className="d-none d-lg-display">{symbol}</td>
+                    <td className="d-none d-lg-display">{company}</td>
                     <td>₵ {price}</td>
-                    <td>{inCart ?  "In Cart" : <button className="cart-btn" disabled={inCart} onClick={()=> this.props.addToCart(id)}><i className="fas fa-cart-plus"/></button>}</td>
+                    <td>{inCart ?  <button className="btn btn-outline-success" disabled={true}>In Cart</button> : <button className="btn btn-outline-success" disabled={inCart} onClick={()=> this.props.addToCart(id)}><i className="fas fa-cart-plus"/></button>}</td>
                 </tr>
             </tbody>
         )

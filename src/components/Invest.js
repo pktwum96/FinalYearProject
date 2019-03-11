@@ -31,17 +31,24 @@ class Invest extends React.Component {
                         <div className="row" >
                             <div className="col-md-9 px-0"id="InvestPage">
                                 <div className="invest-asset-list well">
-                                    <table>
+                                    <div className="d-flex justify-content-center align-content-center">
+                                        <input/>
+                                        <button className="d-flex btn justify-content-center align-content-center px-3 mx-3 btn-outline-success">
+                                            <i className="fas fa-search"></i>
+                                            <h6 className="mb-0 text-capitalize px-2">Search</h6>
+                                        </button>
+                                    </div>
+                                    <table className="mt-3">
                                         <thead>
                                             <tr>
                                                 <th>Asset Type</th>
                                                 <th>Name</th>
-                                                <th>Symbol</th>
-                                                <th>Company</th>
+                                                <th className="d-none d-lg">Symbol</th>
+                                                <th className="d-none d-lg">Company</th>
                                                 <th>Value</th>
                                                 <th>Buy</th>
                                             </tr>
-                                    </thead>
+                                        </thead>
                                         <ProductConsumer>
                                             {(value)=>{
                                                 return value.investmentAsset.map(investmentAsset => {
@@ -51,9 +58,9 @@ class Invest extends React.Component {
                                         </ProductConsumer>
                                     </table>
                                     <ProductConsumer>
-                                            {(value)=>{
-                                                const {openCartModal,cart}=value;
-                                        return <button onClick={()=>openCartModal()}><i className="fas fa-cart-plus"></i> My Cart <span className="badge">{cart.length}</span></button>
+                                        {(value)=>{
+                                            const {openCartModal,cart}=value;
+                                            return <button className={"cartbtn btn "+ (cart.length==0 ? "btn-outline-danger":"btn-outline-success")} onClick={()=>openCartModal()}><i className="fas fa-cart-plus"></i> My Cart <span className="badge">{cart.length}</span></button>
 
                                         }}
                                     </ProductConsumer>
