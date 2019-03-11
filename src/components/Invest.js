@@ -31,20 +31,22 @@ class Invest extends React.Component {
                         <div className="row" >
                             <div className="col-md-9 px-0"id="InvestPage">
                                 <div className="invest-asset-list well">
-                                    <div className="d-flex justify-content-center align-content-center">
-                                        <input/>
-                                        <button className="d-flex btn justify-content-center align-content-center px-3 mx-3 btn-outline-success">
-                                            <i className="fas fa-search"></i>
-                                            <h6 className="mb-0 text-capitalize px-2">Search</h6>
+                                    <div className="ml-auto col-md-5 my-3 input-group ">
+                                        <input type="text" className="form-control"/>
+                                        <div className="input-group-append">
+                                        <button className="d-flex btn justify-content-center align-content-center btn-outline-secondary">
+                                            <i className="fas fa-search align-self-center"></i>
+                                            <span className="mb-0 text-capitalize px-2">Search</span>
                                         </button>
+                                    </div>
                                     </div>
                                     <table className="mt-3">
                                         <thead>
                                             <tr>
                                                 <th>Asset Type</th>
                                                 <th>Name</th>
-                                                <th className="d-none d-lg">Symbol</th>
-                                                <th className="d-none d-lg">Company</th>
+                                                <th className="d-none d-lg-table-cell">Symbol</th>
+                                                <th className="d-none d-lg-table-cell">Company</th>
                                                 <th>Value</th>
                                                 <th>Buy</th>
                                             </tr>
