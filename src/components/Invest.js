@@ -62,7 +62,7 @@ class Invest extends React.Component {
                                     <ProductConsumer>
                                         {(value)=>{
                                             const {openCartModal,cart}=value;
-                                            return <button className={"cartbtn btn "+ (cart.length==0 ? "btn-outline-danger":"btn-outline-success")} onClick={()=>openCartModal()}><i className="fas fa-cart-plus"></i> My Cart <span className="badge">{cart.length}</span></button>
+                                            return <button className={"cartbtn btn "+ (cart.length===0 ? "btn-danger":"btn-outline-success")} onClick={()=>openCartModal()}><i className="fas fa-cart-plus"></i> My Cart <span className="badge">{cart.length}</span></button>
 
                                         }}
                                     </ProductConsumer>

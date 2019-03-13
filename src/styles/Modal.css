@@ -63,3 +63,7 @@ table {
     height:30rem;
     overflow: scroll;
 }
+
+#ModalCart .cartlist .col-lg-2 {
+    padding: 0!important;
+}
