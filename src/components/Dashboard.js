@@ -118,10 +118,10 @@ class Dashboard extends React.Component {
                                             <tr className=" portfolio-asset">
                                                 <th>Asset Type</th>
                                                 <th>Asset</th>
-                                                <th>Symbol</th>
-                                                <th>Price</th>
+                                                <th className="d-none d-lg-table-cell">Symbol</th>
+                                                <th className="d-none d-lg-table-cell">Price</th>
                                                 <th>% Change</th>
-                                                <th>Number</th>
+                                                <th className="d-none d-lg-table-cell">Number</th>
                                                 <th>Value</th>
                                             </tr>
                                         </thead>
@@ -129,30 +129,30 @@ class Dashboard extends React.Component {
                                             <tr className={this.state.expand ? "well portfolio-asset expanded" : "well portfolio-asset"} onClick={this.expandDiv}>
                                                 <td>Stock</td>
                                                 <td>Total Petroleum Ghana</td>
-                                                <td>TOTAL</td>
-                                                <td>₵4.60</td>
+                                                <td className="d-none d-lg-table-cell">TOTAL</td>
+                                                <td className="d-none d-lg-table-cell">₵4.60</td>
                                                 <td>2.43%</td>
-                                                <td>5</td>
+                                                <td className="d-none d-lg-table-cell">5</td>
                                                 <td>₵23.00</td>
 
                                             </tr>
                                             <tr className={this.state.expand ? "well portfolio-asset expanded" : "well portfolio-asset"} onClick={this.expandDiv}>
                                                 <td>Stock</td>
                                                 <td>Societe Generale Ghana</td>
-                                                <td>SOGEGH</td>
-                                                <td>₵0.98</td>
+                                                <td className="d-none d-lg-table-cell">SOGEGH</td>
+                                                <td className="d-none d-lg-table-cell">₵0.98</td>
                                                 <td>1.20%</td>
-                                                <td>8</td>
+                                                <td className="d-none d-lg-table-cell">8</td>
                                                 <td>₵7.84</td>
                                             </tr>
 
                                             <tr className={this.state.expand ? "well portfolio-asset expanded" : "well portfolio-asset"} onClick={this.expandDiv}>
                                                 <td>Stock</td>
                                                 <td>Trust Bank</td>
-                                                <td>TBL</td>
-                                                <td>₵0.26</td>
+                                                <td className="d-none d-lg-table-cell">TBL</td>
+                                                <td className="d-none d-lg-table-cell">₵0.26</td>
                                                 <td>0.37%</td>
-                                                <td>12</td>
+                                                <td className="d-none d-lg-table-cell">12</td>
                                                 <td>₵50.00</td>
                                             </tr>
                                         </tbody>
