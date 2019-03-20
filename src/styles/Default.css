@@ -1,0 +1,8 @@
+#Default img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4rem;
+    width:100%;
+    max-width: 500px!important;
+    height: auto;
+}

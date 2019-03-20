@@ -13,7 +13,7 @@ class Invest extends React.Component {
         super();
         this.state = {
 
-            active:false
+            active:true
         }
         this.changeClass = e => {
             e.preventDefault();
