@@ -17,18 +17,18 @@ class Navbar extends React.Component {
                     <ul className="navbar-nav ml-auto">
 
                         <li className="nav-item">
-                            <a><i className="far fa-envelope"></i></a>
+                            <button className="btn p-0" data-target="#contactUs" data-toggle="modal"><i className="far fa-envelope"></i></button>
                         </li>
                         <li className="nav-item">
-                            <a><i className="far fa-question-circle"></i></a>
+                            <button className="btn p-0"><i className="far fa-question-circle"></i></button>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i className="far fa-user-circle"></i>
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a className="dropdown-item" href="#">Portfolio</a>
-                                <a className="dropdown-item" href="#">Wallet</a>
+                                <a className="dropdown-item" href="/">Portfolio</a>
+                                <a className="dropdown-item" href="/">Wallet</a>
                                 <a className="dropdown-item" href="/login">Logout</a>
                             </div>
                         </li>

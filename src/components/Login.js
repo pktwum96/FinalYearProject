@@ -20,7 +20,7 @@ class Login extends React.Component {
         <div className="LoginForm">
           <Form onSubmit={this.handleSubmit} className="login-form">
             <h1>iPortfolio</h1>
-            <div className="formwrapper">
+            <div className="formwrapper mx-3">
               <Form.Item>
                 {getFieldDecorator('userName', {
                   rules: [{ required: true, message: 'Please input your username!' }],

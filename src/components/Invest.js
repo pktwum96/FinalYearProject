@@ -3,7 +3,6 @@ import Navbar from './Navbar.js';
 import Sidebar from './Sidebar.js';
 import {ProductConsumer} from './context.js';
 import InvestmentList from './InvestmentList.js';
-import ModalCart from './ModalCart.js';
 import Profile from './Profile.js';
 import  '../styles/Invest.css';
 
@@ -63,7 +62,11 @@ class Invest extends React.Component {
                                     <ProductConsumer>
                                         {(value)=>{
                                             const {cart}=value;
-                                            return <button type="button" className={"cartbtn btn "+ (cart.length===0 ? "btn-danger":"btn-outline-success")} data-toggle="modal" data-target="#cartModal"><i className="fas fa-cart-plus"></i> My Cart <span className="badge">{cart.length}</span></button>
+                                            return <button type="button" className={"cartbtn btn "+ (cart.length===0 ? "btn-danger":"btn-outline-success")} data-toggle="modal" data-target="#cartModal">
+                                                        <i className="fas fa-cart-plus pr-2"></i>
+                                                        My Cart
+                                                        <span className="badge">{cart.length}</span>
+                                                    </button>
 
                                         }}
                                     </ProductConsumer>

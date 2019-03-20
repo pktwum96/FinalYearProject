@@ -13,7 +13,7 @@ class InvestmentList extends React.Component{
                     <td className="d-none d-lg-table-cell">{symbol}</td>
                     <td className="d-none d-lg-table-cell">{company}</td>
                     <td>₵ {price}</td>
-                    <td>{inCart ?  <button className="btn btn-outline-secondary" disabled={true}>In Cart</button> : <button className="btn btn-outline-success" disabled={inCart} onClick={()=> this.props.addToCart(id)}><i className="fas fa-cart-plus"/></button>}</td>
+                    <td>{inCart ?  <button className="btn btn-outline-secondary" disabled={true}>Added</button> : <button className="btn btn-outline-success" disabled={inCart} onClick={()=> this.props.addToCart(id)}><i className="fas fa-cart-plus"/></button>}</td>
                 </tr>
             </tbody>
         )

@@ -10,7 +10,6 @@ class ProductProvider extends React.Component {
     state= {
         investmentAsset:[],
         cart:[],
-        modalCartOpen:false,
         cartSubTotal:0,
         cartTotal:0,
         serviceFee:0,
@@ -55,19 +54,6 @@ class ProductProvider extends React.Component {
             };
         },()=> {
             this.addTotals();
-        })
-    }
-
-
-    openCartModal=id=> {
-        this.setState(()=> {
-            return {modalCartOpen:true};
-        })
-    }
-
-    closeCartModal =() => {
-        this.setState(()=> {
-            return {modalCartOpen:false}
         })
     }
 
@@ -163,8 +149,6 @@ class ProductProvider extends React.Component {
                     ...this.state,
                     handleDetail:this.handleDetail,
                     addToCart:this.addToCart,
-                    openCartModal:this.openCartModal,
-                    closeCartModal:this.closeCartModal,
                     removeItem:this.removeItem,
                     clearCart:this.clearCart,
                     increment:this.increment,

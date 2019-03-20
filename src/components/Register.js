@@ -100,7 +100,7 @@ class Register extends React.Component {
 
             <Form onSubmit={this.handleSubmit}>
 
-              <div className="formwrapper">
+              <div className="formwrapper mx-3">
               <Form.Item
                 {...formItemLayout}
                 label="E-mail"
@@ -178,7 +178,7 @@ class Register extends React.Component {
                 {getFieldDecorator('agreement', {
                   valuePropName: 'checked',
                 })(
-                  <Checkbox>I have read the <a href="">agreement</a></Checkbox>
+                  <Checkbox>I have read the <a href="/">agreement</a></Checkbox>
                 )}
               </Form.Item>
               <Form.Item {...tailFormItemLayout}>
