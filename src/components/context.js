@@ -1,5 +1,6 @@
 import React from 'react';
 import {investmentAsset} from './investmentasset.js';
+import {investmentQuestions} from './investmentquestions.js';
 import {videos} from "./learnvideo.js";
 
 
@@ -14,10 +15,14 @@ class ProductProvider extends React.Component {
         cartTotal:0,
         serviceFee:0,
         video:videos,
+        riskProfile:"",
+        investmentQuestions:[],
+        riskTotal:0
     }
 
     componentDidMount() {
         this.setInvestmentAssets();
+        this.setInvestmentQuestions();
     }
 
     setInvestmentAssets=()=> {
@@ -30,6 +35,19 @@ class ProductProvider extends React.Component {
         this.setState(()=> {
             return {investmentAsset:tempProducts};
         })
+    }
+
+    setInvestmentQuestions=()=> {
+        let tempQuestions =[];
+        investmentQuestions.forEach(item => {
+            const singleItem={...item};
+            tempQuestions=[...tempQuestions,singleItem];
+        })
+
+        this.setState(()=> {
+            return {investmentQuestions:tempQuestions};
+        })
+
     }
 
     getItem=id =>{

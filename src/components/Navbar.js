@@ -3,11 +3,13 @@ import '../styles/NavSideBar.css';
 import {Link} from 'react-router-dom';
 
 
+
 class Navbar extends React.Component {
 
 
     render() {
         return (
+
             <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="sidebartoggler" onClick={this.props.changeClass}><i className="fas fa-th"></i></div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,9 +30,9 @@ class Navbar extends React.Component {
                                 <i className="far fa-user-circle"></i>
                             </a>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a className="dropdown-item" href="/">Portfolio</a>
-                                <a className="dropdown-item" href="/">Wallet</a>
-                                <div className="dropdown-item"><Link to="login">Logout</Link></div>
+                                <Link className="dropdown-item" to="dashboard">Portfolio</Link>
+                                <Link className="dropdown-item" to="/">Wallet</Link>
+                                <Link to="login" className="dropdown-item">Logout</Link>
                             </div>
                         </li>
                     </ul>

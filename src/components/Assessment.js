@@ -2,6 +2,8 @@ import React from 'react';
 import Navbar from './Navbar.js';
 import Sidebar from './Sidebar.js';
 import Profile from './Profile.js';
+import AssessmentQuestions from './AssessmentQuestions.js';
+import {ProductConsumer} from './context.js';
 
 
 class Assessment extends React.Component {
@@ -26,8 +28,17 @@ class Assessment extends React.Component {
                     <Navbar changeClass={this.changeClass}/>
                     <div className="container-fluid ">
                         <div className="row">
-                            <div className="col-md-9 px-0" id="LearnPage">
-                                <div className="well videolist">
+                            <div className="col-md-9 px-0" id="Assessment">
+                                <div className="mx-auto my-3 well">
+                                    <h3>Risk Profile Assessment</h3>
+
+                                            <ProductConsumer>
+                                                {(value)=>{
+                                                    return value.investmentQuestions.map(investmentQuestions => {
+                                                        return <AssessmentQuestions key={investmentQuestions.id} investmentQuestions={investmentQuestions}/>
+                                                    })
+                                                }}
+                                            </ProductConsumer>
                                 </div>
                             </div>
                             <div className="col-md-3 px-0">

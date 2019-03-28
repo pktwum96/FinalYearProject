@@ -22,6 +22,7 @@
 .Stats .row h2{
     margin-bottom: 0;
     font-size: 1.8rem;
+    overflow: auto;
 }
 
 .Stats .row p {

@@ -1,15 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'jquery';
-import 'bootstrap/dist/js/bootstrap';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import * as firebase from 'firebase';
 
-
-firebase.initializeApp(config);
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 
