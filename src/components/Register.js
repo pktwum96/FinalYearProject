@@ -2,6 +2,7 @@ import React from 'react';
 import {Form, Input, Select, Row, Col, Checkbox, Button, AutoComplete} from 'antd';
 import '../styles/Register.css';
 import 'antd/dist/antd.css';
+import {Link} from 'react-router-dom';
 
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
@@ -182,7 +183,7 @@ class Register extends React.Component {
                 )}
               </Form.Item>
               <Form.Item {...tailFormItemLayout}>
-                <Button type="primary" htmlType="submit" href="/login">Register</Button>
+                <Button type="primary" htmlType="submit"><Link to='login'>Register</Link></Button>
               </Form.Item>
             </div>
             </Form>

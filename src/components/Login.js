@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Login.css';
 import 'antd/dist/antd.css';
 import {Form, Icon, Input, Button, Checkbox} from 'antd';
+import {Link} from 'react-router-dom';
 
 class Login extends React.Component {
   handleSubmit = (e) => {
@@ -45,10 +46,12 @@ class Login extends React.Component {
                 )}
                 <a className="login-form-forgot" href="/forgotpassword">Forgot password</a>
                 </span>
-                <Button type="primary" htmlType="submit" className="login-form-button" href="/dashboard">
+                <Button type="primary" htmlType="submit" className="login-form-button">
+                    <Link to="dashboard">
                   Login
+              </Link>
                 </Button>
-                <span className="centered">Or <a href="/register">register now!</a></span>
+                <span className="centered">Or <Link to="register">register now!</Link></span>
             </Form.Item>
           </div>
         </Form>

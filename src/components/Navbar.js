@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/NavSideBar.css';
+import {Link} from 'react-router-dom';
 
 
 class Navbar extends React.Component {
@@ -29,7 +30,7 @@ class Navbar extends React.Component {
                             <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a className="dropdown-item" href="/">Portfolio</a>
                                 <a className="dropdown-item" href="/">Wallet</a>
-                                <a className="dropdown-item" href="/login">Logout</a>
+                                <div className="dropdown-item"><Link to="login">Logout</Link></div>
                             </div>
                         </li>
                     </ul>

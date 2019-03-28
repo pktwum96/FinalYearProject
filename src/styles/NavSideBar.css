@@ -56,8 +56,8 @@ body {
 .sidebar-heading i{
 
     color: #fff;
-    margin-bottom: 90px;
-    font-size: 38px;
+    margin-bottom: 5rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
@@ -124,7 +124,7 @@ body {
 }
 
 .list-group i{
-    font-size:43px;
+    font-size:2rem;
     color:white;
 }
 
