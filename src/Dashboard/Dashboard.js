@@ -1,11 +1,11 @@
 import React from 'react';
-import '../styles/Dashboard.css'
-import Navbar from './Navbar.js';
-import Sidebar from './Sidebar.js';
-import Barchart from './Barchart.js';
-import Doughnutchart from './Doughnut.js';
-import Linechart from './Linechart.js';
-import Profile from './Profile.js';
+import './styles/Dashboard.css'
+import Navbar from '../components/NavSideBar/Navbar.js';
+import Sidebar from '../components/NavSideBar/Sidebar.js';
+import Barchart from '../components/Barchart.js';
+import Doughnutchart from '../components/Doughnut.js';
+import Linechart from '../components/Linechart.js';
+import Profile from '../components/Profile.js';
 
 
 class Dashboard extends React.Component {

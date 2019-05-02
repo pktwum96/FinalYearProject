@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import errorFour from '../img/error404.svg';
-import '../styles/Default.css';
+import './styles/Default.css';
 
 class Default extends React.Component{
 

@@ -7,7 +7,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(../img/accounting.jpg);
+  	background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(/src/img/accounting.jpg);
   	background-size: cover;
   	background-position: center;
   	color: #efefef!important;

@@ -1,7 +1,7 @@
 import React from 'react';
-import {investmentAsset} from './investmentasset.js';
-import {investmentQuestions} from './investmentquestions.js';
-import {videos} from "./learnvideo.js";
+import {investmentAsset} from '../Invest/investmentasset.js';
+import {investmentQuestions} from '../Invest/investmentquestions.js';
+import {videos} from "../Learn/learnvideo.js";
 
 
 const ProductContext = React.createContext();

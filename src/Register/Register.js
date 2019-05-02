@@ -1,6 +1,6 @@
 import React from 'react';
 import {Form, Input, Select, Row, Col, Checkbox, Button, AutoComplete} from 'antd';
-import '../styles/Register.css';
+import './styles/Register.css';
 import 'antd/dist/antd.css';
 import {Link} from 'react-router-dom';
 

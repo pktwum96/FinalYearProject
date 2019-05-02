@@ -1,10 +1,10 @@
 import React from 'react';
-import Navbar from './Navbar.js';
-import Sidebar from './Sidebar.js';
-import {ProductConsumer} from './context.js';
+import Navbar from '../components/NavSideBar/Navbar.js';
+import Sidebar from '../components/NavSideBar/Sidebar.js';
+import {ProductConsumer} from '../components/context.js';
 import InvestmentList from './InvestmentList.js';
-import Profile from './Profile.js';
-import  '../styles/Invest.css';
+import Profile from '../components/Profile.js';
+import  './styles/Invest.css';
 
 
 class Invest extends React.Component {

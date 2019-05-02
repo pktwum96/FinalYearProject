@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/Dashboard.css';
 
 class Profile extends React.Component {
     render() {

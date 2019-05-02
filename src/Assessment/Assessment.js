@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from './Navbar.js';
-import Sidebar from './Sidebar.js';
-import Profile from './Profile.js';
+import Navbar from '../components/NavSideBar/Navbar.js';
+import Sidebar from '../components/NavSideBar/Sidebar.js';
+import Profile from '../components/Profile.js';
 import AssessmentQuestions from './AssessmentQuestions.js';
-import {ProductConsumer} from './context.js';
+import {ProductConsumer} from '../components/context.js';
 
 
 class Assessment extends React.Component {

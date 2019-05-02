@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter, Switch, Route} from 'react-router-dom';
-import LandingPage from './components/LandingPage.js';
-import Register from './components/Register.js';
-import Login from './components/Login.js';
-import Assessment from './components/Assessment.js';
-import Dashboard from './components/Dashboard.js';
-import Invest from './components/Invest.js';
-import Learn from './components/Learn.js';
-import Default from './components/Default.js';
+import LandingPage from './LandingPage';
+import Register from './Register';
+import Login from './Login';
+import Assessment from './Assessment';
+import Dashboard from './Dashboard';
+import Invest from './Invest';
+import Learn from './Learn';
+import Default from './Default';
 import {ProductProvider} from './components/context.js';
 
 class App extends Component {
