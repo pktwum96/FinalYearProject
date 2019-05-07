@@ -17,7 +17,16 @@ class ProductProvider extends React.Component {
         video:videos,
         riskProfile:"",
         investmentQuestions:[],
-        riskTotal:0
+        riskTotal:0,
+        active:true
+    }
+
+
+    toggleSidebar =()=> {
+        this.setState(()=>  {
+            return {active: !this.state.active};
+        })
+        console.log("toggled");
     }
 
     componentDidMount() {
@@ -171,6 +180,7 @@ class ProductProvider extends React.Component {
                     clearCart:this.clearCart,
                     increment:this.increment,
                     decrement:this.decrement,
+                    toggleSidebar:this.toggleSidebar
                 }}>
                 {this.props.children}
             </ProductContext.Provider>
