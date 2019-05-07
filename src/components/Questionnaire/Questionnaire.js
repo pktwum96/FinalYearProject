@@ -15,9 +15,11 @@ class Questionnaire extends Component {
       answerOptions: [],
       answer: '',
       answersCount: {
-        Nintendo: 0,
-        Microsoft: 0,
-        Sony: 0
+        Defensive: 0,
+        SemiDefensive: 0,
+        Moderate: 0,
+        SemiEnterprising: 0,
+        Enterprising: 0
       },
       result: ''
     };
@@ -73,6 +75,8 @@ class Questionnaire extends Component {
       },
       answer: answer
     }));
+
+    console.log(this.state.answersCount);
   }
 
   setNextQuestion() {
