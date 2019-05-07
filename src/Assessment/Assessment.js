@@ -4,6 +4,7 @@ import Sidebar from '../components/NavSideBar/Sidebar.js';
 import Profile from '../components/Profile.js';
 import AssessmentQuestions from './AssessmentQuestions.js';
 import {ProductConsumer} from '../components/context.js';
+import Questionnaire from '../components/Questionnaire';
 
 
 class Assessment extends React.Component {
@@ -31,14 +32,7 @@ class Assessment extends React.Component {
                             <div className="col-md-9 px-0" id="Assessment">
                                 <div className="mx-auto my-3 well">
                                     <h3>Risk Profile Assessment</h3>
-
-                                            <ProductConsumer>
-                                                {(value)=>{
-                                                    return value.investmentQuestions.map(investmentQuestions => {
-                                                        return <AssessmentQuestions key={investmentQuestions.id} investmentQuestions={investmentQuestions}/>
-                                                    })
-                                                }}
-                                            </ProductConsumer>
+                                    <Questionnaire/>
                                 </div>
                             </div>
                             <div className="col-md-3 px-0">

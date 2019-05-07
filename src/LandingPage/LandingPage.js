@@ -205,17 +205,17 @@ class LandingPage extends React.Component {
                 </div>
                 <div className="col-md-3">
                   <h1>Contact</h1>
-                  <p><i class="fa fa-phone-square"></i>+233504974695</p>
-                  <p><i class="fa fa-envelope"></i>contact@website.com</p>
-                  <p><i class="fa fa-home"></i>Accra Ghaana</p>
+                  <p><i className="fa fa-phone-square"></i>+233504974695</p>
+                  <p><i className="fa fa-envelope"></i>contact@website.com</p>
+                  <p><i className="fa fa-home"></i>Accra Ghaana</p>
                   <p className="city">City Country</p>
                 </div>
                 <div className="col-md-3">
                   <h1>Follow Us</h1>
-                  <p><i class="fa fa-facebook-official"></i>Facebook</p>
-                  <p><i class="fa fa-youtube-play"></i>YouTube</p>
-                  <p><i class="fa fa-linkedin"></i>LinkedIn</p>
-                  <p><i class="fa fa-twitter"></i>Twitter</p>
+                  <p><i className="fa fa-facebook-official"></i>Facebook</p>
+                  <p><i className="fa fa-youtube-play"></i>YouTube</p>
+                  <p><i className="fa fa-linkedin"></i>LinkedIn</p>
+                  <p><i className="fa fa-twitter"></i>Twitter</p>
                 </div>
 
 

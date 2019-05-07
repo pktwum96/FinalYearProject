@@ -67,7 +67,6 @@ class Invest extends React.Component {
                                                         My Cart
                                                         <span className="badge">{cart.length}</span>
                                                     </button>
-
                                         }}
                                     </ProductConsumer>
                                 </div>
