@@ -5,6 +5,7 @@ import {ProductConsumer} from '../components/context.js';
 import InvestmentList from './InvestmentList.js';
 import Profile from '../components/Profile.js';
 import  './styles/Invest.css';
+import ModalCart from './ModalCart.js'
 
 
 class Invest extends React.Component {
@@ -61,6 +62,7 @@ class Invest extends React.Component {
                                                             </button>
                                                         }}
                                                     </ProductConsumer>
+                                                    <ModalCart/>
                                                 </div>
                                             </div>
                                             <div className="col-md-3 px-0">

@@ -1,6 +1,6 @@
 import React from 'react';
-import {ProductConsumer} from './context.js';
-import '../styles/Modal.css';
+import {ProductConsumer} from '../components/context.js';
+import './styles/Modal.css';
 
 
 class ModalCart extends React.Component {
