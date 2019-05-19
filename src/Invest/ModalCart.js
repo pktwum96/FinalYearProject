@@ -1,18 +1,17 @@
 import React from 'react';
-import {ProductConsumer} from '../components/context.js';
+import { ProductConsumer } from '../components/context.js';
 import './styles/Modal.css';
 
-
 class ModalCart extends React.Component {
-    render () {
-        return (
-            <div id="cartModal" className="modal fade my-auto" tabIndex="-1" role="dialog">
-                <div className="modal-dialog modal-xl" role ="document">
-                    <div className="modal-content">
-                        <button type="button" className="close ml-auto mr-2" data-dismiss="modal">
-                            <span>&times;</span>
-                        </button>
-                        <ProductConsumer>
+	render() {
+		return (
+			<div id="cartModal" className="modal fade my-auto" tabIndex="-1" role="dialog">
+				<div className="modal-dialog modal-xl" role="document">
+					<div className="modal-content">
+						<button type="button" className="close ml-auto mr-2" data-dismiss="modal">
+							<span>&times;</span>
+						</button>
+						{/* <ProductConsumer>
                             {(value)=> {
                                 const {decrement,increment,removeItem,clearCart,cartTotal,cartSubTotal,serviceFee} =value;
                                 const {cart}=value;
@@ -105,12 +104,12 @@ class ModalCart extends React.Component {
                                     </div>
                                 </div>)
                             }}
-                        </ProductConsumer>
-                    </div>
+                        </ProductConsumer> */}
+					</div>
+				</div>
+			</div>
+		);
+	}
+}
 
-                </div>
-            </div>
-
-        )}}
-
-        export default ModalCart;
+export default ModalCart;

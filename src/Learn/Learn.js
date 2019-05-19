@@ -5,48 +5,52 @@ import Profile from '../components/Profile.js';
 import './styles/Learn.css';
 import Videolist from '../_shared/container/VideoList.js';
 import { connect } from 'react-redux';
-import {toggleSideBar} from '../_shared/actions/index';
-import {bindActionCreators} from 'redux';
-
+import { toggleSideBar } from '../_shared/actions/index';
 
 class Learn extends React.Component {
-
-    render() {
-        return (
-            <React.Fragment>
-                <div id="wrapper" className={this.props.sidebarMode ? "d-flex toggled active" : "d-flex"}>
-                    <Sidebar/>
-                    <div id="page-content-wrapper">
-                        <Navbar toggleSidebar={this.props.toggleSidebar}/>
-                        <div className="container-fluid ">
-                            <div className="row">
-                                <div className="col-md-9 px-0"id="LearnPage">
-                                    <div className="well videolist">
-                                        <Videolist/>
-                                    </div>
-                                </div>
-                                <div className="col-md-3 px-0">
-                                    <Profile/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </React.Fragment>
-
-        );
-    }
+	render() {
+		return (
+			<React.Fragment>
+				<div
+					id="wrapper"
+					className={this.props.sidebarMode ? 'd-flex toggled active' : 'd-flex'}
+				>
+					<Sidebar />
+					<div id="page-content-wrapper">
+						<Navbar toggleSidebar={this.props.toggleSidebar} />
+						<div className="container-fluid ">
+							<div className="row">
+								<div className="col-md-9 px-0" id="LearnPage">
+									<div className="well videolist">
+										{this.props.videos.map((video, i) => (
+											<Videolist key={i} video={video} />
+										))}
+									</div>
+								</div>
+								<div className="col-md-3 px-0">
+									<Profile />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</React.Fragment>
+		);
+	}
 }
 
+const mapStateToProps = state => {
+	return {
+		sidebarMode: state.sidebar.sidebarMode,
+		videos: state.videoList.videos
+	};
+};
 
-const mapStateToProps =(state) => {
-    return {
-        sidebarMode: state.sidebar.sidebarMode
-    }
-}
+const mapDispatchToProps = {
+	toggleSideBar
+};
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({toggleSideBar},dispatch)
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(Learn);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Learn);
