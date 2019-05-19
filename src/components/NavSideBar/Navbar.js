@@ -23,9 +23,6 @@ class Navbar extends React.Component {
                             <li className="nav-item">
                                 <button className="btn p-0" data-target="#contactUs" data-toggle="modal"><i className="far fa-envelope"></i></button>
                             </li>
-                            <li className="nav-item">
-                                <button className="btn p-0"><i className="far fa-question-circle"></i></button>
-                            </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i className="far fa-user-circle"></i>

@@ -6,7 +6,7 @@ import './styles/Modal.css';
 class ModalCart extends React.Component {
     render () {
         return (
-            <div id="cartModal" className="modal fade" tabIndex="-1" role="dialog">
+            <div id="cartModal" className="modal fade my-auto" tabIndex="-1" role="dialog">
                 <div className="modal-dialog modal-xl" role ="document">
                     <div className="modal-content">
                         <button type="button" className="close ml-auto mr-2" data-dismiss="modal">
@@ -14,15 +14,14 @@ class ModalCart extends React.Component {
                         </button>
                         <ProductConsumer>
                             {(value)=> {
-                                const {modalCartOpen,closeCartModal,decrement,increment,removeItem,clearCart,cartTotal,cartSubTotal,serviceFee} =value;
-                                const {name,symbol,total,price,id}=value.cart;
+                                const {decrement,increment,removeItem,clearCart,cartTotal,cartSubTotal,serviceFee} =value;
                                 const {cart}=value;
 
                                 return(
                                     <div className="container">
                                         <div className="row">
                                             <div className="mx-auto col-md-12 text-center text-capitalize ">
-                                                <div className="p-5">
+                                                <div>
                                                     {(!cart.length>0) ? <h1>Your Cart is Currently Empty</h1> :
                                                         <div className="cartlist">
                                                             <h1>Cart</h1>
@@ -82,7 +81,7 @@ class ModalCart extends React.Component {
                                                                         </React.Fragment>
                                                                     })}
                                                                 </div>
-                                                                <div className="container">
+                                                                <div className="">
                                                                     <div className="row">
                                                                         <div className="col-10 mt-2 ml-sm-5 ml-md-auto col-sm-8 text-right text-capitalize">
                                                                             <button className="btn btn-outline-danger text-uppercase mb-3 px-5" type="button" onClick={()=>clearCart()}>

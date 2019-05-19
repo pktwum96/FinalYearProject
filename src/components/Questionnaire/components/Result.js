@@ -15,23 +15,35 @@ function Result(props) {
     >
         {props.quizResult === "Defensive" ?
 
-                <h2>You are defesnsibe</h2>
+            <React.Fragment>
+                <h4>You are a <strong>Defensive Investor</strong></h4>
+                <h6>You are a conservative risk taker and therefore more likely to be more comfortable investing in debt-based instruments where risk level is minimal. You are less likely to lose a lot even though it comes with low returns</h6>
+            </React.Fragment>
 
              : props.quizResult === "SemiDefensive" ?
 
-                <h2>You are Defensive semi</h2>
+             <React.Fragment>
+                 <h4>You are a <strong>Semi-Densive Investor</strong></h4>
+                 <h6>Haha</h6>
+             </React.Fragment>
 
             : props.quizResult === "Moderate" ?
 
-                <h2>YOu are moderate </h2>
+            <React.Fragment>
+                <h4>You are a <strong>Moderate Investor</strong></h4>
+            </React.Fragment>
 
             : props.quizResult === "SemiEnterprising" ?
 
-                <h2>Semi-ENter</h2>
+            <React.Fragment>
+                <h4>You are a <strong>Semi-Enterprising Investor</strong></h4>
+            </React.Fragment>
 
             : props.quizResult === "Enterprising" ?
 
-                <h2>Enter</h2>
+            <React.Fragment>
+                <h4>You are an <strong>Enterprising Investor</strong></h4>
+            </React.Fragment>
 
             : (console.log("Error"))
 

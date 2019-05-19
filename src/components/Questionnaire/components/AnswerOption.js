@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function AnswerOption(props) {
   return (
-    <li className="answerOption">
+    <li className="answerOption text-left">
       <input
         type="radio"
         className="radioCustomButton"

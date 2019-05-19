@@ -3,6 +3,7 @@ import quizQuestions from './api/quizQuestions';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import './styles/Questionnaire.css';
+import {ProductConsumer} from '../context.js';
 
 class Questionnaire extends Component {
   constructor(props) {
@@ -75,8 +76,6 @@ class Questionnaire extends Component {
       },
       answer: answer
     }));
-
-    console.log(this.state.answersCount);
   }
 
   setNextQuestion() {
@@ -107,7 +106,9 @@ class Questionnaire extends Component {
     } else {
       this.setState({ result: 'Undetermined' });
     }
+    ContextResults(result);
   }
+
 
   renderQuiz() {
     return (
@@ -135,4 +136,15 @@ class Questionnaire extends Component {
   }
 }
 
+ export const ContextResults = data => (
+    <ProductConsumer>
+          {(value)=>{
+              return  (
+                  <React.Fragment>
+                      value.setUserdata(data)
+                  </React.Fragment>
+              )
+          }}
+      </ProductConsumer>
+  );
 export default Questionnaire;

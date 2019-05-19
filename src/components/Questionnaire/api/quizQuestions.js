@@ -100,7 +100,7 @@ var quizQuestions = [
       ]
   },
   {
-      question: "Suppose you have 50,000 cedis which you can invest for 6 years. It caneither double up to 100,000 cedis or decline to 35,000 cedis. In such a scenario, How much would you invest?",
+      question: "Suppose you have 50,000 cedis which you can invest for 6 years. It can either double up to 100,000 cedis or decline to 35,000 cedis. In such a scenario, How much would you invest?",
       answers: [
           {
               type: "Moderate",
@@ -225,7 +225,7 @@ var quizQuestions = [
       ]
   },
   {
-      question: "If your total portfolio of 15,000 cedis gone up to 20,000 cedis however one asset has gone down from 10,000 cedis to 8,000 cedis, how would you feel?",
+      question: "If your total portfolio of 15,000 cedis has gone up to 20,000 cedis however one asset has gone down from 10,000 cedis to 8,000 cedis, how would you feel?",
       answers: [
           {
               type: "SemiEnterprising",
