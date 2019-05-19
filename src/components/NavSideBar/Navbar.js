@@ -12,7 +12,7 @@ class Navbar extends React.Component {
         return (
             <React.Fragment>
                 <nav id="navbar" className="navbar navbar-expand-lg navbar-light bg-light">
-                    <div className="sidebartoggler" onClick={this.props.toggleSidebar}><i className="fas fa-th"></i></div>
+                    <div className="sidebartoggler" onClick={this.props.toggleSideBar}><i className="fas fa-th"></i></div>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

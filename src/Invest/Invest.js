@@ -19,7 +19,7 @@ class Invest extends React.Component {
 				>
 					<Sidebar />
 					<div id="page-content-wrapper">
-						<Navbar toggleSidebar={this.props.toggleSidebar} />
+						<Navbar toggleSideBar={this.props.toggleSideBar} />
 						<div className="container-fluid ">
 							<div className="row">
 								<div className="col-md-9 px-0" id="InvestPage">

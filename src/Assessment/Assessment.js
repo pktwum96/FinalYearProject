@@ -16,7 +16,7 @@ class Assessment extends React.Component {
                 <div id="wrapper" className={this.props.sidebarMode ? "d-flex toggled active" : "d-flex"}>
                     <Sidebar/>
                     <div id="page-content-wrapper">
-                        <Navbar toggleSidebar={this.props.toggleSidebar}/>
+                        <Navbar toggleSideBar={this.props.toggleSideBar}/>
                         <div className="container-fluid ">
                             <div className="row">
                                 <div className="col-md-9 px-0" id="Assessment">
