@@ -7,7 +7,6 @@ import Doughnutchart from '../components/Doughnut.js';
 import Linechart from '../components/Linechart.js';
 import Profile from '../components/Profile.js';
 import { connect } from 'react-redux';
-import {bindActionCreators} from 'redux';
 import {toggleSideBar} from '../_shared/actions/index';
 
 
@@ -163,12 +162,12 @@ class Dashboard extends React.Component {
 
 const mapStateToProps =(state) => {
     return {
-        sidebarMode: state.sidebarMode
+        sidebarMode: state.sidebar.sidebarMode
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({toggleSideBar},dispatch)
+const mapDispatchToProps = {
+    toggleSideBar
 }
 
-export default Dashboard;
+export default connect(mapStateToProps,mapDispatchToProps)(Dashboard);

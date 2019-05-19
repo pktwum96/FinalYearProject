@@ -4,14 +4,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import {Provider} from 'react-redux';
-import {store} from './_shared/store';
 
 
 ReactDOM.render(
-    <Provider store={store}>
-        <App/>
-    </Provider>, document.getElementById('root')
+        <App/>, document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

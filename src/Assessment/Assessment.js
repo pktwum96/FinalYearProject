@@ -40,7 +40,7 @@ class Assessment extends React.Component {
 
 const mapStateToProps =(state) => {
     return {
-        sidebarMode: state.sidebarMode
+        sidebarMode: state.sidebar.sidebarMode
     }
 }
 

@@ -1,5 +1,7 @@
 export default {
-    sidebarMode: true,
-    videolist:[],
-    investmentassets:[]
+    // sidebar: {
+    //     sidebarMode: true
+    // },
+    // videoList:[],
+    // investmentAsset:[]
 }
