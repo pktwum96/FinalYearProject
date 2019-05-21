@@ -19,8 +19,7 @@ class NewModal extends React.Component {
 								<br/>If you already know your risk appetite, click Manually select. Otherwise, let us help you determine your risk profile by taking the test below
 							</h6>
 							<div className="d-flex py-3">
-								<Link to="assessment" className="mx-auto"><button className="btn btn-outline-primary">Manually Select</button></Link>
-								<Link to="assessment" className="mx-auto"><button className="btn btn-outline-success">Take Test</button></Link>
+								<Link to="assessment" className="mx-auto"><button className="btn btn-outline-success">Let's Go</button></Link>
 							</div>
 						</div>
 					</div>

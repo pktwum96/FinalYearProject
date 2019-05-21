@@ -14,7 +14,7 @@ class NewModal extends React.Component {
 							<h2>Awesome!</h2>
 							<br/>
 							<h6>
-								<br/>Now that we've determine your risk profile, we can now start investing.<br/>
+								<br/>Now that we've determined your risk profile, we can now start investing.<br/>
 								<br/>Click on the link below to start <br/>
 							</h6>
 							<div className="d-flex py-3">
