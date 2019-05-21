@@ -64,6 +64,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
     switch (action.type) {
+
         case "ADDTOCART":
             const id=action.payload;
             const Asset=state.investmentAssets.find(item=>item.id===id);
@@ -79,7 +80,62 @@ export default function(state = initialState, action) {
                 ...state,
                 investmentAssets:tempProducts,
                 cart:[...state.cart,investmentAssets],
-            };
+            }
+
+        case "INCREMENT":
+            let tempCart=[...state.cart];
+            const idIncrement = action.payload;
+            const selectedProduct = tempCart.find(item=>item.id ===idIncrement);
+            const indexIncrement = tempCart.indexOf(selectedProduct);
+            const product = tempCart[indexIncrement];
+            console.log(tempCart);
+            console.log(selectedProduct);
+            console.log(indexIncrement);
+            console.log(product);
+            product.count =product.count+1;
+            product.total=product.count * product.price;
+            product.total=parseFloat((product.total).toFixed(2));
+            console.log(state);
+            return {
+                ...state,
+                cart: [...tempCart]
+            }
+
+        case "DECREMENT":
+
+            let tempCartDecrement=[...state.cart];
+            const idDecrement =action.payload;
+            const selectedProductDecrement = tempCartDecrement.find(item=>item.id ===idDecrement);
+            const indexDecrement = tempCartDecrement.indexOf(selectedProductDecrement);
+            const productDecrement = tempCartDecrement[indexDecrement];
+
+            productDecrement.count=productDecrement.count-1;
+            productDecrement.total=productDecrement.count * productDecrement.price;
+            productDecrement.total=parseFloat((productDecrement.total).toFixed(2));
+
+            return {
+                ...state,
+                cart: [...tempCartDecrement]
+            }
+
+        case "REMOVEITEM":
+
+            let tempProductsRI=[...state.investmentAssets];
+            let tempCartRI = [...state.cart];
+            const idRI=action.payload;
+            const AssetRI=state.investmentAssets.find(item=>item.id===idRI);
+            tempCartRI=tempCartRI.filter(item=>item.id!==idRI);
+            const indexRI = tempProductsRI.indexOf(AssetRI);
+            let removedProductRI= tempProductsRI[indexRI];
+            removedProductRI.inCart=false;
+            removedProductRI.count=0;
+            removedProductRI.total=0;
+            return {
+                ...state,
+                cart:[...tempCartRI],
+                investmentAssets:[...tempProductsRI],
+            }
+
 
         default:
             return state

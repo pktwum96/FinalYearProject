@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/Modal.css';
 import { connect } from 'react-redux';
+import { increment,decrement,removeItem } from '../_shared/actions/index';
 
 class ModalCart extends React.Component {
 	render() {
@@ -58,23 +59,14 @@ class ModalCart extends React.Component {
 																	<div className="col-10 mx-auto col-lg-2 my-2 my-lg-0">
 																		<div className="d-flex justify-content-center">
 																			<div>
-																				<span className="btn mx-1 btn-black" onClick={
-																					//	()=>decrement(item.id)
-																					()=> console.log("decrement")
-																					}>-</span>
+																				<span className="btn mx-1 btn-black" onClick={()=>{item.count>1 ? this.props.decrement(item.id) : this.props.removeItem(item.id)}}>-</span>
 																				<span className="btn mx-1 btn-black">{item.count}</span>
-																				<span className="btn mx-1 btn-black" onClick={
-																						//()=>increment(item.id)
-																						()=> console.log("increment")
-																					}>+</span>
+																				<span className="btn mx-1 btn-black" onClick={()=>this.props.increment(item.id)}>+</span>
 																			</div>
 																		</div>
 																	</div>
 																	<div className="col-10 mx-auto col-lg-2 align-self-center">
-																		<div className="cart-icon" onClick={
-																				//()=>removeItem(item.id)
-																				()=> console.log("removeItem")
-																			}>
+																		<div className="cart-icon" onClick={()=>this.props.removeItem(item.id)}>
 																			<i className="fas fa-trash"></i>
 																		</div>
 																	</div>
@@ -126,6 +118,9 @@ const mapStateToProps =(state) => {
 }
 
 const mapDispatchToProps = {
+	increment,
+	decrement,
+	removeItem,
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(ModalCart);
