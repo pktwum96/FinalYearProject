@@ -34,3 +34,23 @@ export const removeItem = (id) => {
         payload: id
     }
 }
+
+
+export const clearCart = () => {
+    return {
+        type: "CLEARCART",
+    }
+}
+
+export const setAssets = () => {
+    return {
+        type: "SETASSETS",
+    }
+}
+
+
+export const addTotal = () => {
+    return {
+        type: "ADDTOTALS",
+    }
+}

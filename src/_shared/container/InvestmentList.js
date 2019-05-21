@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addToCart } from '../actions/index';
+import { addToCart,addTotal } from '../actions/index';
 
 class InvestmentList extends React.Component {
 	createListItem() {
@@ -22,7 +22,7 @@ class InvestmentList extends React.Component {
 								<button
 									className="btn btn-outline-success"
 									disabled={asset.inCart}
-									onClick={() => this.props.addToCart(asset.id)}
+									onClick={(event) => {this.props.addToCart(asset.id);this.props.addTotal()}}
 								>
 									<i className="fas fa-cart-plus" />
 								</button>
@@ -48,6 +48,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
 	addToCart,
+	addTotal,
 };
 
 export default connect(

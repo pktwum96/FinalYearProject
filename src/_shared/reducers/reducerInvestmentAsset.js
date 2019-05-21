@@ -1,4 +1,64 @@
 const initialState = {
+    investmentProducts:[{
+        id:1,
+        name: "Total Petroleum Ghana",
+        symbol: "TOTAL",
+        price: 4.61,
+        company: "Total Petroleum Ghana",
+        assetType:"stock",
+        info: "Lorem Ipsum",
+        inCart: false,
+        count: 0,
+        total:0,
+    },
+    {
+        id:2,
+        name:"Societe Generale Ghana",
+        symbol: "SOGEGH",
+        price: 0.98,
+        company: "Societe Generale Ghana",
+        assetType:"stock",
+        info: "Lorem Ipsum",
+        inCart: false,
+        count: 0,
+        total:0,
+    },
+    {
+        id:3,
+        name: "Trust Bank",
+        symbol: "TBL",
+        price: 0.83,
+        company: "Trust Bank",
+        assetType: "stock",
+        info: "Lorem Ipsum",
+        inCart: false,
+        count: 0,
+        total:0,
+    },
+    {
+        id:4,
+        name: "Ghana Government Bond",
+        symbol: "GHB",
+        price: 50.02,
+        company: "Ghana Government",
+        assetType:"bond",
+        info: "Lorem Ipsum",
+        inCart: false,
+        count: 0,
+        total:0,
+    },
+    {
+        id:5,
+        name: "Coca Cola Private Bonds",
+        symbol: "CCBL",
+        price: 34.54,
+        company: "Coca Cola Ghana",
+        assetType:"bond",
+        info: "Lorem Ipsum",
+        inCart: false,
+        count: 0,
+        total:0,
+    }],
     investmentAssets: [{
         id:1,
         name: "Total Petroleum Ghana",
@@ -60,6 +120,9 @@ const initialState = {
         total:0,
     }],
     cart: [],
+    cartSubTotal:0,
+    serviceFee:0,
+    cartTotal:0,
 }
 
 export default function(state = initialState, action) {
@@ -88,14 +151,9 @@ export default function(state = initialState, action) {
             const selectedProduct = tempCart.find(item=>item.id ===idIncrement);
             const indexIncrement = tempCart.indexOf(selectedProduct);
             const product = tempCart[indexIncrement];
-            console.log(tempCart);
-            console.log(selectedProduct);
-            console.log(indexIncrement);
-            console.log(product);
             product.count =product.count+1;
             product.total=product.count * product.price;
             product.total=parseFloat((product.total).toFixed(2));
-            console.log(state);
             return {
                 ...state,
                 cart: [...tempCart]
@@ -136,6 +194,28 @@ export default function(state = initialState, action) {
                 investmentAssets:[...tempProductsRI],
             }
 
+        case "CLEARCART":
+            const reset= [...state.investmentProducts];
+            return {
+                ...state,
+                cart:[],
+                investmentAssets:[...reset]
+            }
+        case "ADDTOTALS":
+            console.log(state);
+            let subTotal=0;
+            state.cart.map(item => (subTotal+=item.total));
+            subTotal=parseFloat(subTotal.toFixed(2))
+            const tempSFee=subTotal*0.02;
+            const Fee=parseFloat(tempSFee.toFixed(2));
+            const temptotal=subTotal+Fee;
+            const total=parseFloat(temptotal.toFixed(2));
+            return {
+                ...state,
+                cartSubTotal:subTotal,
+                serviceFee:Fee,
+                cartTotal:total,
+            }
 
         default:
             return state
