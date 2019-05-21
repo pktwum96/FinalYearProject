@@ -54,3 +54,13 @@ export const addTotal = () => {
         type: "ADDTOTALS",
     }
 }
+
+export const setRisk= (risk,info) => {
+    return {
+        type: "SETRISK",
+        payload: {
+            profile:risk,
+            info:info
+        }
+    }
+}

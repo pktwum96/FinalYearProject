@@ -10,8 +10,8 @@ class ModalCart extends React.Component {
 
 		 const cart=this.props.cart;
 		return (
-			<div id="cartModal" className="modal fade my-auto" tabIndex="-1" role="dialog">
-				<div className="modal-dialog modal-xl" role="document">
+			<div id="cartModal" className="modal fade" tabIndex="-1" role="dialog">
+				<div className="modal-dialog modal-xl mt-5" role="document">
 					<div className="modal-content">
 						<button type="button" className="close ml-auto mr-2" data-dismiss="modal">
 							<span>&times;</span>

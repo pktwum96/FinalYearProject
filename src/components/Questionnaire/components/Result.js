@@ -1,63 +1,79 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransitionGroup } from 'react-transition-group';
+import { connect } from 'react-redux';
+import {setRisk} from '../../../_shared/actions';
+import {Link} from 'react-router-dom';
 
 function Result(props) {
-  return (
-    <CSSTransitionGroup
-      className="container-questionnaire result"
-      component="div"
-      transitionName="fade"
-      transitionEnterTimeout={800}
-      transitionLeaveTimeout={500}
-      transitionAppear
-      transitionAppearTimeout={500}
-    >
-        {props.quizResult === "Defensive" ?
 
-            <React.Fragment>
-                <h4>You are a <strong>Defensive Investor</strong></h4>
-                <h6>You are a conservative risk taker and therefore more likely to be more comfortable investing in debt-based instruments where risk level is minimal. You are less likely to lose a lot even though it comes with low returns</h6>
-            </React.Fragment>
+    const resultProfile = {
+        profile:"",
+        info:""
+    }
 
-             : props.quizResult === "SemiDefensive" ?
+    return (
+        <CSSTransitionGroup
+            className="container-questionnaire result"
+            component="div"
+            transitionName="fade"
+            transitionEnterTimeout={800}
+            transitionLeaveTimeout={500}
+            transitionAppear
+            transitionAppearTimeout={500}
+            >
+            {(() => {
+                switch (props.quizResult) {
+                    case "Defensive":
+                        resultProfile.profile = "Defensive";
+                        resultProfile.info ="You are a conservative risk taker and therefore more likely to be more comfortable investing in debt-based instruments where risk level is minimal. You are less likely to lose a lot even though it comes with low returns";
+                        break;
 
-             <React.Fragment>
-                 <h4>You are a <strong>Semi-Densive Investor</strong></h4>
-                 <h6>Haha</h6>
-             </React.Fragment>
+                    case "SemiDefensive":
+                        resultProfile.profile = "Defensive";
+                        resultProfile.info = "tramol";
+                        break;
 
-            : props.quizResult === "Moderate" ?
+                    case "Moderate":
+                        resultProfile.profile = "Moderate";
+                        resultProfile.info ="here";
+                        break;
 
-            <React.Fragment>
-                <h4>You are a <strong>Moderate Investor</strong></h4>
-            </React.Fragment>
+                    case "SemiEnterprising":
+                        resultProfile.profile = "Semi-Enterprising";
+                        resultProfile.info = "god";
+                        break;
 
-            : props.quizResult === "SemiEnterprising" ?
+                    case "Enterprising":
+                        resultProfile.profile = "Enterprising";
+                        resultProfile.info = "hit";
+                        break;
+                    default:
+                    (console.log("Error"))
+                }
+            })()}
+            <h4>You are a <strong>{resultProfile.profile}</strong> Investor</h4>
+            <h6>{resultProfile.info}</h6>
 
-            <React.Fragment>
-                <h4>You are a <strong>Semi-Enterprising Investor</strong></h4>
-            </React.Fragment>
-
-            : props.quizResult === "Enterprising" ?
-
-            <React.Fragment>
-                <h4>You are an <strong>Enterprising Investor</strong></h4>
-            </React.Fragment>
-
-            : (console.log("Error"))
-
-         }
-         <div className="d-flex">
-             <button className="btn btn-outline-secondary mx-auto"><i className="fas fa-pen"></i> Retake Test</button>
-             <button className="btn btn-outline-success mx-auto">Submit Result</button>
-         </div>
-    </CSSTransitionGroup>
-  );
+            <div className="d-flex">
+                <Link to="assessment" className="mx-auto"><button className="btn btn-outline-secondary" onClick={()=>window.location.reload()}><i className="fas fa-pen"></i> Retake Test</button></Link>
+                <Link to="invest" className="mx-auto"><button className="btn btn-outline-success" onClick={()=>props.setRisk(resultProfile.profile,resultProfile.info)}>Submit Result</button></Link>
+            </div>
+        </CSSTransitionGroup>
+    );
 }
 
 Result.propTypes = {
-  quizResult: PropTypes.string.isRequired
+    quizResult: PropTypes.string.isRequired
 };
 
-export default Result;
+const mapStateToProps =(state) => {
+    return {
+    }
+}
+
+const mapDispatchToProps = {
+    setRisk
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Result);

@@ -3,6 +3,7 @@ const initialState = {
 		email:"",
 		password:"",
 		riskProfile:"",
+		riskInfo:"la la a",
 		portfolios: {
 			name:"",
 			dateCreated:"",
@@ -48,6 +49,18 @@ const initialState = {
 
 export default function(state = initialState, action) {
 	switch (action.type) {
+		case "SETRISK":
+			const profile = action.payload.profile;
+			const info = action.payload.info;
+			let tempUserData=state.userData;
+			tempUserData.riskProfile=profile;
+			tempUserData.riskInfo=info;
+
+			return {
+				...state,
+				userData:tempUserData
+			}
+
 		default:
 			return state;
 	}
