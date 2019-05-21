@@ -15,10 +15,8 @@ class InvestmentList extends React.Component {
 	}
 
 	expandDiv=(index)=>{
-		console.log(index);
 		let tempExpand= [...this.state.expand];
 		tempExpand[index]=!tempExpand[index]
-		console.log(tempExpand);
 
 		this.setState({
 			expand:tempExpand

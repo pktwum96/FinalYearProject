@@ -17,7 +17,6 @@ class Dashboard extends React.Component {
 
     render() {
         const user=this.props.userData;
-        console.log(user);
         return (
             <React.Fragment>
                 <div id="wrapper" className={this.props.sidebarMode ? "d-flex toggled active" : "d-flex"}>

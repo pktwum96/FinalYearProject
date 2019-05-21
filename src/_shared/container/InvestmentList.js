@@ -4,9 +4,9 @@ import { addToCart,addTotal } from '../actions/index';
 
 class InvestmentList extends React.Component {
 	createListItem() {
-		return this.props.investmentAssets.map(asset => {
+		return this.props.investmentAssets.map((asset,item) => {
 			return (
-				<tbody key={asset.id} className="well">
+				<tbody key={item} className="well">
 					<tr>
 						<td className="text-uppercase">{asset.assetType}</td>
 						<td>{asset.name}</td>

@@ -202,7 +202,6 @@ export default function(state = initialState, action) {
                 investmentAssets:[...reset]
             }
         case "ADDTOTALS":
-            console.log(state);
             let subTotal=0;
             state.cart.map(item => (subTotal+=item.total));
             subTotal=parseFloat(subTotal.toFixed(2))
