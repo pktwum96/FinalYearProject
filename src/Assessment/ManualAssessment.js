@@ -7,8 +7,10 @@ class ManualAssessment extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="col-md-9 px-0" id="Assessment">
-                    <h6>Manual</h6>
+                <div id="ManualAssessment">
+                    <h2>Manual</h2>
+                    <br/>
+                    <h5>Which of the following types of investor are you?</h5>
                 </div>
             </React.Fragment>
         );
