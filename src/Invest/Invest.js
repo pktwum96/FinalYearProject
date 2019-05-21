@@ -15,8 +15,7 @@ class Invest extends React.Component {
 			<React.Fragment>
 				<div
 					id="wrapper"
-					className={this.props.sidebarMode ? 'd-flex toggled active' : 'd-flex'}
-				>
+					className={this.props.sidebarMode ? 'd-flex toggled active' : 'd-flex'}>
 					<Sidebar />
 					<div id="page-content-wrapper">
 						<Navbar toggleSideBar={this.props.toggleSideBar} />
@@ -52,28 +51,20 @@ class Invest extends React.Component {
 											</thead>
 											<InvestmentList />
 										</table>
-										{/* <ProductConsumer>
-											{value => {
-												const { cart } = value;
-												return (
 													<button
 														type="button"
 														className={
 															'cartbtn btn ' +
-															(cart.length === 0
+															(this.props.cart.length === 0
 																? 'btn-danger'
 																: 'btn-outline-success')
 														}
 														data-toggle="modal"
-														data-target="#cartModal"
-													>
+														data-target="#cartModal">
 														<i className="fas fa-cart-plus pr-2" />
 														My Cart
-														<span className="badge">{cart.length}</span>
+														<span className="badge">{this.props.cart.length}</span>
 													</button>
-												);
-											}}
-										</ProductConsumer> */}
 										<ModalCart />
 									</div>
 								</div>
@@ -91,7 +82,8 @@ class Invest extends React.Component {
 
 const mapStateToProps = state => {
 	return {
-		sidebarMode: state.sidebar.sidebarMode
+		sidebarMode: state.sidebar.sidebarMode,
+		cart: state.investmentAsset.cart
 	};
 };
 

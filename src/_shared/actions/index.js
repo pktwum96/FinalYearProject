@@ -1,7 +1,14 @@
 export const toggleSideBar = () => {
-    console.log("sidebar toggled");
     return {
         type: "toggle",
         payload: "sidebar"
     }
 };
+
+
+export const addToCart = (id) => {
+    return {
+        type: "ADDTOCART",
+        payload: id
+    }
+}

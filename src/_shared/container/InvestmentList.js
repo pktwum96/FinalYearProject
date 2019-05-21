@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { addToCart } from '../actions/index';
 
 class InvestmentList extends React.Component {
 	createListItem() {
@@ -44,4 +45,12 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps)(InvestmentList);
+
+const mapDispatchToProps = {
+	addToCart,
+};
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(InvestmentList);

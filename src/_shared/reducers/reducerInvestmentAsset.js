@@ -58,11 +58,29 @@ const initialState = {
         inCart: false,
         count: 0,
         total:0,
-    }]
+    }],
+    cart: [],
 }
 
 export default function(state = initialState, action) {
     switch (action.type) {
+        case "ADDTOCART":
+            const id=action.payload;
+            const Asset=state.investmentAssets.find(item=>item.id===id);
+            let tempProducts=[...state.investmentAssets];
+            const index= tempProducts.indexOf(Asset);
+            const investmentAssets=tempProducts[index];
+            investmentAssets.inCart=true;
+            investmentAssets.count=1;
+            const price = investmentAssets.price;
+            investmentAssets.total=price;
+
+            return {
+                ...state,
+                investmentAssets:tempProducts,
+                cart:[...state.cart,investmentAssets],
+            };
+
         default:
             return state
     }

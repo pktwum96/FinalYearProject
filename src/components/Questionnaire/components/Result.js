@@ -48,6 +48,10 @@ function Result(props) {
             : (console.log("Error"))
 
          }
+         <div className="d-flex">
+             <button className="btn btn-outline-secondary mx-auto"><i className="fas fa-pen"></i> Retake Test</button>
+             <button className="btn btn-outline-success mx-auto">Submit Result</button>
+         </div>
     </CSSTransitionGroup>
   );
 }
