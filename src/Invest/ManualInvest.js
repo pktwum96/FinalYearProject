@@ -9,7 +9,7 @@ class ManualInvest extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
-				<div className="invest-asset-list">
+				<div className="invest-asset-list" id="ManualInvest">
 					<div className="ml-auto col-md-5 my-3 input-group ">
 						<input type="text" className="form-control" />
 						<div className="input-group-append">
@@ -21,7 +21,7 @@ class ManualInvest extends React.Component {
 							</button>
 						</div>
 					</div>
-					<table className="my-5">
+					<table className="my-3">
 						<thead>
 							<tr>
 								<th>Asset Type</th>
@@ -39,7 +39,7 @@ class ManualInvest extends React.Component {
 						<InvestmentList />
 					</table>
 					<button type="button" className={'cartbtn btn ' +(this.props.cart.length === 0 ? 'btn-danger' : 'btn-outline-success')} data-toggle="modal" data-target="#cartModal">
-						<i className="fas fa-cart-plus pr-2" />
+						<i className="fas fa-cart-plus px-2" />
 						My Cart
 						<span className="badge">{this.props.cart.length}</span>
 					</button>
