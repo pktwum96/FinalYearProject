@@ -1,5 +1,5 @@
 import React from 'react';
-import Questionnaire from '../components/Questionnaire';
+import AutoQuestionnaire from '../components/AutoQuestionnaire';
 
 
 class AutoAssessment extends React.Component {
@@ -8,7 +8,7 @@ class AutoAssessment extends React.Component {
         return (
             <React.Fragment>
                         <h3>Risk Profile Assessment</h3>
-                        <Questionnaire/>
+                        <AutoQuestionnaire/>
             </React.Fragment>
         );
     }

@@ -5,7 +5,7 @@ import Result from './components/Result';
 import './styles/Questionnaire.css';
 import {ProductConsumer} from '../context.js';
 
-class Questionnaire extends Component {
+class AutoQuestionnaire extends Component {
   constructor(props) {
     super(props);
 
@@ -147,4 +147,4 @@ class Questionnaire extends Component {
           }}
       </ProductConsumer>
   );
-export default Questionnaire;
+export default AutoQuestionnaire;

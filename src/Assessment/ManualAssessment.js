@@ -1,5 +1,5 @@
 import React from 'react';
-import Profile from '../components/Profile.js';
+import ManualQuestionnaire from '../components/ManualQuestionnaire';
 
 
 class ManualAssessment extends React.Component {
@@ -7,11 +7,8 @@ class ManualAssessment extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div id="ManualAssessment">
-                    <h2>Manual</h2>
-                    <br/>
-                    <h5>Which of the following types of investor are you?</h5>
-                </div>
+                        <h3>Risk Profile Assessment</h3>
+                        <ManualQuestionnaire/>
             </React.Fragment>
         );
     }

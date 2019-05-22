@@ -2,7 +2,6 @@ import React from 'react';
 import Navbar from '../components/NavSideBar/Navbar.js';
 import Sidebar from '../components/NavSideBar/Sidebar.js';
 import Profile from '../components/Profile.js';
-import Questionnaire from '../components/Questionnaire';
 import { connect } from 'react-redux';
 import {toggleSideBar} from '../_shared/actions/index';
 import {bindActionCreators} from 'redux';
