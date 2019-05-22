@@ -195,7 +195,7 @@ export default function(state = initialState, action) {
             }
 
         case "CLEARCART":
-            const reset= [...state.investmentProducts];
+            let reset= [...state.investmentProducts];
             return {
                 ...state,
                 cart:[],
@@ -215,7 +215,10 @@ export default function(state = initialState, action) {
                 serviceFee:Fee,
                 cartTotal:total,
             }
-
+        // case "DEFENSIVE":
+        //     let initialInvestment=action.payload.amount;
+        //     let debtAmount= initialInvestment *0.80;
+        //     let stockAmount= initialInvestment *0.20;
         default:
             return state
     }

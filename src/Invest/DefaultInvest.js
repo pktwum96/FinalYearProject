@@ -1,4 +1,5 @@
 import React from 'react';
+import AutoInvestModal from './AutoInvestModal';
 
 class DefaultInvest extends React.Component {
 
@@ -9,9 +10,10 @@ class DefaultInvest extends React.Component {
                     <h2>Invest</h2>
                     <div className="d-flex">
                         <button className="btn btn-outline-primary mx-auto" onClick={()=>this.props.openManual()}>Manually Invest</button>
-                        <button className="btn btn-outline-success mx-auto" onClick={()=>this.props.openAuto()}>Generate Portfolio</button>
+                        <button className="btn btn-outline-success mx-auto"  data-target="#AutoInvestModal" data-toggle="modal">Generate Portfolio</button>
                     </div>
                 </div>
+                <AutoInvestModal openAuto={()=>this.props.openAuto()}/>
             </React.Fragment>
         );
     }
