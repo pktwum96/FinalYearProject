@@ -97,10 +97,12 @@ class AutoQuestionnaire extends Component {
     const answersCountValues = answersCountKeys.map(key => answersCount[key]);
     const maxAnswerCount = Math.max.apply(null, answersCountValues);
 
+        console.log("answer count:" + {answersCountValues})
     return answersCountKeys.filter(key => answersCount[key] === maxAnswerCount);
   }
 
   setResults(result) {
+      console.log({result})
     if (result.length === 1) {
       this.setState({ result: result[0] });
     } else {

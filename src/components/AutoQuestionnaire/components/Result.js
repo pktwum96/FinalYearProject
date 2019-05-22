@@ -22,6 +22,7 @@ function Result(props) {
             transitionAppear
             transitionAppearTimeout={500}
             >
+        <div>
             {(() => {
                 switch (props.quizResult) {
                     case "Defensive":
@@ -30,7 +31,7 @@ function Result(props) {
                         break;
 
                     case "SemiDefensive":
-                        resultProfile.profile = "Defensive";
+                        resultProfile.profile = "Semi-Defensive";
                         resultProfile.info = "tramol";
                         break;
 
@@ -49,16 +50,32 @@ function Result(props) {
                         resultProfile.info = "hit";
                         break;
                     default:
-                    (console.log("Error"))
+                        resultProfile.profile = "Inconclusive";
+                        resultProfile.info = "Please retake test";
+                        console.log("error");
                 }
             })()}
-            <h4>You are a <strong>{resultProfile.profile}</strong> Investor</h4>
-            <h6>{resultProfile.info}</h6>
+
+
+            {
+                    (resultProfile.profile==="Inconclusive") ?
+                    <React.Fragment>
+                        <h4>{resultProfile.profile}</h4>
+                        <h6>{resultProfile.info}</h6>
+                    </React.Fragment>
+                :
+                    <React.Fragment>
+                        <h4>You are a <strong>{resultProfile.profile}</strong> Investor</h4>
+                        <h6>{resultProfile.info}</h6>
+                    </React.Fragment>
+
+            }
 
             <div className="d-flex">
                 <Link to="assessment" className="mx-auto"><button className="btn btn-outline-secondary" onClick={()=>window.location.reload()}><i className="fas fa-pen"></i> Retake Test</button></Link>
                 <Link to="dashboard" className="mx-auto"><button className="btn btn-outline-success" onClick={()=>props.setRisk(resultProfile.profile,resultProfile.info)}>Submit Result</button></Link>
             </div>
+        </div>
         </CSSTransitionGroup>
     );
 }
