@@ -64,3 +64,15 @@ export const setRisk= (risk,info) => {
         }
     }
 }
+
+export const allocateAssets = (riskProfile,debtAmount,stockAmount,years) => {
+    return {
+        type: "ALLOCATEASSETS",
+        payload: {
+            riskProfile:riskProfile,
+            debtAmount:debtAmount,
+            stockAmount:stockAmount,
+            years:years
+        }
+    }
+}

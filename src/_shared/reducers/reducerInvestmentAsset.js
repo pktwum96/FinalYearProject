@@ -215,10 +215,8 @@ export default function(state = initialState, action) {
                 serviceFee:Fee,
                 cartTotal:total,
             }
-        // case "DEFENSIVE":
-        //     let initialInvestment=action.payload.amount;
-        //     let debtAmount= initialInvestment *0.80;
-        //     let stockAmount= initialInvestment *0.20;
+        case "ALLOCATEASSETS":
+            console.log(action.payload)
         default:
             return state
     }

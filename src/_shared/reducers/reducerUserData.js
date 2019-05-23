@@ -2,7 +2,7 @@ const initialState = {
 	userData: {
 		email:"",
 		password:"",
-		riskProfile:"bofrot",
+		riskProfile:"Defensive",
 		riskInfo:"la la a",
 		portfolios: {
 			name:"",
