@@ -294,7 +294,7 @@ var quizQuestions = [
               content: "None"
           },
       ]
-  }
+ }
 ];
 
 export default quizQuestions;

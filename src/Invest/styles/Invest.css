@@ -3,7 +3,7 @@
 }
 
 
-#InvestPage table {
+#ManualInvest table {
     width: 100%;
 }
 
@@ -11,12 +11,12 @@
 }
 
 
-#InvestPage .cartbtn {
+#ManualInvest .cartbtn {
     padding: 0.5rem;
     margin-top: 1rem;
 }
 
 
-#InvestPage td {
+#ManualInvest td {
     padding: 0.5rem 0.2rem!important;
 }

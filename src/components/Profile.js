@@ -1,12 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class Profile extends React.Component {
     render() {
+        const user= this.props.userData;
+
         return (<div className="otherinfo">
             <div className="well profile">
                 <div className="userimage"><i className="far fa-user-circle"></i></div>
-                <h6>Risk Profile: <span>Enterprising</span></h6>
-                <p>Lorem Ipsum dolor amet in this corenrt cn sjkn shb ksdb</p>
+                <h6>Risk Profile: <span>{user.riskProfile}</span></h6>
+                <p>{user.riskInfo}</p>
                 <table>
                     <tbody>
                         <tr>
@@ -15,15 +18,15 @@ class Profile extends React.Component {
                         </tr>
                         <tr>
                             <td>Assets</td>
-                            <td>44</td>
+                            <td>{user.portfolios.assets.length}</td>
                         </tr>
                         <tr>
-                            <td>Lorem</td>
-                            <td>None</td>
+                            <td>Current Value</td>
+                            <td>{user.portfolios.currentValue}</td>
                         </tr>
                         <tr>
-                            <td>Ipsum</td>
-                            <td>True</td>
+                            <td>Expected Value</td>
+                            <td>{user.portfolios.expectedValue}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -33,4 +36,13 @@ class Profile extends React.Component {
     }
 }
 
-export default Profile;
+const mapStateToProps =(state) => {
+    return {
+        userData: state.user.userData
+    }
+}
+
+const mapDispatchToProps = {
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Profile);

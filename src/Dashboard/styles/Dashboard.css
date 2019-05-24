@@ -159,3 +159,11 @@
 .profile tr:nth-child(2n) {
     background-color: #f3f3f3;
 }
+
+.newUser{
+    margin-top: 4rem;
+}
+
+ .modal-backdrop{
+    opacity: 0.85!important
+}

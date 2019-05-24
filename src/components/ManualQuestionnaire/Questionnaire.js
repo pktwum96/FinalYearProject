@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import quizQuestions from './api/quizQuestions';
+import quizQuestionsManual from './api/quizQuestions';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import './styles/Questionnaire.css';
 import {ProductConsumer} from '../context.js';
 
-class Questionnaire extends Component {
+class ManualQuestionnaire extends Component {
   constructor(props) {
     super(props);
 
@@ -29,11 +29,11 @@ class Questionnaire extends Component {
   }
 
   componentWillMount() {
-    const shuffledAnswerOptions = quizQuestions.map(question =>
+    const shuffledAnswerOptions = quizQuestionsManual.map(question =>
       this.shuffleArray(question.answers)
     );
     this.setState({
-      question: quizQuestions[0].question,
+      question: quizQuestionsManual[0].question,
       answerOptions: shuffledAnswerOptions[0]
     });
   }
@@ -61,7 +61,7 @@ class Questionnaire extends Component {
   handleAnswerSelected(event) {
     this.setUserAnswer(event.currentTarget.value);
 
-    if (this.state.questionId < quizQuestions.length) {
+    if (this.state.questionId < quizQuestionsManual.length) {
       setTimeout(() => this.setNextQuestion(), 300);
     } else {
       setTimeout(() => this.setResults(this.getResults()), 300);
@@ -85,8 +85,8 @@ class Questionnaire extends Component {
     this.setState({
       counter: counter,
       questionId: questionId,
-      question: quizQuestions[counter].question,
-      answerOptions: quizQuestions[counter].answers,
+      question: quizQuestionsManual[counter].question,
+      answerOptions: quizQuestionsManual[counter].answers,
       answer: ''
     });
   }
@@ -117,7 +117,7 @@ class Questionnaire extends Component {
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}
         question={this.state.question}
-        questionTotal={quizQuestions.length}
+        questionTotal={quizQuestionsManual.length}
         onAnswerSelected={this.handleAnswerSelected}
       />
     );
@@ -147,4 +147,4 @@ class Questionnaire extends Component {
           }}
       </ProductConsumer>
   );
-export default Questionnaire;
+export default ManualQuestionnaire;

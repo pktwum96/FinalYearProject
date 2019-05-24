@@ -1,67 +1,70 @@
 import React from 'react';
 import Navbar from '../components/NavSideBar/Navbar.js';
 import Sidebar from '../components/NavSideBar/Sidebar.js';
-import {ProductConsumer} from '../components/context.js';
-import InvestmentList from '../_shared/container/InvestmentList.js';
 import Profile from '../components/Profile.js';
-import  './styles/Invest.css';
-import ModalCart from './ModalCart.js';
+import './styles/Invest.css';
 import { connect } from 'react-redux';
-import {toggleSideBar} from '../_shared/actions/index';
-import {bindActionCreators} from 'redux';
-
+import { toggleSideBar } from '../_shared/actions/index';
+import DefaultInvest from './DefaultInvest';
+import AutoInvest from './AutoInvest';
+import ManualInvest from './ManualInvest';
+import NewModal from '../Dashboard/NewModal';
 
 class Invest extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isDefaultOpen:true,
+            isManualOpen: false,
+            isAutoOpen: false
+        };
+
+        this.openAuto =this.openAuto.bind(this)
+        this.openManual =this.openManual.bind(this)
+    }
+
+    openManual () {
+        this.setState({
+            isDefaultOpen:false,
+            isManualOpen: true,
+            isAutoOpen: false
+        })
+    }
+
+    openAuto() {
+        this.setState({
+            isDefaultOpen:false,
+            isManualOpen: false,
+            isAutoOpen: true
+        })
+    }
 
     render() {
+        const user=this.props.userData;
+
         return (
             <React.Fragment>
                 <div id="wrapper" className={this.props.sidebarMode ? "d-flex toggled active" : "d-flex"}>
                     <Sidebar/>
                     <div id="page-content-wrapper">
-                        <Navbar toggleSidebar={this.props.toggleSidebar}/>
+                        <Navbar toggleSideBar={this.props.toggleSideBar}/>
                         <div className="container-fluid ">
-                            <div className="row" >
-                                <div className="col-md-9 px-0"id="InvestPage">
-                                    <div className="invest-asset-list well">
-                                        <div className="ml-auto col-md-5 my-3 input-group ">
-                                            <input type="text" className="form-control"/>
-                                            <div className="input-group-append">
-                                                <button className="d-flex btn justify-content-center align-content-center btn-outline-secondary">
-                                                    <i className="fas fa-search align-self-center"></i>
-                                                    <span className="mb-0 text-capitalize px-2">Search</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <table className="mt-3">
-                                            <thead>
-                                                <tr>
-                                                    <th>Asset Type</th>
-                                                    <th>Name</th>
-                                                    <th className="d-none d-lg-table-cell">Symbol</th>
-                                                    <th className="d-none d-lg-table-cell">Company</th>
-                                                    <th>Value</th>
-                                                    <th>Buy</th>
-                                                </tr>
-                                            </thead>
-                                            <InvestmentList/>
-                                        </table>
-                                        <ProductConsumer>
-                                            {(value)=>{
-                                                const {cart}=value;
-                                                return <button type="button" className={"cartbtn btn "+ (cart.length===0 ? "btn-danger":"btn-outline-success")} data-toggle="modal" data-target="#cartModal">
-                                                    <i className="fas fa-cart-plus pr-2"></i>
-                                                    My Cart
-                                                    <span className="badge">{cart.length}</span>
-                                                </button>
-                                            }}
-                                        </ProductConsumer>
-                                        <ModalCart/>
+                            <div className="row">
+                                <div className={"px-0 col-md-" + (user.riskProfile==="" ?  "12" : "9")} id="Invest">
+                                    <div className="mx-auto my-3 well">
+                                        {user.riskProfile==="" || user.riskProfile==="Inconclusive" ? <NewModal/>  :(this.state.isDefaultOpen && <DefaultInvest openManual={this.openManual} openAuto={this.openAuto}/>)}
+                                        {this.state.isManualOpen && <ManualInvest/>}
+                                        {this.state.isAutoOpen && <AutoInvest/>}
                                     </div>
                                 </div>
+                            {user.riskProfile==="" ?
+                                <div></div>
+                                :
                                 <div className="col-md-3 px-0">
                                     <Profile/>
                                 </div>
+                            }
+
                             </div>
                         </div>
                     </div>
@@ -71,16 +74,19 @@ class Invest extends React.Component {
     }
 }
 
+const mapStateToProps = state => {
+	return {
+		sidebarMode: state.sidebar.sidebarMode,
+		cart: state.investmentAsset.cart,
+        userData: state.user.userData
+	};
+};
 
+const mapDispatchToProps = {
+	toggleSideBar
+};
 
-const mapStateToProps =(state) => {
-    return {
-        sidebarMode: state.sidebar.sidebarMode
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators({toggleSideBar},dispatch)
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(Invest);
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Invest);
