@@ -182,7 +182,7 @@ export const investmentProducts =  [
         },
         {
             id:19,
-            name: "",
+            name: "NewGold Issuer Limited",
             symbol: "GLD",
             price: 54,
             assetType:"Stock",
@@ -192,7 +192,7 @@ export const investmentProducts =  [
         },
         {
             id:20,
-            name: "",
+            name: "Ghana Oil Company Limited",
             symbol: "GOIL",
             price: 2.36,
             assetType:"Stock",
@@ -202,7 +202,7 @@ export const investmentProducts =  [
         },
         {
             id:21,
-            name: "",
+            name: "Golden Star Resources Limited",
             symbol: "GSR",
             price: 9.5,
             assetType:"Stock",
@@ -212,7 +212,7 @@ export const investmentProducts =  [
         },
         {
             id:22,
-            name: "",
+            name: "Hords Limited",
             symbol: "HORDS",
             price: 0.1,
             assetType:"Stock",
@@ -222,7 +222,7 @@ export const investmentProducts =  [
         },
         {
             id:23,
-            name: "",
+            name: "Intravenous Infusions Limited",
             symbol: "IIL",
             price: 0.08,
             assetType:"Stock",
@@ -232,7 +232,7 @@ export const investmentProducts =  [
         },
         {
             id:24,
-            name: "",
+            name: "Mega African Capital Limited",
             symbol: "MAC",
             price: 5.98,
             assetType:"Stock",
@@ -242,7 +242,7 @@ export const investmentProducts =  [
         },
         {
             id:25,
-            name: "",
+            name: "Mechanical Lloyd Company Limited",
             symbol: "MLC",
             price: 0.09,
             assetType:"Stock",
@@ -252,7 +252,7 @@ export const investmentProducts =  [
         },
         {
             id:26,
-            name: "",
+            name: "Meridian-Marshall Holdings",
             symbol: "MMH",
             price: 0.11,
             assetType:"Stock",
@@ -262,7 +262,7 @@ export const investmentProducts =  [
         },
         {
             id:27,
-            name: "",
+            name: "MTN Ghana",
             symbol: "MTNGH",
             price: 0.74,
             assetType:"Stock",
@@ -272,7 +272,7 @@ export const investmentProducts =  [
         },
         {
             id:28,
-            name: "",
+            name: "Produce Buying Company Limited",
             symbol: "PBC",
             price: 0.04,
             assetType:"Stock",
@@ -282,7 +282,7 @@ export const investmentProducts =  [
         },
         {
             id:29,
-            name: "",
+            name: "PZ Cussons Ghana Limited",
             symbol: "PZC",
             price: 0.4,
             assetType:"Stock",
@@ -292,7 +292,7 @@ export const investmentProducts =  [
         },
         {
             id:30,
-            name: "",
+            name: "Republic Bank Ghana Limited",
             symbol: "RGBH",
             price: 0.63,
             assetType:"Stock",
@@ -302,7 +302,7 @@ export const investmentProducts =  [
         },
         {
             id:31,
-            name: "",
+            name: "Samba Foods Limited",
             symbol: "SAMBA",
             price: 0.65,
             assetType:"Stock",
@@ -312,7 +312,7 @@ export const investmentProducts =  [
         },
         {
             id:32,
-            name: "",
+            name: "Standard Chartered Bank Limited",
             symbol: "SCB",
             price: 21.8,
             assetType:"Stock",
@@ -322,7 +322,7 @@ export const investmentProducts =  [
         },
         {
             id:33,
-            name: "",
+            name: "Stanchart Preferential Shares",
             symbol: "SCBPREF",
             price: 0.86,
             assetType:"Stock",
@@ -332,7 +332,7 @@ export const investmentProducts =  [
         },
         {
             id:34,
-            name: "",
+            name: "SIC Insurance Company Limited",
             symbol: "SIC",
             price: 0.12,
             assetType:"Stock",
@@ -342,7 +342,7 @@ export const investmentProducts =  [
         },
         {
             id:35,
-            name: "",
+            name: "Societe Generale Ghana Limited",
             symbol: "SOGEGH",
             price: 0.72,
             assetType:"Stock",
@@ -352,7 +352,7 @@ export const investmentProducts =  [
         },
         {
             id:36,
-            name: "",
+            name: "Starwin Products Limited",
             symbol: "SPL",
             price: 0.03,
             assetType:"Stock",
@@ -362,7 +362,7 @@ export const investmentProducts =  [
         },
         {
             id:37,
-            name: "",
+            name: "Sam Woode Limited",
             symbol: "SWL",
             price: 0.05,
             assetType:"Stock",
@@ -372,7 +372,7 @@ export const investmentProducts =  [
         },
         {
             id:38,
-            name: "",
+            name: "Trust Bank (Gambia) Limited",
             symbol: "TBL",
             price: 0.2,
             assetType:"Stock",
@@ -382,7 +382,7 @@ export const investmentProducts =  [
         },
         {
             id:39,
-            name: "",
+            name: "Tullow Oil Plc",
             symbol: "TLW",
             price: 11.94,
             assetType:"Stock",
@@ -392,8 +392,8 @@ export const investmentProducts =  [
         },
         {
             id:40,
-            name: "",
-            symbol: "Total",
+            name: "Total Petroleum Ghana Limited",
+            symbol: "TOTAL",
             price: 4.6,
             assetType:"Stock",
             inCart: false,
@@ -402,7 +402,7 @@ export const investmentProducts =  [
         },
         {
             id:41,
-            name: "",
+            name: "Unilever Ghana Limited",
             symbol: "UNIL",
             price: 17.68,
             assetType:"Stock",

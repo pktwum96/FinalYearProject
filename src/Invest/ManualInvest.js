@@ -10,31 +10,31 @@ class ManualInvest extends React.Component {
 		return (
 			<React.Fragment>
 				<div className="invest-asset-list" id="ManualInvest">
-					<div className="ml-auto col-md-5 my-3 input-group ">
-						<input type="text" className="form-control" />
-						<div className="input-group-append">
-							<button className="d-flex btn justify-content-center align-content-center btn-outline-secondary">
-								<i className="fas fa-search align-self-center" />
-								<span className="mb-0 text-capitalize px-2">
-									Search
-								</span>
-							</button>
-						</div>
-					</div>
-					<table className="my-3">
+				{/*	// <div className="ml-auto col-md-5 my-3 input-group ">
+					// 	<input type="text" className="form-control" />
+					// 	<div className="input-group-append">
+					// 		<button className="d-flex btn justify-content-center align-content-center btn-outline-secondary">
+					// 			<i className="fas fa-search align-self-center" />
+					// 			<span className="mb-0 text-capitalize px-2">
+					// 				Search
+					// 			</span>
+					// 		</button>
+					// 	</div>
+					// </div>*/}
+					<div className="table-responsive-sm">
+					<table className="my-3 table">
 						<thead>
 							<tr>
 								<th>Asset Type</th>
 								<th>Name</th>
-								<th className="d-none d-lg-table-cell">
-									Symbol
-								</th>
+								<th>Ticker</th>
 								<th>Value</th>
 								<th>Buy</th>
 							</tr>
 						</thead>
 						<InvestmentList />
 					</table>
+					</div>
 					<button type="button" className={'cartbtn btn ' +(this.props.cart.length === 0 ? 'btn-danger' : 'btn-outline-success')} data-toggle="modal" data-target="#cartModal">
 						<i className="fas fa-cart-plus px-2" />
 						My Cart

@@ -11,7 +11,7 @@ class InvestmentList extends React.Component {
 						<td className="text-uppercase">{asset.assetType}</td>
 						<td>{asset.name}</td>
 						<td className="">{asset.symbol}</td>
-						<td className="ml-auto">₵ {parseFloat(Math.round(asset.price * 100) / 100).toFixed(2)}</td>
+						<td className="text-right">₵ {parseFloat(Math.round(asset.price * 100) / 100).toFixed(2)}</td>
 						<td>
 							{asset.inCart ? (
 								<button className="btn btn-outline-secondary" disabled={true}>
@@ -19,7 +19,7 @@ class InvestmentList extends React.Component {
 								</button>
 							) : (
 								<button
-									className="btn btn-outline-success"
+									className="btn btn-outline-success mx-4"
 									disabled={asset.inCart}
 									onClick={(event) => {this.props.addToCart(asset.id);this.props.addTotal()}}
 								>

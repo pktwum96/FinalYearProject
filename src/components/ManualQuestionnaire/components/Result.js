@@ -53,9 +53,9 @@ function Result(props) {
                 }
             })()}
             <h4>You are a <strong>{resultProfile.profile}</strong> Investor</h4>
-            <h6>{resultProfile.info}</h6>
+            <h6  className="my-4"> {resultProfile.info}</h6>
 
-            <div className="d-flex">
+            <div className="d-flex my-5">
                 <Link to="assessment" className="mx-auto"><button className="btn btn-outline-secondary" onClick={()=>window.location.reload()}><i className="fas fa-pen"></i> Retake Test</button></Link>
                 <Link to="dashboard" className="mx-auto"><button className="btn btn-outline-success" onClick={()=>props.setRisk(resultProfile.profile,resultProfile.info)}>Submit Result</button></Link>
             </div>
