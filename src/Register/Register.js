@@ -12,6 +12,7 @@ import "./styles/Register.css";
 import "antd/dist/antd.css";
 import { UserSignUp } from "../api/api";
 import { withRouter } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
@@ -24,6 +25,7 @@ class Register extends React.Component {
             autoCompleteResult: [],
             alreadyRegistered:false,
             checked: false,
+            fetchInProgress:false,
         };
 
         this.handleCheckBox=this.handleCheckBox.bind(this);
@@ -49,16 +51,22 @@ class Register extends React.Component {
                     mobile_number: phone
                 };
 
+                this.setState({
+                    fetchInProgress:true
+                })
                 UserSignUp(data)
                 .then(res => {
                     var data = res.data
                     if(data.id){
                         this.props.history.push("/login")
-                        console.log(res.data);
+                        this.setState({
+                            fetchInProgress:false
+                        })
                     } else{
                         console.log("User already registered")
                         this.setState({
-                            alreadyRegistered:true
+                            alreadyRegistered:true,
+                            fetchInProgress:false
                         })
                     }
                 })
@@ -142,6 +150,7 @@ class Register extends React.Component {
 
         return (
             <React.Fragment>
+                {this.state.fetchInProgress &&  <Spinner/>}
                 <div id="Registerpage">
                     <div className="RegisterDiv">
                         <div className="innerdiv">
