@@ -5,6 +5,10 @@ import {investmentProducts} from '../../api/investmentProducts'
 const product =investmentProducts;
 
 const initialState = {
+    initialAutoAmount:0,
+    cartSubTotalAuto:0,
+    serviceFeeAuto:0,
+    cartTotalAuto:0,
     cartAuto:[],
     investmentAssets: product,
     cart: [],
@@ -107,10 +111,39 @@ export default function(state = initialState, action) {
               const model = stockInfo(action.payload.stockAmount);
             console.log(action.payload.stockAmount);
             const results = solver.Solve(model);
-            console.log(results);
+
+            var tempCart=[];
+            for (var key in results) {
+                if(key=="result"){
+                    var investmentAmount=results[key];
+                }
+                else if(key == "feasible" || key == "bounded") {
+                    console.log(key);
+                }
+                else {
+                    for (var i = 0;i <investmentProducts.length; i++){
+                        if(investmentProducts[i].symbol==key){
+                            var temp = {
+                                id:investmentProducts[i].id,
+                                name: "Guinness Ghana Breweries Limited",
+                                symbol: investmentProducts[i].symbol,
+                                price: investmentProducts[i].price,
+                                quantity:results[key],
+                                expectedValue:results[key] *investmentProducts[i].price,
+                            }
+                            tempCart.push(temp);
+                        }
+                    }
+                }
+            }
+            var tempcartSubTotalAuto= investmentAmount,
+            var tempserviceFeeAuto=investmentAmount * 0.02,
+            var tempcartTotalAuto= investmentAmount+ tempserviceFeeAuto,
+            console.log(tempCart);
             return {
                 ...state,
-                cartAuto:results
+                cartAuto:tempCart
+
             }
         default:
             return state
