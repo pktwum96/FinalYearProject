@@ -1,4 +1,8 @@
+import solver from '../../components/LinearProgramming/solver.js';
+import {stockInfo} from '../../api/stockInfo.js';
+
 const initialState = {
+    cartAuto:[],
     investmentProducts:[{
         id:1,
         name: "Total Petroleum Ghana",
@@ -216,7 +220,21 @@ export default function(state = initialState, action) {
                 cartTotal:total,
             }
         case "ALLOCATEASSETS":
-            console.log(action.payload)
+              const model = {
+                  "optimize": "profit",
+                  "opType": "max",
+                  "constraints": {
+                      "cost": {"max":action.payload.stockAmount},
+                  },
+                  "variables": stockInfo,
+                  "ints": {"asset": 1}
+            };
+            console.log(action.payload.stockAmount);
+            const results = solver.Solve(model);
+            return {
+                ...state,
+                cartAuto:results
+            }
         default:
             return state
     }

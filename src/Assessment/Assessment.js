@@ -51,14 +51,14 @@ class Assessment extends React.Component {
                         <Navbar toggleSideBar={this.props.toggleSideBar}/>
                         <div className="container-fluid ">
                             <div className="row">
-                                <div className={"px-0 col-md-" + (user.riskProfile==="" ?  "12" : "9")} id="Assessment">
+                                <div className={"px-0 col-md-" + (!user.riskProfile  ?  "12" : "9")} id="Assessment">
                                     <div className="mx-auto my-3 well">
                                         {this.state.isDefaultOpen && <DefaultAssessment openManual={this.openManual} openAuto={this.openAuto}/>}
                                         {this.state.isManualOpen && <ManualAssessment/>}
                                         {this.state.isAutoOpen && <AutoAssessment/>}
                                     </div>
                                 </div>
-                            {user.riskProfile==="" ?
+                            {!user.riskProfile  ?
                                 <div></div>
                                 :
                                 <div className="col-md-3 px-0">

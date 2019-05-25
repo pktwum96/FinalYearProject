@@ -50,14 +50,14 @@ class Invest extends React.Component {
                         <Navbar toggleSideBar={this.props.toggleSideBar}/>
                         <div className="container-fluid ">
                             <div className="row">
-                                <div className={"px-0 col-md-" + (user.riskProfile==="" ?  "12" : "9")} id="Invest">
+                                <div className={"px-0 col-md-" + (!user.riskProfile  ?  "12" : "9")} id="Invest">
                                     <div className="mx-auto my-3 well">
-                                        {user.riskProfile==="" || user.riskProfile==="Inconclusive" ? <NewModal/>  :(this.state.isDefaultOpen && <DefaultInvest openManual={this.openManual} openAuto={this.openAuto}/>)}
+                                        {!user.riskProfile  || user.riskProfile==="Inconclusive" ? <NewModal/>  :(this.state.isDefaultOpen && <DefaultInvest openManual={this.openManual} openAuto={this.openAuto}/>)}
                                         {this.state.isManualOpen && <ManualInvest/>}
                                         {this.state.isAutoOpen && <AutoInvest/>}
                                     </div>
                                 </div>
-                            {user.riskProfile==="" ?
+                            {!user.riskProfile  ?
                                 <div></div>
                                 :
                                 <div className="col-md-3 px-0">

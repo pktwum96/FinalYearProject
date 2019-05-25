@@ -20,7 +20,7 @@ var quizQuestionsManual = [
           },
           {
               type: "Enterprising",
-              content: "Enterprising Invest"
+              content: "Enterprising Investor"
           }
       ]
   },

@@ -22,7 +22,7 @@ class Dashboard extends React.Component {
                     <div id="page-content-wrapper">
                         <Navbar toggleSideBar={this.props.toggleSideBar} page="Dashboard"/>
                         <div className="container-fluid ">
-                            {user.riskProfile==="" || user.riskProfile==="Inconclusive" ? <NewModal/> :user.portfolios.assets.length===0? <NewInvestor/>:<UserDashboard/>}
+                            {!user.riskProfile  || user.riskProfile==="Inconclusive" ? <NewModal/> :user.portfolios.assets.length===0? <NewInvestor/>:<UserDashboard/>}
                         </div>
                     </div>
                 </div>
