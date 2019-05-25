@@ -7,7 +7,7 @@ class InvestmentList extends React.Component {
 		return this.props.investmentAssets.map((asset,item) => {
 			return (
 				<tbody key={item} className="well">
-					<tr>
+					<tr className="align-middle">
 						<td className="text-uppercase">{asset.assetType}</td>
 						<td>{asset.name}</td>
 						<td className="">{asset.symbol}</td>

@@ -43,12 +43,8 @@ class Login extends React.Component {
           .then(res => {
             var user_data = res.data;
             if (user_data.success) {
-                console.log("successful")
-                console.log(user_data)
               this.props.history.push("/dashboard");
             } else {
-              console.log(user_data);
-              console.log("Login failed")
               this.setState({
                   loginFailed:true
               })

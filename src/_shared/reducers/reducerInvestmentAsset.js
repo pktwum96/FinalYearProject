@@ -5,7 +5,7 @@ import {investmentProducts} from '../../api/investmentProducts'
 const product =investmentProducts;
 
 const initialState = {
-    initialAutoAmount:0,
+    initialAmount:0,
     cartSubTotalAuto:0,
     serviceFeeAuto:0,
     cartTotalAuto:0,
@@ -109,41 +109,45 @@ export default function(state = initialState, action) {
             }
         case "ALLOCATEASSETS":
               const model = stockInfo(action.payload.stockAmount);
-            console.log(action.payload.stockAmount);
             const results = solver.Solve(model);
 
             var tempCart=[];
             for (var key in results) {
                 if(key=="result"){
-                    var investmentAmount=results[key];
+                    var tempExpectedValue=results[key];
                 }
                 else if(key == "feasible" || key == "bounded") {
-                    console.log(key);
                 }
                 else {
-                    for (var i = 0;i <investmentProducts.length; i++){
-                        if(investmentProducts[i].symbol==key){
+                    investmentProducts.forEach( element => {
+                        if(element.symbol==key){
                             var temp = {
-                                id:investmentProducts[i].id,
-                                name: "Guinness Ghana Breweries Limited",
-                                symbol: investmentProducts[i].symbol,
-                                price: investmentProducts[i].price,
+                                assetType:"Stock",
+                                id:element.id,
+                                name: element.name,
+                                symbol: element.symbol,
+                                price: element.price,
                                 quantity:results[key],
-                                expectedValue:results[key] *investmentProducts[i].price,
-                            }
+                                expectedValue:results[key] *element.price,
+                            };
                             tempCart.push(temp);
                         }
-                    }
+                    });
                 }
             }
-            var tempcartSubTotalAuto= investmentAmount,
-            var tempserviceFeeAuto=investmentAmount * 0.02,
-            var tempcartTotalAuto= investmentAmount+ tempserviceFeeAuto,
-            console.log(tempCart);
+
+            var investmentAmount= action.payload.stockAmount;
+            var tempcartSubTotalAuto= action.payload.stockAmount;
+            var tempserviceFeeAuto=investmentAmount * 0.02;
+            var tempcartTotalAuto= investmentAmount+ tempserviceFeeAuto;
             return {
                 ...state,
-                cartAuto:tempCart
-
+                cartAuto:tempCart,
+                initialAmount:investmentAmount,
+                cartSubTotalAuto:tempcartSubTotalAuto,
+                serviceFeeAuto:tempserviceFeeAuto,
+                cartTotalAuto:tempcartTotalAuto,
+                expectedValue:tempExpectedValue,
             }
         default:
             return state
