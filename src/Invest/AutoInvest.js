@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles/Invest.css';
 import { connect } from 'react-redux';
+import Checkout from "./Checkout.js";
 
 class AutoInvest extends React.Component {
 	render() {
@@ -11,12 +12,16 @@ class AutoInvest extends React.Component {
 				<br/>
 				<div className="d-flex text-center">
 					<span className="mx-auto well w-20 dataFloat">
-						<h6>{parseFloat((Math.round((this.props.initialAmount)* 100) / 100).toFixed(2))}</h6>
-						<p>Initial Investment</p>
+						<strong>
+							<h6>₵ {parseFloat((Math.round((this.props.initialAmount)* 100) / 100).toFixed(2))}</h6>
+							<p>Initial Investment</p>
+						</strong>
 					</span>
 					<span className="mx-auto well w-20 dataFloat">
-						<h6 className="text-success">{parseFloat((Math.round((this.props.expectedValue)* 100) / 100).toFixed(2))}</h6>
-						<p>Expected Value</p>
+						<strong>
+							<h6 className="text-success">₵ {parseFloat((Math.round((this.props.expectedValue)* 100) / 100).toFixed(2))}</h6>
+							<p>Expected Value</p>
+						</strong>
 					</span>
 				</div>
 				<div className="table-responsive-md">
@@ -38,8 +43,8 @@ class AutoInvest extends React.Component {
 									<td>{items.name}</td>
 									<td>{items.symbol}</td>
 									<td>{items.quantity}</td>
-									<td>{parseFloat((Math.round((items.price)* 100) / 100).toFixed(2))}</td>
-									<td>{parseFloat((Math.round((items.expectedValue)* 100) / 100).toFixed(2))}</td>
+									<td>₵ {parseFloat((Math.round((items.price)* 100) / 100).toFixed(2))}</td>
+									<td>₵ {parseFloat((Math.round((items.expectedValue)* 100) / 100).toFixed(2))}</td>
 								</tr>
 							})}
 						</tbody>
@@ -52,6 +57,7 @@ class AutoInvest extends React.Component {
 							<h5>Subtotal : <strong>₵ {this.props.cartSubTotalAuto}</strong></h5>
 							<h5>Service Fee : <strong>₵ {this.props.serviceFeeAuto}</strong></h5>
 							<h5>Total : <strong>₵ {this.props.cartTotalAuto}</strong></h5>
+							<Checkout amount={this.props.cartTotalAuto}/>
 						</div>
 					</div>
 				</div>
@@ -66,9 +72,9 @@ const mapStateToProps = state => {
 		cartAuto: state.investmentAsset.cartAuto,
 		initialAmount: state.investmentAsset.initialAmount,
 		expectedValue: state.investmentAsset.expectedValue,
-	    cartSubTotalAuto:state.investmentAsset.cartSubTotalAuto,
-	    serviceFeeAuto:state.investmentAsset.serviceFeeAuto,
-	    cartTotalAuto:state.investmentAsset.cartTotalAuto,
+		cartSubTotalAuto:state.investmentAsset.cartSubTotalAuto,
+		serviceFeeAuto:state.investmentAsset.serviceFeeAuto,
+		cartTotalAuto:state.investmentAsset.cartTotalAuto,
 	}
 };
 

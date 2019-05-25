@@ -2,13 +2,15 @@ import React from 'react';
 import './styles/Modal.css';
 import { connect } from 'react-redux';
 import { increment,decrement,removeItem, clearCart,addTotal} from '../_shared/actions/index';
+import Checkout from "./Checkout.js"
+
 
 class ModalCart extends React.Component {
 
 
 	render() {
 
-		 const cart=this.props.cart;
+		const cart=this.props.cart;
 		return (
 			<div id="cartModal" className="modal fade" tabIndex="-1" role="dialog">
 				<div className="modal-dialog modal-xl mt-5" role="document">
@@ -85,46 +87,41 @@ class ModalCart extends React.Component {
 																<button className="btn btn-outline-danger text-uppercase mb-3 px-5" type="button" onClick={()=>this.props.clearCart()}>
 																	Clear Cart
 																</button>
-																<h5>
-																	Subtotal : <strong>₵ {this.props.cartSubTotal}</strong>
-															</h5>
-															<h5>
-																Service Fee : <strong>₵ {this.props.serviceFee}</strong>
-														</h5>
-														<h5>
-															Total : <strong>₵ {this.props.cartTotal}</strong>
-													</h5>
-												</div>
+																<h5>Subtotal : <strong>₵ {this.props.cartSubTotal}</strong></h5>
+																<h5>Service Fee : <strong>₵ {this.props.serviceFee}</strong></h5>
+																<h5>Total : <strong>₵ {this.props.cartTotal}</strong></h5>
+																<Checkout amount={this.props.cartTotal}/>
+															</div>
+														</div>
+													</div>
+												</div>}
 											</div>
 										</div>
-									</div>}
+									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>
+				);
+			}
+		}
 
-				</div>
-			</div>
-		</div>
-	);
-}
-}
+		const mapStateToProps =(state) => {
+			return {
+				cart: state.investmentAsset.cart,
+				serviceFee:state.investmentAsset.serviceFee,
+				cartSubTotal:state.investmentAsset.cartSubTotal,
+				cartTotal:state.investmentAsset.cartTotal
+			}
+		}
 
-const mapStateToProps =(state) => {
-    return {
-		cart: state.investmentAsset.cart,
-		serviceFee:state.investmentAsset.serviceFee,
-		cartSubTotal:state.investmentAsset.cartSubTotal,
-		cartTotal:state.investmentAsset.cartTotal
-    }
-}
+		const mapDispatchToProps = {
+			increment,
+			decrement,
+			removeItem,
+			clearCart,
+			addTotal,
+		}
 
-const mapDispatchToProps = {
-	increment,
-	decrement,
-	removeItem,
-	clearCart,
-	addTotal,
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(ModalCart);
+		export default connect(mapStateToProps,mapDispatchToProps)(ModalCart);
