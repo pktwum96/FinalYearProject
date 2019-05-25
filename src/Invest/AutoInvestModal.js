@@ -71,7 +71,7 @@ class AutoInvestModal extends React.Component {
 			<div id="AutoInvestModal" className="modal fade my-auto" tabIndex="1" role="dialog">
 				<div className="modal-dialog modal-xl newUser" role="document">
 					<div className="modal-content text-center">
-						<div className="p-4 w-50 mx-auto">
+						<div className="p-4 mw-50 mx-auto">
 							<h2>Portfolio Generator</h2>
 							<br/>
 

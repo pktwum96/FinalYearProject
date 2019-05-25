@@ -10,9 +10,8 @@ class InvestmentList extends React.Component {
 					<tr>
 						<td className="text-uppercase">{asset.assetType}</td>
 						<td>{asset.name}</td>
-						<td className="d-none d-lg-table-cell">{asset.symbol}</td>
-						<td className="d-none d-lg-table-cell">{asset.company}</td>
-						<td>₵ {asset.price}</td>
+						<td className="">{asset.symbol}</td>
+						<td className="ml-auto">₵ {parseFloat(Math.round(asset.price * 100) / 100).toFixed(2)}</td>
 						<td>
 							{asset.inCart ? (
 								<button className="btn btn-outline-secondary" disabled={true}>

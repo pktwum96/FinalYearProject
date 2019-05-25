@@ -29,9 +29,6 @@ class ManualInvest extends React.Component {
 								<th className="d-none d-lg-table-cell">
 									Symbol
 								</th>
-								<th className="d-none d-lg-table-cell">
-									Company
-								</th>
 								<th>Value</th>
 								<th>Buy</th>
 							</tr>

@@ -1,128 +1,12 @@
 import solver from '../../components/LinearProgramming/solver.js';
 import {stockInfo} from '../../api/stockInfo.js';
+import {investmentProducts} from '../../api/investmentProducts'
+
+const product =investmentProducts;
 
 const initialState = {
     cartAuto:[],
-    investmentProducts:[{
-        id:1,
-        name: "Total Petroleum Ghana",
-        symbol: "TOTAL",
-        price: 4.61,
-        company: "Total Petroleum Ghana",
-        assetType:"stock",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:2,
-        name:"Societe Generale Ghana",
-        symbol: "SOGEGH",
-        price: 0.98,
-        company: "Societe Generale Ghana",
-        assetType:"stock",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:3,
-        name: "Trust Bank",
-        symbol: "TBL",
-        price: 0.83,
-        company: "Trust Bank",
-        assetType: "stock",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:4,
-        name: "Ghana Government Bond",
-        symbol: "GHB",
-        price: 50.02,
-        company: "Ghana Government",
-        assetType:"bond",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:5,
-        name: "Coca Cola Private Bonds",
-        symbol: "CCBL",
-        price: 34.54,
-        company: "Coca Cola Ghana",
-        assetType:"bond",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    }],
-    investmentAssets: [{
-        id:1,
-        name: "Total Petroleum Ghana",
-        symbol: "TOTAL",
-        price: 4.61,
-        company: "Total Petroleum Ghana",
-        assetType:"stock",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:2,
-        name:"Societe Generale Ghana",
-        symbol: "SOGEGH",
-        price: 0.98,
-        company: "Societe Generale Ghana",
-        assetType:"stock",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:3,
-        name: "Trust Bank",
-        symbol: "TBL",
-        price: 0.83,
-        company: "Trust Bank",
-        assetType: "stock",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:4,
-        name: "Ghana Government Bond",
-        symbol: "GHB",
-        price: 50.02,
-        company: "Ghana Government",
-        assetType:"bond",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:5,
-        name: "Coca Cola Private Bonds",
-        symbol: "CCBL",
-        price: 34.54,
-        company: "Coca Cola Ghana",
-        assetType:"bond",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    }],
+    investmentAssets: product,
     cart: [],
     cartSubTotal:0,
     serviceFee:0,
@@ -199,7 +83,7 @@ export default function(state = initialState, action) {
             }
 
         case "CLEARCART":
-            let reset= [...state.investmentProducts];
+            let reset= investmentProducts;
             return {
                 ...state,
                 cart:[],
@@ -220,17 +104,10 @@ export default function(state = initialState, action) {
                 cartTotal:total,
             }
         case "ALLOCATEASSETS":
-              const model = {
-                  "optimize": "profit",
-                  "opType": "max",
-                  "constraints": {
-                      "cost": {"max":action.payload.stockAmount},
-                  },
-                  "variables": stockInfo,
-                  "ints": {"asset": 1}
-            };
+              const model = stockInfo(action.payload.stockAmount);
             console.log(action.payload.stockAmount);
             const results = solver.Solve(model);
+            console.log(results);
             return {
                 ...state,
                 cartAuto:results
