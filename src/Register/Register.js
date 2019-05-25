@@ -5,7 +5,6 @@ import {
     Select,
     Row,
     Col,
-    Checkbox,
     Button,
     AutoComplete
 } from "antd";
@@ -18,12 +17,23 @@ const { Option } = Select;
 const AutoCompleteOption = AutoComplete.Option;
 
 class Register extends React.Component {
-    state = {
-        confirmDirty: false,
-        autoCompleteResult: [],
-        alreadyRegistered:false
-    };
+    constructor(props){
+        super(props);
+        this.state = {
+            confirmDirty: false,
+            autoCompleteResult: [],
+            alreadyRegistered:false,
+            checked: false,
+        };
 
+        this.handleCheckBox=this.handleCheckBox.bind(this);
+    }
+
+    handleCheckBox (){
+        this.setState({
+            checked:!this.state.checked
+        })
+    }
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
@@ -32,8 +42,6 @@ class Register extends React.Component {
                 var password = values.password;
                 var confirm_password = values.confirm;
                 var phone = values.phone;
-                var captcha = values.captcha;
-                var agreement = values.agreement;
 
                 var data = {
                     email: email,
@@ -198,38 +206,14 @@ class Register extends React.Component {
                                         )}
                                     </Form.Item>
 
-                                    <Form.Item
-                                        {...formItemLayout}
-                                        label="Captcha"
-                                        extra="We must make sure that your are a human."
-                                        >
-                                        <Row gutter={8}>
-                                            <Col span={12}>
-                                                {getFieldDecorator("captcha", {
-                                                    rules: [
-                                                        {
-                                                            required: true,
-                                                            message: "Please input the captcha you got!"
-                                                        }
-                                                    ]
-                                                })(<Input />)}
-                                            </Col>
-                                            <Col span={12}>
-                                                <Button>Get captcha</Button>
-                                            </Col>
-                                        </Row>
-                                    </Form.Item>
-                                    <Form.Item {...tailFormItemLayout}>
-                                        {getFieldDecorator("agreement", {
-                                            valuePropName: "checked"
-                                        })(
-                                            <Checkbox>
-                                                I have read the <a href="/">agreement</a>
-                                        </Checkbox>
-                                    )}
-                                </Form.Item>
+                                    <div className="d-flex justify-content-center align-items-center my-4">
+                                    <input id="checkBox" className="mr-4" type="checkbox" onClick={()=>this.handleCheckBox()} checked={this.state.checked} className="form-control"/>
+                                    <label for="checkBox" className="ml-2 my-0">
+                                        I have read the <a href="/">agreement</a>
+                                    </label>
+                                    </div>
                                 <Form.Item {...tailFormItemLayout}>
-                                    <Button type="primary" htmlType="submit">
+                                    <Button type="primary" htmlType="submit" disabled={!this.state.checked}>
                                         Register
                                     </Button>
                                 </Form.Item>

@@ -4,18 +4,6 @@ import "antd/dist/antd.css";
 import { Form, Icon, Input, Button, Checkbox } from "antd";
 import { Link, withRouter } from "react-router-dom";
 import { UserSignIn } from "../api/api";
-import { ProductConsumer } from "../components/context.js";
-
-export const LoginDataFunction = data => {
-  return (
-    <ProductConsumer>
-      {value => {
-        const { getUserdata } = value;
-        return getUserdata(data);
-      }}
-    </ProductConsumer>
-  );
-};
 
 class Login extends React.Component {
   constructor(props) {
@@ -57,7 +45,6 @@ class Login extends React.Component {
             if (user_data.success) {
                 console.log("successful")
                 console.log(user_data)
-              // LoginDataFunction(user_data.data);
               this.props.history.push("/dashboard");
             } else {
               console.log(user_data);
