@@ -7,7 +7,7 @@ class AutoInvestModal extends React.Component {
 		super(props);
 		this.state= {
 			value:1,
-			amount:0
+			amount:""
 		}
 		this.handleChange=this.handleChange.bind(this);
 		this.handleAmount=this.handleAmount.bind(this);
@@ -26,7 +26,6 @@ class AutoInvestModal extends React.Component {
 		})
 	}
 	autoInvestfunct(){
-		console.log("running function");
 		const riskProfile=this.props.userData.riskProfile;
 		const amount=this.state.amount;
 		const debtAmount= this.state.amount;
@@ -35,31 +34,31 @@ class AutoInvestModal extends React.Component {
 
 		switch(riskProfile){
 			case "Defensive":
-				this.props.allocateAssets(riskProfile,debtAmount*0.8,stockAmount*0.2,years)
+				this.props.allocateAssets(riskProfile,amount,parseFloat((debtAmount*0.8).toFixed(2)),parseFloat((stockAmount*0.2).toFixed(2)),years)
 				break;
 
 			case "Semi-Defensive":
-				this.props.allocateAssets(riskProfile,debtAmount*0.8,stockAmount*0.2,years)
+				this.props.allocateAssets(riskProfile,amount,parseFloat((debtAmount*0.65).toFixed(2)),parseFloat((stockAmount*0.35).toFixed(2)),years)
 				break;
 
 			case "Moderate":
-				this.props.allocateAssets(riskProfile,debtAmount*0.65,stockAmount*0.35,years)
+				this.props.allocateAssets(riskProfile,amount,parseFloat((debtAmount*0.5).toFixed(2)),parseFloat((stockAmount*0.5).toFixed(2)),years)
 				break;
 
 			case "Semi-Enterprising":
-				this.props.allocateAssets(riskProfile,debtAmount*0.35,stockAmount*0.65,years)
+				this.props.allocateAssets(riskProfile,amount,parseFloat((debtAmount*0.35).toFixed(2)),parseFloat((stockAmount*0.65).toFixed(2)),years)
 				break;
 
 			case "Enterprising":
-				this.props.allocateAssets(riskProfile,debtAmount*0.2,stockAmount*0.8,years)
+				this.props.allocateAssets(riskProfile,amount,parseFloat((debtAmount*0.2).toFixed(2)),parseFloat((stockAmount*0.8).toFixed(2)),years)
 				break;
 			default:
-				this.props.allocateAssets(riskProfile,debtAmount*0.5,stockAmount*0.5,years)
+				this.props.allocateAssets(riskProfile,amount,parseFloat((debtAmount*0.5).toFixed(2)),parseFloat((stockAmount*0.5).toFixed(2)),years)
 		}
 	}
 
 	render() {
-		const isEnabled =  this.state.amount > 200;
+		const isEnabled =  this.state.amount > 500;
 
 		let items =[
 			{value:1 , label:"Very Short Term (6 months to 1 year)"},
@@ -72,7 +71,7 @@ class AutoInvestModal extends React.Component {
 			<div id="AutoInvestModal" className="modal fade my-auto" tabIndex="1" role="dialog">
 				<div className="modal-dialog modal-xl newUser" role="document">
 					<div className="modal-content text-center">
-						<div className="p-4">
+						<div className="p-4 mw-50 mx-auto">
 							<h2>Portfolio Generator</h2>
 							<br/>
 
@@ -90,7 +89,7 @@ class AutoInvestModal extends React.Component {
 								<label htmlFor="amount" className="py-2">
 									<h5>How much would you like to invest (minimum 500 cedis)?</h5>
 								</label>
-								<input type="number" className="form-control" id="amount" onChange={this.handleAmount} value={this.state.amount}/>
+								<input type="number" className={!isEnabled? "form-control text-danger border border-danger":"form-control text-success"} id="amount" onChange={this.handleAmount} value={this.state.amount}/>
 							</div>
 
 							<div className="d-flex py-3">

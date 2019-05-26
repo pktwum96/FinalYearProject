@@ -16,7 +16,12 @@
     margin-top: 1rem;
 }
 
+.table > tbody > tr > td {
+     vertical-align: middle!important;
+     padding:0.2rem;
+}
 
-#ManualInvest td {
-    padding: 0.5rem 0.2rem!important;
+.dataFloat {
+    width:45%!important;
+    margin-top:1rem;
 }

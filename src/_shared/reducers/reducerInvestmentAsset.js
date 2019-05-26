@@ -1,124 +1,16 @@
+import solver from '../../components/LinearProgramming/solver.js';
+import {stockInfo} from '../../api/stockInfo.js';
+import {investmentProducts} from '../../api/investmentProducts'
+
+const product =investmentProducts;
+
 const initialState = {
-    investmentProducts:[{
-        id:1,
-        name: "Total Petroleum Ghana",
-        symbol: "TOTAL",
-        price: 4.61,
-        company: "Total Petroleum Ghana",
-        assetType:"stock",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:2,
-        name:"Societe Generale Ghana",
-        symbol: "SOGEGH",
-        price: 0.98,
-        company: "Societe Generale Ghana",
-        assetType:"stock",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:3,
-        name: "Trust Bank",
-        symbol: "TBL",
-        price: 0.83,
-        company: "Trust Bank",
-        assetType: "stock",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:4,
-        name: "Ghana Government Bond",
-        symbol: "GHB",
-        price: 50.02,
-        company: "Ghana Government",
-        assetType:"bond",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:5,
-        name: "Coca Cola Private Bonds",
-        symbol: "CCBL",
-        price: 34.54,
-        company: "Coca Cola Ghana",
-        assetType:"bond",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    }],
-    investmentAssets: [{
-        id:1,
-        name: "Total Petroleum Ghana",
-        symbol: "TOTAL",
-        price: 4.61,
-        company: "Total Petroleum Ghana",
-        assetType:"stock",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:2,
-        name:"Societe Generale Ghana",
-        symbol: "SOGEGH",
-        price: 0.98,
-        company: "Societe Generale Ghana",
-        assetType:"stock",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:3,
-        name: "Trust Bank",
-        symbol: "TBL",
-        price: 0.83,
-        company: "Trust Bank",
-        assetType: "stock",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:4,
-        name: "Ghana Government Bond",
-        symbol: "GHB",
-        price: 50.02,
-        company: "Ghana Government",
-        assetType:"bond",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    },
-    {
-        id:5,
-        name: "Coca Cola Private Bonds",
-        symbol: "CCBL",
-        price: 34.54,
-        company: "Coca Cola Ghana",
-        assetType:"bond",
-        info: "Lorem Ipsum",
-        inCart: false,
-        count: 0,
-        total:0,
-    }],
+    initialAmount:0,
+    cartSubTotalAuto:0,
+    serviceFeeAuto:0,
+    cartTotalAuto:0,
+    cartAuto:[],
+    investmentAssets: product,
     cart: [],
     cartSubTotal:0,
     serviceFee:0,
@@ -195,7 +87,7 @@ export default function(state = initialState, action) {
             }
 
         case "CLEARCART":
-            let reset= [...state.investmentProducts];
+            let reset= investmentProducts;
             return {
                 ...state,
                 cart:[],
@@ -216,7 +108,96 @@ export default function(state = initialState, action) {
                 cartTotal:total,
             }
         case "ALLOCATEASSETS":
-            console.log(action.payload)
+            const debtAmount=action.payload.stockAmount;
+            const days=action.payload.years*365;
+
+            const model = stockInfo(action.payload.stockAmount);
+            const results = solver.Solve(model);
+
+            var tempCart=[];
+            var tempExpectedValue=0;
+            console.log(days);
+
+            if(days<367){
+                var temp = {
+                    assetType:"Bond",
+                    id:143,
+                    name: "364-Day Goverment of Ghana Bond",
+                    symbol:"364-Day Bill",
+                    price: debtAmount,
+                    quantity:1,
+                    expectedValue:debtAmount*0.152582,
+                };
+                tempCart.push(temp);
+                tempExpectedValue= debtAmount*0.152582;
+            }
+            else if(days<(365*2)+5){
+                var temp = {
+                    assetType:"Bond",
+                    id:291,
+                    name: "2 Year FXR Bond",
+                    symbol:"FXR",
+                    price: debtAmount,
+                    quantity:1,
+                    expectedValue:debtAmount*0.1724,
+                };
+                tempCart.push(temp);
+                tempExpectedValue= debtAmount*0.1724;
+
+            }
+            else if(days<(365*7)+5){
+                var temp = {
+                    assetType:"Bond",
+                    id:291,
+                    name: "3 Year FXR Bond",
+                    symbol:"FXR",
+                    price: debtAmount,
+                    quantity:1,
+                    expectedValue:debtAmount*0.197,
+                };
+                tempCart.push(temp);
+                tempExpectedValue= debtAmount*0.197;
+
+            }
+            var investmentAmount= debtAmount;
+
+            for (var key in results) {
+                if(key=="result"){
+                    tempExpectedValue+=results[key];
+                }
+                else if(key == "feasible" || key == "bounded") {
+                }
+                else {
+                    investmentProducts.forEach( element => {
+                        if(element.symbol==key){
+                            var temp = {
+                                assetType:"Stock",
+                                id:element.id,
+                                name: element.name,
+                                symbol: element.symbol,
+                                price: element.price,
+                                quantity:results[key],
+                                expectedValue:results[key] *element.price,
+                            };
+                            tempCart.push(temp);
+                        }
+                    });
+                }
+            }
+
+            investmentAmount+= action.payload.stockAmount;
+            var tempcartSubTotalAuto= investmentAmount;
+            var tempserviceFeeAuto=investmentAmount * 0.02;
+            var tempcartTotalAuto= investmentAmount+ tempserviceFeeAuto;
+            return {
+                ...state,
+                cartAuto:tempCart,
+                initialAmount:investmentAmount,
+                cartSubTotalAuto:tempcartSubTotalAuto,
+                serviceFeeAuto:tempserviceFeeAuto,
+                cartTotalAuto:tempcartTotalAuto,
+                expectedValue:tempExpectedValue,
+            }
         default:
             return state
     }

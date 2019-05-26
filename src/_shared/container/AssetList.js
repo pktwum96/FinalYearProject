@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import {formatter} from '../../components/formatter';
+
 
 class InvestmentList extends React.Component {
 	constructor(props){
@@ -33,7 +35,7 @@ class InvestmentList extends React.Component {
 						<td>{asset.type}</td>
 						<td>{asset.name}</td>
 						<td className="d-none d-lg-table-cell">{asset.symbol}</td>
-						<td className="d-none d-lg-table-cell">₵{asset.price}</td>
+						<td className="d-none d-lg-table-cell">{formatter.format(asset.price)}</td>
 						<td>{asset.change}%</td>
 						<td className="d-none d-lg-table-cell">{asset.quantity}</td>
 						<td>{asset.value}</td>

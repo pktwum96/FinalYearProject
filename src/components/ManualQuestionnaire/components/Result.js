@@ -26,36 +26,36 @@ function Result(props) {
                 switch (props.quizResult) {
                     case "Defensive":
                         resultProfile.profile = "Defensive";
-                        resultProfile.info ="You are a conservative risk taker and therefore more likely to be more comfortable investing in debt-based instruments where risk level is minimal. You are less likely to lose a lot even though it comes with low returns";
+                        resultProfile.info ="You are a conservative risk-taker and therefore more likely to be more comfortable investing in debt-based instruments where risk level is minimal. You are less likely to lose a lot even though it comes with low returns";
                         break;
 
                     case "SemiDefensive":
                         resultProfile.profile = "Semi-Defensive";
-                        resultProfile.info = "tramol";
+                        resultProfile.info = "You are a slightly conservative risk-taker and therefore more likely to be more comfortable investing in debt-based instruments where risk level is minimal. You are less likely to lose a lot even though it comes with low returns. Optimum debt/equity allocation is 65% debt to 35% equity";
                         break;
 
                     case "Moderate":
                         resultProfile.profile = "Moderate";
-                        resultProfile.info ="here";
+                        resultProfile.info = "You are a moderate risk-taker and therefore are comfortable investing in both debt-based instruments where risk level is minimal and stock-based assets with high return. You are less likely to lose a lot and returns are moderate. Optimum debt/equity allocation is 50% debt to 50% equity";
                         break;
 
                     case "SemiEnterprising":
                         resultProfile.profile = "Semi-Enterprising";
-                        resultProfile.info = "god";
+                        resultProfile.info = "You are a slightly higher risk-taker and therefore are comfortable investing in both debt-based instruments where risk level is minimal and stock-based assets with high return. Returns ar slightly higher than average. Optimum debt/equity allocation is 35% debt to 65% equity";
                         break;
 
                     case "Enterprising":
                         resultProfile.profile = "Enterprising";
-                        resultProfile.info = "hit";
+                        resultProfile.info = "You are a more adventurous risk-taker and therefore are comfortable investing in high-yield euity instruments where risk level is high. Profits may be high. Optimum debt/equity allocation is 20% debt to 80% equity";
                         break;
                     default:
                     (console.log("Error"))
                 }
             })()}
             <h4>You are a <strong>{resultProfile.profile}</strong> Investor</h4>
-            <h6>{resultProfile.info}</h6>
+            <h6  className="my-4"> {resultProfile.info}</h6>
 
-            <div className="d-flex">
+            <div className="d-flex my-5">
                 <Link to="assessment" className="mx-auto"><button className="btn btn-outline-secondary" onClick={()=>window.location.reload()}><i className="fas fa-pen"></i> Retake Test</button></Link>
                 <Link to="dashboard" className="mx-auto"><button className="btn btn-outline-success" onClick={()=>props.setRisk(resultProfile.profile,resultProfile.info)}>Submit Result</button></Link>
             </div>
