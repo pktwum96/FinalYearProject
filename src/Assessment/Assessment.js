@@ -22,6 +22,7 @@ class Assessment extends React.Component {
 
         this.openAuto =this.openAuto.bind(this)
         this.openManual =this.openManual.bind(this)
+        this.openDefault =this.openDefault.bind(this)
     }
 
     openManual () {
@@ -40,6 +41,14 @@ class Assessment extends React.Component {
         })
     }
 
+    openDefault(){
+        this.setState({
+            isDefaultOpen:true,
+            isManualOpen: false,
+            isAutoOpen: false
+        })
+    }
+
     render() {
         const user=this.props.userData;
 
@@ -54,8 +63,8 @@ class Assessment extends React.Component {
                                 <div className={"px-0 col-md-" + (!user.riskProfile  ?  "12" : "9")} id="Assessment">
                                     <div className="mx-auto my-3 well">
                                         {this.state.isDefaultOpen && <DefaultAssessment openManual={this.openManual} openAuto={this.openAuto}/>}
-                                        {this.state.isManualOpen && <ManualAssessment/>}
-                                        {this.state.isAutoOpen && <AutoAssessment/>}
+                                        {this.state.isManualOpen && <ManualAssessment openDefault={this.openDefault}/>}
+                                        {this.state.isAutoOpen && <AutoAssessment openDefault={this.openDefault}/>}
                                     </div>
                                 </div>
                             {!user.riskProfile  ?

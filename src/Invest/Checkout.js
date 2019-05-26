@@ -17,7 +17,6 @@ export default class Checkout extends React.Component {
 
     onToken = token => {
         const body = {
-          amount: this.props.amount,
           token: token
       };
 
@@ -37,9 +36,6 @@ export default class Checkout extends React.Component {
           .catch(error => {
             console.log("Payment Error: ", error);
             alert("Payment Error");
-            this.setState({
-                fetchInProgress:false,
-            })
           });
       };
 
@@ -49,7 +45,6 @@ export default class Checkout extends React.Component {
             <React.Fragment>
                     {this.state.fetchInProgress &&  <Spinner/>}
                     <StripeCheckout
-                        amount={this.props.amount}
                         image={coin}
                         stripeKey="pk_test_f2y1iKFgUZui09eySMvPnydO00hjDbzReA"
                         token={this.onToken}

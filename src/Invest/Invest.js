@@ -21,6 +21,7 @@ class Invest extends React.Component {
 
         this.openAuto =this.openAuto.bind(this)
         this.openManual =this.openManual.bind(this)
+        this.openDefault =this.openDefault.bind(this)
     }
 
     openManual () {
@@ -39,6 +40,14 @@ class Invest extends React.Component {
         })
     }
 
+    openDefault(){
+        this.setState({
+            isDefaultOpen:true,
+            isManualOpen: false,
+            isAutoOpen: false
+        })
+    }
+
     render() {
         const user=this.props.userData;
 
@@ -53,8 +62,8 @@ class Invest extends React.Component {
                                 <div className={"px-0 col-md-" + (!user.riskProfile  ?  "12" : "9")} id="Invest">
                                     <div className="mx-auto my-3 well">
                                         {!user.riskProfile  || user.riskProfile==="Inconclusive" ? <NewModal/>  :(this.state.isDefaultOpen && <DefaultInvest openManual={this.openManual} openAuto={this.openAuto}/>)}
-                                        {this.state.isManualOpen && <ManualInvest/>}
-                                        {this.state.isAutoOpen && <AutoInvest/>}
+                                        {this.state.isManualOpen && <ManualInvest openDefault={this.openDefault}/>}
+                                        {this.state.isAutoOpen && <AutoInvest openDefault={this.openDefault}/>}
                                     </div>
                                 </div>
                             {!user.riskProfile  ?

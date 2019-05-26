@@ -10,6 +10,12 @@ class AutoInvest extends React.Component {
 			<React.Fragment>
 				<h4>Invest</h4>
 				<br/>
+				<span className="d-flex">
+					<button className="btn btn-outline-danger mr-auto" onClick={()=>this.props.openDefault()}>
+						<i className="fas fa-arrow-left"></i>
+						Back
+					</button>
+				</span>
 				<div className="d-flex text-center">
 					<span className="mx-auto well w-20 dataFloat">
 						<strong>
