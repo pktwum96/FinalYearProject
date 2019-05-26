@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { addToCart,addTotal } from '../actions/index';
+import {formatter} from '../../components/formatter';
 
 class InvestmentList extends React.Component {
 	createListItem() {
@@ -11,7 +12,7 @@ class InvestmentList extends React.Component {
 						<td className="text-uppercase">{asset.assetType}</td>
 						<td>{asset.name}</td>
 						<td className="">{asset.symbol}</td>
-						<td className="text-right">₵ {parseFloat(Math.round(asset.price * 100) / 100).toFixed(2)}</td>
+						<td className="text-right">{formatter.format(asset.price)}</td>
 						<td>
 							{asset.inCart ? (
 								<button className="btn btn-outline-secondary" disabled={true}>

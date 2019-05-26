@@ -27,7 +27,7 @@ class ManualInvest extends React.Component {
 								Back
 							</button>
 						</span>
-						<div className="table-responsive-sm">
+						<div className="table-responsive">
 							<table className="my-3 table">
 								<thead>
 									<tr>

@@ -3,6 +3,8 @@ import StripeCheckout from 'react-stripe-checkout';
 import axios from "axios";
 import coin from './img/coin.jpg';
 import Spinner from "../components/Spinner";
+import {formatter} from '../components/formatter';
+
 
 export default class Checkout extends React.Component {
 
@@ -48,7 +50,7 @@ export default class Checkout extends React.Component {
                         image={coin}
                         stripeKey="pk_test_f2y1iKFgUZui09eySMvPnydO00hjDbzReA"
                         token={this.onToken}
-                        panelLabel={"Invest ₵" + this.props.amount}
+                        panelLabel={"Invest " + formatter.format(this.props.amount)}
                         label="Pay with  card 💳"
                       />
 

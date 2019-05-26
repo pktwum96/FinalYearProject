@@ -7,6 +7,7 @@ import Profile from '../components/Profile.js';
 import { connect } from 'react-redux';
 import {toggleSideBar} from '../_shared/actions/index';
 import AssetList from '../_shared/container/AssetList.js';
+import {formatter} from '../components/formatter';
 
 
 
@@ -23,13 +24,13 @@ class Dashboard extends React.Component {
                             <div className="row">
                                 <div className="col-md-3">
                                     <div className="well">
-                                        <h2>₵ {user.portfolios.initialDeposit}</h2>
+                                        <h2>{formatter.format(user.portfolios.initialDeposit)}</h2>
                                         <p>Initial Deposit</p>
                                     </div>
                                 </div>
                                 <div className="col-md-3">
                                     <div className="well">
-                                        <h2>₵ {user.portfolios.currentValue}</h2>
+                                        <h2>{formatter.format(user.portfolios.currentValue)}</h2>
                                         <p>Current Value</p>
                                     </div>
                                 </div>
@@ -44,7 +45,7 @@ class Dashboard extends React.Component {
                                 </div>
                                 <div className="col-md-3">
                                     <div className="well">
-                                        <h2>₵ {user.portfolios.expectedValue}</h2>
+                                        <h2>{formatter.format(user.portfolios.expectedValue)}</h2>
                                         <p>Projected Value</p>
                                     </div>
                                 </div>
@@ -62,7 +63,7 @@ class Dashboard extends React.Component {
                                                 70%
                                             </div>
                                         </div>
-                                        <p>₵{user.portfolios.currentValue} of ₵{user.portfolios.expectedValue}</p>
+                                        <p>{formatter.format(user.portfolios.currentValue)} of {formatter.format(user.portfolios.expectedValue)}</p>
                                     </div>
                                     <div className="well">
                                         <h4>Time Passed</h4>

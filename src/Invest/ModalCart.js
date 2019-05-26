@@ -2,7 +2,8 @@ import React from 'react';
 import './styles/Modal.css';
 import { connect } from 'react-redux';
 import { increment,decrement,removeItem, clearCart,addTotal} from '../_shared/actions/index';
-import Checkout from "./Checkout.js"
+import Checkout from "./Checkout.js";
+import {formatter} from '../components/formatter';
 
 
 class ModalCart extends React.Component {
@@ -58,7 +59,7 @@ class ModalCart extends React.Component {
 																	{item.symbol}
 																</div>
 																<div className="col-10 mx-auto col-lg-2 align-self-center">
-																	<span><span className="d-lg-none">Price: </span>₵ {item.price}</span>
+																	<span><span className="d-lg-none">Price: </span>{formatter.format(item.price)}</span>
 																</div>
 																<div className="col-10 mx-auto col-lg-2 my-2 my-lg-0">
 																	<div className="d-flex justify-content-center">
@@ -75,7 +76,7 @@ class ModalCart extends React.Component {
 																	</div>
 																</div>
 																<div className="col-10 mx-auto col-lg-2 align-self-center">
-																	<strong><span className="d-lg-none">Item total: </span>₵ {item.total}</strong>
+																	<strong><span className="d-lg-none">Item total: </span>{formatter.format(item.total)}</strong>
 																</div>
 															</div>
 														</React.Fragment>
@@ -87,9 +88,9 @@ class ModalCart extends React.Component {
 															<button className="btn btn-outline-danger text-uppercase mb-3 px-5" type="button" onClick={()=>this.props.clearCart()}>
 																Clear Cart
 															</button>
-															<h6>Subtotal : <strong>₵ {this.props.cartSubTotal}</strong></h6>
-															<h6>Service Fee : <strong>₵ {this.props.serviceFee}</strong></h6>
-															<h6>Total : <strong>₵ {this.props.cartTotal}</strong></h6>
+															<h6>Subtotal : <strong>{formatter.format(this.props.cartSubTotal)}</strong></h6>
+															<h6>Service Fee : <strong>{formatter.format(this.props.serviceFee)}</strong></h6>
+															<h6>Total : <strong>{formatter.format(this.props.cartTotal)}</strong></h6>
 															<Checkout amount={this.props.cartTotal}/>
 														</div>
 													</div>

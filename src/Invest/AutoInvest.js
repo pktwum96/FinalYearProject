@@ -2,6 +2,7 @@ import React from 'react';
 import './styles/Invest.css';
 import { connect } from 'react-redux';
 import Checkout from "./Checkout.js";
+import {formatter} from '../components/formatter';
 
 class AutoInvest extends React.Component {
 	render() {
@@ -19,18 +20,18 @@ class AutoInvest extends React.Component {
 				<div className="d-flex text-center">
 					<span className="mx-auto well w-20 dataFloat">
 						<strong>
-							<h6>₵ {parseFloat((Math.round((this.props.initialAmount)* 100) / 100).toFixed(2))}</h6>
+							<h6>{formatter.format(this.props.initialAmount)}</h6>
 							<p>Initial Investment</p>
 						</strong>
 					</span>
 					<span className="mx-auto well w-20 dataFloat">
 						<strong>
-							<h6 className="text-success">₵ {parseFloat((Math.round((this.props.expectedValue)* 100) / 100).toFixed(2))}</h6>
+							<h6 className="text-success">{formatter.format(this.props.expectedValue)}</h6>
 							<p>Expected Value</p>
 						</strong>
 					</span>
 				</div>
-				<div className="table-responsive-md">
+				<div className="table-responsive">
 					<table className="table">
 						<thead>
 							<tr>
@@ -49,8 +50,8 @@ class AutoInvest extends React.Component {
 									<td>{items.name}</td>
 									<td>{items.symbol}</td>
 									<td>{items.quantity}</td>
-									<td>₵ {parseFloat((Math.round((items.price)* 100) / 100).toFixed(2))}</td>
-									<td>₵ {parseFloat((Math.round((items.expectedValue)* 100) / 100).toFixed(2))}</td>
+									<td>{formatter.format(items.price)}</td>
+									<td>{formatter.format(items.expectedValue)}</td>
 								</tr>
 							})}
 						</tbody>
@@ -60,10 +61,10 @@ class AutoInvest extends React.Component {
 					<div className="row">
 						<div className="col-10 mt-2 ml-sm-5 ml-md-auto col-sm-8 text-right text-capitalize">
 
-							<h6>Subtotal : <strong>₵ {this.props.cartSubTotalAuto}</strong></h6>
-							<h6>Service Fee : <strong>₵ {this.props.serviceFeeAuto}</strong></h6>
-							<h6>Total : <strong>₵ {this.props.cartTotalAuto}</strong></h6>
-							<Checkout amount={this.props.cartTotalAuto}/>
+							<h6>Subtotal : <strong>{formatter.format(this.props.cartSubTotalAuto)}</strong></h6>
+							<h6>Service Fee : <strong>{formatter.format(this.props.serviceFeeAuto)}</strong></h6>
+							<h6>Total : <strong>{formatter.format(this.props.cartTotalAuto)}</strong></h6>
+							<Checkout amount={formatter.format(this.props.cartTotalAuto)}/>
 						</div>
 					</div>
 				</div>

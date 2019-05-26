@@ -108,13 +108,62 @@ export default function(state = initialState, action) {
                 cartTotal:total,
             }
         case "ALLOCATEASSETS":
-              const model = stockInfo(action.payload.stockAmount);
+            const debtAmount=action.payload.stockAmount;
+            const days=action.payload.years*365;
+
+            const model = stockInfo(action.payload.stockAmount);
             const results = solver.Solve(model);
 
             var tempCart=[];
+            var tempExpectedValue=0;
+            console.log(days);
+
+            if(days<367){
+                var temp = {
+                    assetType:"Bond",
+                    id:143,
+                    name: "364-Day Goverment of Ghana Bond",
+                    symbol:"364-Day Bill",
+                    price: debtAmount,
+                    quantity:1,
+                    expectedValue:debtAmount*0.152582,
+                };
+                tempCart.push(temp);
+                tempExpectedValue= debtAmount*0.152582;
+            }
+            else if(days<(365*2)+5){
+                var temp = {
+                    assetType:"Bond",
+                    id:291,
+                    name: "2 Year FXR Bond",
+                    symbol:"FXR",
+                    price: debtAmount,
+                    quantity:1,
+                    expectedValue:debtAmount*0.1724,
+                };
+                tempCart.push(temp);
+                tempExpectedValue= debtAmount*0.1724;
+
+            }
+            else if(days<(365*7)+5){
+                var temp = {
+                    assetType:"Bond",
+                    id:291,
+                    name: "3 Year FXR Bond",
+                    symbol:"FXR",
+                    price: debtAmount,
+                    quantity:1,
+                    expectedValue:debtAmount*0.197,
+                };
+                tempCart.push(temp);
+                tempExpectedValue= debtAmount*0.197;
+
+            }
+            var investmentAmount= debtAmount;
+
             for (var key in results) {
                 if(key=="result"){
-                    var tempExpectedValue=results[key];
+                    tempExpectedValue+=results[key];
                 }
                 else if(key == "feasible" || key == "bounded") {
                 }
@@ -136,8 +185,8 @@ export default function(state = initialState, action) {
                 }
             }
 
-            var investmentAmount= action.payload.stockAmount;
-            var tempcartSubTotalAuto= action.payload.stockAmount;
+            investmentAmount+= action.payload.stockAmount;
+            var tempcartSubTotalAuto= investmentAmount;
             var tempserviceFeeAuto=investmentAmount * 0.02;
             var tempcartTotalAuto= investmentAmount+ tempserviceFeeAuto;
             return {
