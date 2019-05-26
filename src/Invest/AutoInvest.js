@@ -60,9 +60,9 @@ class AutoInvest extends React.Component {
 					<div className="row">
 						<div className="col-10 mt-2 ml-sm-5 ml-md-auto col-sm-8 text-right text-capitalize">
 
-							<h5>Subtotal : <strong>₵ {this.props.cartSubTotalAuto}</strong></h5>
-							<h5>Service Fee : <strong>₵ {this.props.serviceFeeAuto}</strong></h5>
-							<h5>Total : <strong>₵ {this.props.cartTotalAuto}</strong></h5>
+							<h6>Subtotal : <strong>₵ {this.props.cartSubTotalAuto}</strong></h6>
+							<h6>Service Fee : <strong>₵ {this.props.serviceFeeAuto}</strong></h6>
+							<h6>Total : <strong>₵ {this.props.cartTotalAuto}</strong></h6>
 							<Checkout amount={this.props.cartTotalAuto}/>
 						</div>
 					</div>

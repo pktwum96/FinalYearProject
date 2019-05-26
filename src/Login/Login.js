@@ -5,6 +5,8 @@ import { Form, Icon, Input, Button, Checkbox } from "antd";
 import { Link, withRouter } from "react-router-dom";
 import { UserSignIn } from "../api/api";
 import Spinner from "../components/Spinner";
+import { connect } from 'react-redux';
+import {setUserData} from '../_shared/actions/index';
 
 class Login extends React.Component {
     constructor(props) {
@@ -50,6 +52,7 @@ class Login extends React.Component {
                         this.setState({
                             fetchInProgress:false,
                         })
+                        this.props.setUserData(user_data.data[0]);
                         this.props.history.push("/dashboard");
                     } else {
                         this.setState({
@@ -135,4 +138,19 @@ class Login extends React.Component {
 }
 }
 
-export default Form.create()(withRouter(Login));
+const mapStateToProps =(state) => {
+	return {
+		cart: state.investmentAsset.cart,
+		serviceFee:state.investmentAsset.serviceFee,
+		cartSubTotal:state.investmentAsset.cartSubTotal,
+		cartTotal:state.investmentAsset.cartTotal
+	}
+}
+
+const mapDispatchToProps = {
+    setUserData,
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Form.create()(withRouter(Login)));
+
+//export default Form.create()(withRouter(Login));

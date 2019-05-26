@@ -78,9 +78,9 @@ export const allocateAssets = (riskProfile,amount,debtAmount,stockAmount,years) 
     }
 }
 
-export const userLogin = (data) => {
+export const setUserData = (data) => {
     return {
-        type: "LOGGEDIN",
+        type: "SETUSERDATA",
         data:data,
     }
 }

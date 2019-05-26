@@ -1,9 +1,11 @@
 const initialState = {
 	userData: {
+		userID:"",
 		email:"",
 		password:"",
 		riskProfile:null,
 		riskInfo:null,
+		portfolioID:null,
 		portfolios: {
 			name:"",
 			dateCreated:"",
@@ -51,9 +53,31 @@ const initialState = {
 export default function(state = initialState, action) {
 	switch (action.type) {
 		case "SETUSERDATA":
-
+			var tempData= {
+				userID:action.data.user_id,
+				email:action.data.email,
+				password:action.data.password,
+				riskProfile:action.data.risk_id,
+				riskInfo:null,
+				portfolioID:action.data.portfolio_id,
+				portfolios: {
+					name:"",
+					dateCreated:"",
+					assets:[
+					],
+					dateComplete:null,
+					initialDeposit:null,
+					currentValue:action.data.current_value,
+					expectedValue:action.data.projected_value,
+					change:null,
+					daysDone:null,
+					totalDays:null,
+				}
+			}
+			console.log(tempData);
 			return {
 				...state,
+				userData:tempData
 			}
 		case "SETRISK":
 			const profile = action.payload.profile;
